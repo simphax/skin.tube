@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>5</defaultcontrol>
+	<controls>
+		<control type="group">
+
+			<animation type="WindowOpen" condition="!Window.Previous(OSDVideoSettings) + !Window.Previous(OSDAudioSettings)">
+		        <include>WindowOpenForwards</include>
+	        </animation>
+	        <animation type="WindowClose" condition="!Window.Previous(OSDVideoSettings) + !Window.Previous(OSDAudioSettings)">
+		        <include>WindowCloseBackwards</include>
+	        </animation>
+
+            <include>ContentCommon</include>
+            <control type="button" id="155">
+                <onfocus>Control.SetFocus(5)</onfocus>
+                <onfocus>ActivateWindow(OSDVideoSettings)</onfocus>
+                <onfocus>Dialog.Close(OSDAudioSettings)</onfocus>
+            </control>
+
+            <control type="button" id="156">
+                <onfocus>Control.SetFocus(5)</onfocus>
+                <onfocus>ActivateWindow(OSDAudioSettings)</onfocus>
+                <onfocus>Dialog.Close(OSDVideoSettings)</onfocus>
+            </control>
+
+            <control type="button">
+                <width>240</width>
+                <include>DialogTitle</include>
+            </control>
+
+			<control type="grouplist">
+                <width>840</width>
+                <centertop>50%</centertop>
+		        <centerleft>50%</centerleft>
+		        <aligny>top</aligny>
+		        <top>110</top>
+
+		        <itemgap>0</itemgap>
+		        <usecontrolcoords>true</usecontrolcoords>
+
+
+                <!-- Menu -->
+                <control type="grouplist">
+                    <height>30</height>
+
+                    <orientation>horizontal</orientation>
+                    <align>center</align>
+
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <itemgap>20</itemgap>
+
+					<!-- Previous -->
+                    <control type="image">
+                        <top>7</top>
+                        <width>10</width>
+                        <height>20</height>
+
+                        <texture flipx="true">menu-next.png</texture>
+
+                        <animation type="Conditional" condition="Window.IsActive(OSDAudioSettings)" reversible="false">
+                            <effect type="Slide" end="-4,0" time="50"/>
+                            <effect type="Slide" end="4,0" time="250" delay="50" tween="cubic"/>
+                        </animation>
+
+	                    <visible>Window.IsActive(OSDAudioSettings)</visible>
+                    </control>
+
+	                <control type="label">
+                    	<width>240</width>
+	                    <include>DialogTitle</include>
+	                    <label>Video Settings</label>
+	                    <visible>Window.IsActive(OSDVideoSettings)</visible>
+	                </control>
+
+	                <control type="label">
+                    	<width>240</width>
+	                    <include>DialogTitle</include>
+	                    <label>Audio Settings</label>
+	                    <visible>Window.IsActive(OSDAudioSettings)</visible>
+	                </control>
+
+
+                    <!-- Next -->
+                    <control type="image">
+                        <top>7</top>
+                        <width>10</width>
+                        <height>20</height>
+
+                        <texture>menu-next.png</texture>
+
+                        <animation type="Conditional" condition="Window.IsActive(OSDVideoSettings)" reversible="false">
+                            <effect type="Slide" end="4,0" time="50"/>
+                            <effect type="Slide" end="-4,0" time="250" delay="50" tween="cubic"/>
+                        </animation>
+
+	                    <visible>Window.IsActive(OSDVideoSettings)</visible>
+                    </control>
+
+                </control>
+
+	            <!-- Settings -->
+	            <control type="group">
+	                <top>20</top>
+	                <left>30</left>
+	                <width>780</width>
+	                <height>480</height>
+
+	                <control type="group">
+	                    <visible allowhiddenfocus="true">ControlGroup(5).HasFocus</visible>
+	                    <animation type="Visible">
+	                        <effect type="Fade" start="0" end="100" time="300" tween="cubic" easing="out" delay="150"/>
+	                    </animation>
+
+	                    <control type="grouplist" id="5">
+	                        <width>780</width>
+	                        <height>480</height>
+
+	                        <pagecontrol>121</pagecontrol>
+	                        <itemgap>10</itemgap>
+	                    </control>
+
+	                    <control type="scrollbar" id="121">
+	                        <right>-20</right>
+	                        <height>480</height>
+
+	                        <onleft>120</onleft>
+	                        <onright>156</onright>
+
+	                        <showonepage>false</showonepage>
+
+	                        <texturesliderbackground colordiffuse="08FFFFFF">solid.png</texturesliderbackground>
+	                        <texturesliderbar colordiffuse="22FFFFFF">solid.png</texturesliderbar>
+	                    </control>
+
+	                </control>
+	            </control>
+			</control>
+
+            <control type="button" id="7">
+                <onleft>155</onleft>
+                <onright>156</onright>
+
+                <height>60</height>
+
+                <textoffsetx>20</textoffsetx>
+                <textoffsety>13</textoffsety>
+
+                <font>MenuItemLabel</font>
+
+                <textcolor>Secondary</textcolor>
+                <focusedcolor>Primary</focusedcolor>
+                <disabledcolor>Disabled</disabledcolor>
+
+                <texturenofocus colordiffuse="PlayerButtonBack">solid.png</texturenofocus>
+                <texturefocus colordiffuse="PlayerButtonBackFocus">solid.png</texturefocus>
+            </control>
+
+            <control type="radiobutton" id="8">
+                <onleft>155</onleft>
+                <onright>156</onright>
+
+                <height>60</height>
+
+                <textoffsetx>20</textoffsetx>
+                <textoffsety>13</textoffsety>
+
+                <font>MenuItemLabel</font>
+
+                <textcolor>Secondary</textcolor>
+                <focusedcolor>Primary</focusedcolor>
+                <disabledcolor>Disabled</disabledcolor>
+
+                <texturenofocus colordiffuse="PlayerButtonBack">solid.png</texturenofocus>
+                <texturefocus colordiffuse="PlayerButtonBackFocus">solid.png</texturefocus>
+
+                <radioposx>740</radioposx>
+                <radioposy>0</radioposy>
+                <radiowidth>18</radiowidth>
+                <radioheight>18</radioheight>
+
+                <textureradiooffnofocus colordiffuse="Secondary">icon-unwatched.png</textureradiooffnofocus>
+                <textureradioofffocus colordiffuse="Primary">icon-unwatched.png</textureradioofffocus>
+                <textureradioonnofocus colordiffuse="Secondary">icon-watched.png</textureradioonnofocus>
+                <textureradioonfocus colordiffuse="Primary">icon-watched.png</textureradioonfocus>
+            </control>
+
+            <control type="spincontrolex" id="9">
+                <onleft>155</onleft>
+                <onright>156</onright>
+
+                <height>60</height>
+
+                <textoffsetx>20</textoffsetx>
+                <textoffsety>13</textoffsety>
+
+                <font>MenuItemLabel</font>
+
+                <textcolor>Secondary</textcolor>
+                <focusedcolor>Primary</focusedcolor>
+                <disabledcolor>Disabled</disabledcolor>
+
+                <texturenofocus colordiffuse="PlayerButtonBack">solid.png</texturenofocus>
+                <texturefocus colordiffuse="PlayerButtonBackFocus">solid.png</texturefocus>
+
+                <texturedown colordiffuse="Secondary" flipx="true">spincontrol-up.png</texturedown>
+                <texturedownfocus colordiffuse="Primary" flipx="true">spincontrol-up.png</texturedownfocus>
+                <textureup colordiffuse="Secondary" align="left">spincontrol-up.png</textureup>
+                <textureupfocus colordiffuse="Primary">spincontrol-up.png</textureupfocus>
+            </control>
+
+            <control type="image" id="11">
+                <onleft>155</onleft>
+                <onright>156</onright>
+
+                <height>10</height>
+            </control>
+
+			<control type="sliderex" id="13">
+				<description>Default Slider</description>
+				<height>40</height>
+				<texturenofocus border="5">button-nofocus.png</texturenofocus>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<font>font13</font>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+			</control>
+
+
+            <control type="button" id="28"></control>
+            <control type="button" id="29"></control>
+        </control>
+	</controls>
+</window>

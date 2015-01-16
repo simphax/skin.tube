@@ -38,6 +38,13 @@
 
     <include name="GlobalTime">
         <control type="grouplist">
+            <visible>!Window.IsActive(10138) + !Window.IsActive(10151) + !Window.IsActive(10107)</visible>
+            <animation type="Visible">
+                <effect type="Fade" start="0" end="100" time="300"/>
+            </animation>
+            <animation type="Hidden">
+                <effect type="Fade" start="100" end="0" time="150"/>
+            </animation>
             <top>91</top>
             <right>100</right>
 
@@ -60,12 +67,12 @@
                 <width>auto</width>
                 <top>10</top>
 
-                <visible>Player.HasMedia</visible>
+                <visible>Player.HasMedia + !StringCompare(Player.FinishTime(hh:mm:ss),System.Time(hh:mm:ss))</visible>
 
                 <textcolor>Secondary</textcolor>
                 <font>WindowTitleTertiary</font>
 
-                <label>$INFO[Player.FinishTime]</label>
+                <label>$INFO[Player.FinishTime(hh:mm)]</label>
             </control>
 
             <control type="label">
@@ -74,7 +81,7 @@
                 <textcolor>Primary</textcolor>
                 <font>WindowTitleSecondary</font>
 
-                <label>$INFO[System.Time]</label>
+                <label>$INFO[System.Time(hh:mm)]</label>
             </control>
 
         </control>
@@ -161,6 +168,7 @@
     </include>
 
     <include name="WindowCloseBackwards">
+        <effect type="Fade" start="0" end="0" time="0" delay="150"/><!-- Hack to fix flicker when loading a view for the first time -->
         <effect type="Fade" start="100" end="0" time="150" tween="cubic" easing="in"/>
         <effect type="Zoom" start="100" end="110" time="150" center="auto" tween="cubic" easing="in"/>
     </include>
@@ -301,5 +309,174 @@
                 </control>
             </control>
         </control>
+    </include>
+
+    <include name="TVChannelListItem">
+        <top>10</top>
+        <bottom>10</bottom>
+        <left>140</left>
+        <right>-120</right>
+
+        <!-- Label -->
+        <control type="group">
+            <right>65</right>
+
+            <control type="image">
+                <texture colordiffuse="BackgroundPrimary">solid.png</texture>
+            </control>
+            
+            <control type="group">
+                <left>20</left>
+                <right>20</right>
+                <top>20</top>
+                <bottom>20</bottom>
+
+                <!-- Channel number -->
+                <control type="label">
+                    <aligny>center</aligny>
+                    <left>0</left>
+                    <width>60</width>
+
+                    <align>center</align>
+
+                    <font>ItemTitleSecondary</font>
+                    <textcolor>Secondary</textcolor>
+                    <selectedcolor>Secondary</selectedcolor>
+
+                    <label>$INFO[ListItem.ChannelNumber]</label>
+                </control>
+
+                <!-- Channel name -->
+                <control type="label">
+                    <aligny>top</aligny>
+                    <left>80</left>
+                    <right>40</right>
+
+                    <font>ItemTitle</font>
+                    <textcolor>Primary</textcolor>
+                    <selectedcolor>Primary</selectedcolor>
+
+                    <label>$INFO[ListItem.ChannelName]</label>
+                </control>
+
+                <!-- Current program -->
+                <control type="label">
+                    <aligny>top</aligny>
+                    <left>80</left>
+                    <top>24</top>
+                    <right>40</right>
+
+                    <align>left</align>
+
+                    <font>ItemTitleSecondary</font>
+                    <textcolor>Secondary</textcolor>
+                    <selectedcolor>Secondary</selectedcolor>
+
+                    <label>$INFO[ListItem.Title]</label>
+                </control>
+            </control>
+        </control>
+
+        <!-- Watched badge -->
+        <control type="group">
+            <right>0</right>
+            <width>65</width>
+
+            <control type="image">
+                <texture colordiffuse="BackgroundSecondary">solid.png</texture>
+            </control>
+
+            <!-- Actual badge -->
+            <control type="group">
+                <include>ItemBadgeVisibility</include>
+
+                <control type="image">
+                    <texture>solid.png</texture>
+                    <colordiffuse>BadgeBackground</colordiffuse>
+
+                    <visible>!ListItem.IsPlaying</visible>
+                </control>
+                <control type="image">
+                    <texture>solid.png</texture>
+                    <colordiffuse>BadgePlayingBackground</colordiffuse>
+
+                    <visible>ListItem.IsPlaying</visible>
+                </control>
+
+                <control type="image">
+                    <centertop>50%</centertop>
+                    <centerleft>50%</centerleft>
+                    <width>17</width>
+                    <height>17</height>
+
+                    <texture colordiffuse="BadgeIcon">$VAR[ItemBadgeIcon]</texture>
+                </control>
+            </control>
+        </control>
+    </include>
+    <include name="SettingsEdit">
+        <onleft>155</onleft>
+        <onright>156</onright>
+
+        <height>60</height>
+
+        <textoffsetx>20</textoffsetx>
+        <textoffsety>13</textoffsety>
+
+        <font>MenuItemLabel</font>
+
+        <textcolor>Secondary</textcolor>
+        <focusedcolor>Primary</focusedcolor>
+        <disabledcolor>Disabled</disabledcolor>
+        <invalidcolor>Tertiary</invalidcolor>
+
+        <texturenofocus colordiffuse="BackgroundSecondary">solid.png</texturenofocus>
+        <texturefocus colordiffuse="BackgroundPrimary">solid.png</texturefocus>
+    </include>
+    <include name="SettingsRadioButton">
+        <onleft>155</onleft>
+        <onright>156</onright>
+
+        <height>60</height>
+
+        <textoffsetx>20</textoffsetx>
+        <textoffsety>13</textoffsety>
+
+        <font>MenuItemLabel</font>
+
+        <textcolor>Secondary</textcolor>
+        <focusedcolor>Primary</focusedcolor>
+        <disabledcolor>Disabled</disabledcolor>
+
+        <texturenofocus colordiffuse="BackgroundSecondary">solid.png</texturenofocus>
+        <texturefocus colordiffuse="BackgroundPrimary">solid.png</texturefocus>
+
+        <radioposx>740</radioposx>
+        <radioposy>0</radioposy>
+        <radiowidth>18</radiowidth>
+        <radioheight>18</radioheight>
+
+        <textureradiooffnofocus colordiffuse="Secondary">icon-unwatched.png</textureradiooffnofocus>
+        <textureradioofffocus colordiffuse="Primary">icon-unwatched.png</textureradioofffocus>
+        <textureradioonnofocus colordiffuse="Secondary">icon-watched.png</textureradioonnofocus>
+        <textureradioonfocus colordiffuse="Primary">icon-watched.png</textureradioonfocus>
+    </include>
+    <include name="SettingsButton">
+        <onleft>155</onleft>
+        <onright>156</onright>
+
+        <height>60</height>
+
+        <textoffsetx>20</textoffsetx>
+        <textoffsety>13</textoffsety>
+
+        <font>MenuItemLabel</font>
+
+        <textcolor>Secondary</textcolor>
+        <focusedcolor>Primary</focusedcolor>
+        <disabledcolor>Disabled</disabledcolor>
+
+        <texturenofocus colordiffuse="BackgroundSecondary">solid.png</texturenofocus>
+        <texturefocus colordiffuse="BackgroundPrimary">solid.png</texturefocus>
     </include>
 </includes>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<window id="2901">
-    <defaultcontrol>18<!-- 4 --></defaultcontrol>
+<window id="2902">
+    <defaultcontrol>17<!-- 4 --></defaultcontrol>
 
     <animation effect="Fade" start="0" end="100" time="300" tween="cubic" easing="out">WindowOpen</animation>
     <animation effect="Fade" start="100" end="0" time="150" delay="50" tween="cubic" easing="in">WindowClose</animation>
@@ -42,7 +42,7 @@
                         <animation condition="!Control.HasFocus(12)" type="Conditional">
                             <include>PlayerButtonBackEffect</include>
                         </animation>
-                        <texture colordiffuse="PlayerButtonBackFocus">solid.png</texture>
+                        <texture colordiffuse="PlayerButtonBack">solid.png</texture>
                     </control>
 
                     <!-- Button -->
@@ -64,8 +64,6 @@
 
                 <!-- Rewind -->
                 <control type="group">
-                    <visible>!VideoPlayer.Content(LiveTv)</visible>
-
                     <width>70</width>
                     <height>70</height>
 
@@ -73,7 +71,7 @@
                         <animation condition="!Control.HasFocus(13)" type="Conditional">
                             <include>PlayerButtonBackEffect</include>
                         </animation>
-                        <texture colordiffuse="PlayerButtonBackFocus">solid.png</texture>
+                        <texture colordiffuse="PlayerButtonBack">solid.png</texture>
                     </control>
 
                     <!-- Button -->
@@ -95,7 +93,6 @@
 
                 <!-- Play / Pause -->
                 <control type="group">
-                    <visible>!VideoPlayer.Content(LiveTv)</visible>
                     <width>70</width>
                     <height>70</height>
 
@@ -103,7 +100,7 @@
                         <animation condition="!Control.HasFocus(14)" type="Conditional">
                             <include>PlayerButtonBackEffect</include>
                         </animation>
-                        <texture colordiffuse="PlayerButtonBackFocus">solid.png</texture>
+                        <texture colordiffuse="PlayerButtonBack">solid.png</texture>
                     </control>
 
                     <!-- Button -->
@@ -135,7 +132,7 @@
                         <animation condition="!Control.HasFocus(15)" type="Conditional">
                             <include>PlayerButtonBackEffect</include>
                         </animation>
-                        <texture colordiffuse="PlayerButtonBackFocus">solid.png</texture>
+                        <texture colordiffuse="PlayerButtonBack">solid.png</texture>
                     </control>
 
                     <!-- Button -->
@@ -157,7 +154,6 @@
 
                 <!-- Forward -->
                 <control type="group">
-                    <visible>!VideoPlayer.Content(LiveTv)</visible>
                     <width>70</width>
                     <height>70</height>
 
@@ -165,7 +161,7 @@
                         <animation condition="!Control.HasFocus(16)" type="Conditional">
                             <include>PlayerButtonBackEffect</include>
                         </animation>
-                        <texture colordiffuse="PlayerButtonBackFocus">solid.png</texture>
+                        <texture colordiffuse="PlayerButtonBack">solid.png</texture>
                     </control>
 
                     <!-- Button -->
@@ -185,36 +181,6 @@
                     </control>
                 </control>
 
-                <!-- Record -->
-                <control type="group">
-                    <visible>VideoPlayer.Content(LiveTv)</visible>
-                    <width>70</width>
-                    <height>70</height>
-
-                    <control type="image">
-                        <animation condition="!Control.HasFocus(16)" type="Conditional">
-                            <include>PlayerButtonBackEffect</include>
-                        </animation>
-                        <texture colordiffuse="PlayerButtonBackFocus">solid.png</texture>
-                    </control>
-
-                    <!-- Button -->
-                    <control type="button" id="16">
-                        <onleft>15</onleft>
-                        <onright>17</onright>
-
-                        <centertop>50%</centertop>
-                        <centerleft>50%</centerleft>
-                        <width>32</width>
-                        <height>32</height>
-
-                        <texturefocus colordiffuse="PlayerButtonIconFocus">icon-record.png</texturefocus>
-                        <texturenofocus colordiffuse="PlayerButtonIcon">icon-record.png</texturenofocus>
-
-                        <onclick>PlayerControl(Record)</onclick>
-                    </control>
-                </control>
-
                 <!-- Next -->
                 <control type="group">
                     <width>70</width>
@@ -224,7 +190,7 @@
                         <animation condition="!Control.HasFocus(17)" type="Conditional">
                             <include>PlayerButtonBackEffect</include>
                         </animation>
-                        <texture colordiffuse="PlayerButtonBackFocus">solid.png</texture>
+                        <texture colordiffuse="PlayerButtonBack">solid.png</texture>
                     </control>
 
                     <!-- Button -->
@@ -257,70 +223,6 @@
                 <orientation>horizontal</orientation>
                 <align>right</align>
 
-                <!-- Subtitles -->
-                <control type="group">
-                    <visible>!VideoPlayer.Content(LiveTv)</visible>
-                    
-                    <width>70</width>
-                    <height>70</height>
-
-                    <control type="image">
-                        <animation condition="!Control.HasFocus(18)" type="Conditional">
-                            <include>PlayerButtonBackEffect</include>
-                        </animation>
-                        <texture colordiffuse="PlayerButtonBackFocus">solid.png</texture>
-                    </control>
-
-                    <!-- Button -->
-                    <control type="togglebutton" id="18">
-                        <onleft>17</onleft>
-                        <onright>19</onright>
-
-                        <centertop>50%</centertop>
-                        <centerleft>50%</centerleft>
-                        <width>32</width>
-                        <height>32</height>
-
-                        <texturefocus colordiffuse="PlayerButtonIconFocus">icon-subtitles.png</texturefocus>
-                        <texturenofocus colordiffuse="PlayerButtonIcon">icon-subtitles.png</texturenofocus>
-
-                        <alttexturefocus colordiffuse="PlayerButtonIconFocus">icon-subtitles-active.png</alttexturefocus>
-                        <alttexturenofocus colordiffuse="PlayerButtonIcon">icon-subtitles-active.png</alttexturenofocus>
-
-                        <usealttexture>VideoPlayer.HasSubtitles</usealttexture>
-                        <onclick>ActivateWindow(SubtitleSearch)</onclick>
-                    </control>
-                </control>
-
-                <!-- Video options -->
-                <control type="group">
-                    <width>70</width>
-                    <height>70</height>
-
-                    <control type="image">
-                        <animation condition="!Control.HasFocus(19)" type="Conditional">
-                            <include>PlayerButtonBackEffect</include>
-                        </animation>
-                        <texture colordiffuse="PlayerButtonBackFocus">solid.png</texture>
-                    </control>
-
-                    <!-- Button -->
-                    <control type="button" id="19">
-                        <onleft>18</onleft>
-                        <onright>20</onright>
-
-                        <centertop>50%</centertop>
-                        <centerleft>50%</centerleft>
-                        <width>32</width>
-                        <height>32</height>
-
-                        <texturefocus colordiffuse="PlayerButtonIconFocus">icon-video.png</texturefocus>
-                        <texturenofocus colordiffuse="PlayerButtonIcon">icon-video.png</texturenofocus>
-
-                        <onclick>ActivateWindow(OSDVideoSettings)</onclick>
-                    </control>
-                </control>
-
                 <!-- Audio options -->
                 <control type="group">
                     <width>70</width>
@@ -330,7 +232,7 @@
                         <animation condition="!Control.HasFocus(20)" type="Conditional">
                             <include>PlayerButtonBackEffect</include>
                         </animation>
-                        <texture colordiffuse="PlayerButtonBackFocus">solid.png</texture>
+                        <texture colordiffuse="PlayerButtonBack">solid.png</texture>
                     </control>
 
                     <!-- Button -->
@@ -346,7 +248,7 @@
                         <texturefocus colordiffuse="PlayerButtonIconFocus">icon-audio.png</texturefocus>
                         <texturenofocus colordiffuse="PlayerButtonIcon">icon-audio.png</texturenofocus>
 
-                        <onclick>ActivateWindow(OSDAudioSettings)</onclick>
+                        <onclick>-</onclick>
                     </control>
                 </control>
 

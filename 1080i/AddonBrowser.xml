@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">500</defaultcontrol>
+    <views>500,501,502,503</views>
+
+    <controls>
+
+        <include>GlobalBackground</include>
+        <include>GlobalTime</include>
+
+        <include>WindowTitle</include>
+
+        <!-- Content -->
+        <control type="group">
+            <include>ContentCommon</include>
+
+            <!-- Animations -->
+            <animation type="WindowOpen" condition="Window.Previous(Home)">
+                <include>WindowOpenForwards</include>
+            </animation>
+            <animation type="WindowClose" condition="Window.Next(Home)">
+                <include>WindowCloseBackwards</include>
+            </animation>
+
+            <animation type="Visible">
+                <include>WindowOpenBackwards</include>
+            </animation>
+            <animation type="Hidden">
+                <include>WindowCloseForwards</include>
+            </animation>
+
+            <visible>![Window.IsVisible(MusicInformation)]</visible>
+
+            <!-- Views -->
+            <control type="group">
+                <top>160</top>
+                <bottom>90</bottom>
+                <left>100</left>
+                <right>100</right>
+
+                <include>ViewScrollbarVisibility</include>
+
+                <include>ViewTypeList</include>
+                <include>ViewTypePoster</include>
+                <include>ViewTypeFanart</include>
+                <include>ViewTypeFanartSmall</include>
+            </control>
+
+            <!-- Menu overlay -->
+            <control type="image">
+                <include>FillParent</include>
+
+                <texture colordiffuse="DialogBackground">solid.png</texture>
+
+                <animation effect="Fade" start="0" end="100" time="200" tween="cubic" easing="out">Visible</animation>
+                <animation effect="Fade" start="100" end="0" time="150" delay="50" tween="cubic" easing="in">Hidden</animation>
+
+                <visible>ControlGroup(3000).HasFocus</visible>
+            </control>
+
+            <!-- View options -->
+            <control type="group" id="3000">
+                <visible allowhiddenfocus="true">ControlGroup(3000).HasFocus</visible>
+                
+                <animation type="Visible">
+                    <include>WindowOpenForwards</include>
+                </animation>
+                <animation type="Hidden">
+                    <include>WindowCloseBackwards</include>
+                </animation>
+
+                <control type="button" id="3002">
+                    <onfocus condition="Control.IsVisible(3000)">Control.SetFocus(500)</onfocus>
+                    <onfocus condition="!Control.IsVisible(3000)">Control.SetFocus(3001)</onfocus>
+                </control>
+
+                <!-- Controls -->
+                <control type="grouplist" id="3001">
+                    <centertop>50%</centertop>
+                    <centerleft>50%</centerleft>
+                    <width>420</width>
+                    <align>center</align>
+
+                    <itemgap>0</itemgap>
+                    <usecontrolcoords>true</usecontrolcoords>
+
+                    <!-- Title -->
+                    <control type="label">
+                        <height>30</height>
+
+                        <font>MenuTitle</font>
+                        <textcolor>Primary</textcolor>
+
+                        <align>center</align>
+
+                        <label>View menu</label>
+                    </control>
+
+                    <!-- View mode -->
+                    <control type="group" id="3010">
+                        <top>20</top>
+                        <centerleft>50%</centerleft>
+                        <width>340</width>
+                        <height>60</height>
+
+                        <control type="group">
+                            <visible>ControlGroup(3010).HasFocus</visible>
+                            
+                            <animation type="Visible" reversible="false">
+                                <include>ActiveOverlayAnimation</include>
+                            </animation>
+
+                            <include>ActiveOverlay</include>
+                        </control>
+
+                        <control type="group">
+                            <visible>ControlGroup(3010).HasFocus</visible>
+
+                            <animation type="Visible" reversible="false">
+                                <effect type="Zoom" start="80" end="100" time="500" center="auto" tween="back"/>
+                                <effect type="Fade" start="0" end="100" time="150" delay="100"/>
+                            </animation>
+
+                            <control type="button" id="3012">
+                                <onfocus>Container.PreviousViewMode</onfocus>
+                                <onfocus>Control.SetFocus(2)</onfocus>
+
+                                <centertop>50%</centertop>
+                                <left>-30</left>
+                                <width>10</width>
+                                <height>20</height>
+
+                                <texturenofocus flipx="true">menu-next.png</texturenofocus>
+                                <texturefocus flipx="true">menu-next.png</texturefocus>
+                            
+                                <animation type="Focus">
+                                    <effect type="Slide" end="-4,0" time="50"/>
+                                    <effect type="Slide" end="4,0" time="250" delay="50" tween="cubic"/>
+                                </animation>
+                            </control>
+                            <control type="button" id="3013">
+                                <onfocus>Container.NextViewMode</onfocus>
+                                <onfocus>Control.SetFocus(2)</onfocus>
+
+                                <centertop>50%</centertop>
+                                <right>-30</right>
+                                <width>10</width>
+                                <height>20</height>
+
+                                <texturenofocus>menu-next.png</texturenofocus>
+                                <texturefocus>menu-next.png</texturefocus>
+
+                                <animation type="Focus">
+                                    <effect type="Slide" end="4,0" time="50"/>
+                                    <effect type="Slide" end="-4,0" time="250" delay="50" tween="cubic"/>
+                                </animation>
+                            </control>
+                        </control>
+
+                        <!-- Label -->
+                        <control type="group">
+                            <right>200</right>
+
+                            <control type="image">
+                                <texture colordiffuse="BackgroundSecondary">solid.png</texture>
+                            </control>
+
+                            <control type="label">
+                                <left>20</left>
+                                <top>13</top>
+
+                                <font>MenuItemLabel</font>
+                                <textcolor>Secondary</textcolor>
+
+                                <label>View</label>
+                            </control>
+                        </control>
+
+                        <!-- Value -->
+                        <control type="group">
+                            <right>0</right>
+                            <width>200</width>
+
+                            <control type="image">
+                                <texture colordiffuse="BackgroundPrimary">solid.png</texture>
+                            </control>
+
+                            <control type="label">
+                                <left>20</left>
+                                <top>13</top>
+
+                                <font>MenuItemValue</font>
+                                <textcolor>Primary</textcolor>
+
+                                <label>$INFO[Container.ViewMode]</label>
+                            </control>
+                        </control>
+
+                        <control type="button" id="2">
+                            <onup condition="Skin.HasSetting(KioskMode)">3050</onup>
+                            <onup condition="!Skin.HasSetting(KioskMode)">3002</onup>
+                            <ondown>3020</ondown>
+
+                            <onleft>3012</onleft>
+                            <onright>3013</onright>
+                        </control>
+                    </control>
+
+                    <!-- Sort method -->
+                    <control type="group" id="3020">
+                        <top>20</top>
+                        <centerleft>50%</centerleft>
+                        <width>340</width>
+                        <height>60</height>
+    
+                        <animation condition="!Control.IsEnabled(3)" effect="Fade" start="100" end="30" time="0">Conditional</animation>
+
+                        <control type="group">
+                            <visible>ControlGroup(3020).HasFocus</visible>
+                            
+                            <animation type="Visible" reversible="false">
+                                <include>ActiveOverlayAnimation</include>
+                            </animation>
+
+                            <include>ActiveOverlay</include>
+                        </control>
+
+                        <control type="group">
+                            <visible>ControlGroup(3020).HasFocus</visible>
+
+                            <animation type="Visible" reversible="false">
+                                <effect type="Zoom" start="80" end="100" time="500" center="auto" tween="back"/>
+                                <effect type="Fade" start="0" end="100" time="150" delay="100"/>
+                            </animation>
+
+                            <control type="button" id="3022">
+                                <onfocus>Container.PreviousSortMethod</onfocus>
+                                <onfocus>Control.SetFocus(3)</onfocus>
+
+                                <centertop>50%</centertop>
+                                <left>-30</left>
+                                <width>10</width>
+                                <height>20</height>
+
+                                <texturenofocus flipx="true">menu-next.png</texturenofocus>
+                                <texturefocus flipx="true">menu-next.png</texturefocus>
+                            
+                                <animation type="Focus">
+                                    <effect type="Slide" end="-4,0" time="50"/>
+                                    <effect type="Slide" end="4,0" time="250" delay="50" tween="cubic"/>
+                                </animation>
+                            </control>
+                            <control type="button" id="3023">
+                                <onfocus>Container.NextSortMethod</onfocus>
+                                <onfocus>Control.SetFocus(3)</onfocus>
+
+                                <centertop>50%</centertop>
+                                <right>-30</right>
+                                <width>10</width>
+                                <height>20</height>
+
+                                <texturenofocus>menu-next.png</texturenofocus>
+                                <texturefocus>menu-next.png</texturefocus>
+
+                                <animation type="Focus">
+                                    <effect type="Slide" end="4,0" time="50"/>
+                                    <effect type="Slide" end="-4,0" time="250" delay="50" tween="cubic"/>
+                                </animation>
+                            </control>
+                        </control>
+
+                        <!-- Label -->
+                        <control type="group">
+                            <right>200</right>
+
+                            <control type="image">
+                                <texture colordiffuse="BackgroundSecondary">solid.png</texture>
+                            </control>
+
+                            <control type="label">
+                                <left>20</left>
+                                <top>13</top>
+
+                                <font>MenuItemLabel</font>
+                                <textcolor>Secondary</textcolor>
+
+                                <label>Sort</label>
+                            </control>
+                        </control>
+
+                        <!-- Value -->
+                        <control type="group">
+                            <right>0</right>
+                            <width>200</width>
+
+                            <control type="image">
+                                <texture colordiffuse="BackgroundPrimary">solid.png</texture>
+                            </control>
+
+                            <control type="label">
+                                <left>20</left>
+                                <top>13</top>
+
+                                <font>MenuItemValue</font>
+                                <textcolor>Primary</textcolor>
+
+                                <label>$INFO[Container.SortMethod]</label>
+                            </control>
+                        </control>
+
+                        <control type="button" id="3">
+                            <onup>3010</onup>
+                            <ondown>3030</ondown>
+
+                            <onleft>3022</onleft>
+                            <onright>3023</onright>
+                        </control>
+                    </control>
+
+                    <!-- Sort direction -->
+                    <control type="group" id="3030">
+                        <top>20</top>
+                        <centerleft>50%</centerleft>
+                        <width>340</width>
+                        <height>60</height>
+
+                        <control type="group">
+                            <visible>ControlGroup(3030).HasFocus</visible>
+                            
+                            <animation type="Visible" reversible="false">
+                                <include>ActiveOverlayAnimation</include>
+                            </animation>
+
+                            <include>ActiveOverlay</include>
+                        </control>
+
+                        <!-- Label -->
+                        <control type="group">
+                            <right>60</right>
+
+                            <control type="image">
+                                <texture colordiffuse="BackgroundSecondary">solid.png</texture>
+                            </control>
+
+                            <control type="label">
+                                <left>20</left>
+                                <top>13</top>
+
+                                <font>MenuItemLabel</font>
+                                <textcolor>Secondary</textcolor>
+
+                                <label>Sort direction</label>
+                            </control>
+                        </control>
+
+                        <!-- Value -->
+                        <control type="group">
+                            <right>0</right>
+                            <width>60</width>
+
+                            <control type="image">
+                                <texture colordiffuse="BackgroundPrimary">solid.png</texture>
+                            </control>
+
+                            <control type="radiobutton" id="4">
+                                <onup>3020</onup>
+                                <ondown>3040</ondown>
+
+                                <radioposx>20</radioposx>
+                                <radioposy>0</radioposy>
+                                <radiowidth>20</radiowidth>
+                                <radioheight>20</radioheight>
+
+                                <textureradioonnofocus flipy="true">sort-asc.png</textureradioonnofocus>
+                                <textureradioonfocus flipy="true">sort-asc.png</textureradioonfocus>
+                                <textureradiooffnofocus>sort-asc.png</textureradiooffnofocus>
+                                <textureradioofffocus>sort-asc.png</textureradioofffocus>
+                            </control>
+                        </control>
+                    </control>
+
+                    <!-- Show watched -->
+                    <control type="group" id="3040">
+                        <top>20</top>
+                        <centerleft>50%</centerleft>
+                        <width>340</width>
+                        <height>60</height>
+
+                        <control type="group">
+                            <visible>ControlGroup(3040).HasFocus</visible>
+                            
+                            <animation type="Visible" reversible="false">
+                                <include>ActiveOverlayAnimation</include>
+                            </animation>
+
+                            <include>ActiveOverlay</include>
+                        </control>
+
+                        <!-- Label -->
+                        <control type="group">
+                            <right>60</right>
+
+                            <control type="image">
+                                <texture colordiffuse="BackgroundSecondary">solid.png</texture>
+                            </control>
+
+                            <control type="label">
+                                <left>20</left>
+                                <top>13</top>
+
+                                <font>MenuItemLabel</font>
+                                <textcolor>Secondary</textcolor>
+
+                                <label>Show watched</label>
+                            </control>
+                        </control>
+
+                        <!-- Value -->
+                        <control type="group">
+                            <right>0</right>
+                            <width>60</width>
+
+                            <control type="image">
+                                <texture colordiffuse="BackgroundPrimary">solid.png</texture>
+                            </control>
+
+                            <control type="radiobutton" id="14">
+                                <onup>3030</onup>
+                                <ondown>3050</ondown>
+
+                                <radioposx>20</radioposx>
+                                <radioposy>0</radioposy>
+                                <radiowidth>20</radiowidth>
+                                <radioheight>20</radioheight>
+
+                                <textureradioonnofocus>icon-unwatched.png</textureradioonnofocus>
+                                <textureradioonfocus>icon-unwatched.png</textureradioonfocus>
+                                <textureradiooffnofocus>icon-watched.png</textureradiooffnofocus>
+                                <textureradioofffocus>icon-watched.png</textureradioofffocus>
+                            </control>
+                        </control>
+                    </control>
+
+                </control>
+            </control>
+
+        </control>
+
+    </controls>
+</window>

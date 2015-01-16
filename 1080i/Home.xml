@@ -46,6 +46,7 @@
 
                     <label>$INFO[Control.GetLabel(2)]</label>
                     <animation condition="!Control.HasFocus(2)" effect="Fade" time="50" start="100" end="40">Conditional</animation>
+                    <visible>!Skin.HasSetting(Home2Disable)</visible>
                 </control>
                 <control type="label">
                     <width>auto</width>
@@ -55,6 +56,27 @@
 
                     <label>$INFO[Control.GetLabel(3)]</label>
                     <animation condition="!Control.HasFocus(3)" effect="Fade" time="50" start="100" end="40">Conditional</animation>
+                    <visible>!Skin.HasSetting(Home3Disable)</visible>
+                </control>
+                <control type="label">
+                    <width>auto</width>
+
+                    <font>WindowTitle</font>
+                    <textcolor>Primary</textcolor>
+
+                    <label>$INFO[Control.GetLabel(4)]</label>
+                    <animation condition="!Control.HasFocus(4)" effect="Fade" time="50" start="100" end="40">Conditional</animation>
+                    <visible>!Skin.HasSetting(Home4Disable)</visible>
+                </control>
+                <control type="label">
+                    <width>auto</width>
+
+                    <font>WindowTitle</font>
+                    <textcolor>Primary</textcolor>
+
+                    <label>$INFO[Control.GetLabel(5)]</label>
+                    <animation condition="!Control.HasFocus(5)" effect="Fade" time="50" start="100" end="40">Conditional</animation>
+                    <visible>!Skin.HasSetting(Home5Disable)</visible>
                 </control>
 
             </control>
@@ -62,18 +84,78 @@
             <!-- Hidden controls -->
             <control type="grouplist" id="300">
                 <orientation>horizontal</orientation>
-
                 <control type="button" id="1">
-                    <label>Movies</label>
-                    <onclick>ActivateWindow(Videos, MovieTitles, return)</onclick>
+                    <label>$VAR[Home1Name]</label>
+                    <onclick>$VAR[Home1Path]</onclick>
+                    <ondown>301</ondown>
                 </control>
                 <control type="button" id="2">
-                    <label>TV shows</label>
-                    <onclick>ActivateWindow(Videos, TvShowTitles, return)</onclick>
+                    <label>$VAR[Home2Name]</label>
+                    <onclick>$VAR[Home2Path]</onclick>
+                    <ondown>301</ondown>
+                    <visible>!Skin.HasSetting(Home2Disable)</visible>
                 </control>
                 <control type="button" id="3">
-                    <label>Settings</label>
+                    <label>$VAR[Home3Name]</label>
+                    <onclick>$VAR[Home3Path]</onclick>
+                    <ondown>301</ondown>
+                    <visible>!Skin.HasSetting(Home3Disable)</visible>
+                </control>
+                <control type="button" id="4">
+                    <label>$VAR[Home4Name]</label>
+                    <onclick>$VAR[Home4Path]</onclick>
+                    <ondown>301</ondown>
+                    <visible>!Skin.HasSetting(Home4Disable)</visible>
+                </control>
+                <control type="button" id="5">
+                    <label>$VAR[Home5Name]</label>
+                    <onclick>$VAR[Home5Path]</onclick>
+                    <ondown>301</ondown>
+                    <visible>!Skin.HasSetting(Home5Disable)</visible>
+                </control>
+            </control>
+
+            <control type="grouplist" id="301">
+                <defaultcontrol always="true">101</defaultcontrol>
+                <orientation>horizontal</orientation>
+                <align>right</align>
+                <top>948</top>
+                <right>100</right>
+                <control type="button" id="101">
+
+                    <onup>300</onup>
+                    <width>40</width>
+                    <height>40</height>
+
+                    <texturenofocus colordiffuse="Primary">circle-settings.png</texturenofocus>
+                    <texturefocus colordiffuse="Primary">circle-settings.png</texturefocus>
+                    <animation condition="!Control.HasFocus(101)" effect="Fade" time="50" start="100" end="40">Conditional</animation>
+
                     <onclick>ActivateWindow(Settings)</onclick>
+                </control>
+                <control type="button" id="102">
+
+                    <onup>300</onup>
+                    <width>40</width>
+                    <height>40</height>
+
+                    <texturenofocus colordiffuse="Primary">circle-update.png</texturenofocus>
+                    <texturefocus colordiffuse="Primary">circle-update.png</texturefocus>
+                    <animation condition="!Control.HasFocus(102)" effect="Fade" time="50" start="100" end="40">Conditional</animation>
+
+                    <onclick>ReloadSkin()</onclick>
+                </control>
+                <control type="button" id="103">
+
+                    <onup>300</onup>
+                    <width>40</width>
+                    <height>40</height>
+
+                    <texturenofocus colordiffuse="Primary">circle-exit.png</texturenofocus>
+                    <texturefocus colordiffuse="Primary">circle-exit.png</texturefocus>
+                    <animation condition="!Control.HasFocus(103)" effect="Fade" time="50" start="100" end="40">Conditional</animation>
+
+                    <onclick>Quit()</onclick>
                 </control>
             </control>
 

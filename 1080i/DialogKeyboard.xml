@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">312</defaultcontrol>
+
+    <controls>
+        <include>DialogBackground</include>
+
+        <control type="group">
+            <include>DialogAnimations</include>
+            <control type="grouplist">
+                <include>DialogContents</include>
+
+                <!-- Title -->
+                <control type="label" id="311">
+                    <include>DialogTitle</include>
+                </control>
+
+                <!-- Message -->
+                <control type="edit" id="312">
+                    <top>20</top>
+                    <height>60</height>
+
+                    <font>MenuItemLabel</font>
+
+                    <textcolor>Secondary</textcolor>
+                    <focusedcolor>Primary</focusedcolor>
+                    <disabledcolor>Disabled</disabledcolor>
+                    <invalidcolor>Tertiary</invalidcolor>
+
+                    <align>left</align>
+                    <textoffsetx>20</textoffsetx>
+                    <textoffsety>13</textoffsety>
+                    <texturenofocus colordiffuse="BackgroundSecondary">solid.png</texturenofocus>
+                    <texturefocus colordiffuse="BackgroundPrimary">solid.png</texturefocus>
+
+                    <ondown>300</ondown>
+                </control>
+
+                <!-- Button -->
+                <control type="group" id="2">
+                    <top>20</top>
+                    <centerleft>50%</centerleft>
+                    <width>240</width>
+                    <height>60</height>
+
+                    <control type="group">
+                        <visible>Control.HasFocus(300)</visible>
+
+                        <animation type="Visible" reversible="false">
+                            <include>ActiveOverlayAnimation</include>
+                        </animation>
+
+                        <include>ActiveOverlay</include>
+                    </control>
+
+                    <!-- Button -->
+                    <control type="button" id="300">
+                        <align>center</align>
+                        <textoffsety>13</textoffsety>
+                        <onup>312</onup>
+
+                        <font>MenuItemLabel</font>
+                        <textcolor>Primary</textcolor>
+                        <label>Done</label>
+
+                        <texturenofocus colordiffuse="BackgroundPrimary">solid.png</texturenofocus>
+                        <texturefocus colordiffuse="BackgroundPrimary">solid.png</texturefocus>
+                    </control>
+                </control>
+
+            </control>
+        </control>
+
+    </controls>
+
+</window>

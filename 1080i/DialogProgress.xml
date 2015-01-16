@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="2002">
+    <defaultcontrol always="true">10</defaultcontrol>
+
+    <controls>
+        <include>DialogBackground</include>
+
+        <control type="group">
+            <include>DialogAnimations</include>
+            <control type="grouplist">
+                <include>DialogContents</include>
+
+                <!-- Title -->
+                <control type="label" id="1">
+                    <include>DialogTitle</include>
+                </control>
+
+                <!-- Message -->
+                <control type="textbox" id="9">
+                    <height>auto</height>
+
+                    <font>MenuDescription</font>
+                    <textcolor>Secondary</textcolor>
+
+                    <align>center</align>
+                </control>
+
+                <control type="progress" id="20">
+                        <width>200</width>
+                        <height>30</height>
+                        <visible>true</visible>
+                        <!--texturebg>mybackgroundtexture.png</texturebg>
+                        <lefttexture>mydowntexture.png</lefttexture>
+                        <midtexture>mymidtexture.png</midtexture>
+                        <righttexture>myrighttexture.png</righttexture-->
+                        <overlaytexture colordiffuse="Primary">solid.png</overlaytexture>
+                </control>
+
+                <!-- Button -->
+                <control type="group">
+                    <top>20</top>
+                    <centerleft>50%</centerleft>
+                    <width>240</width>
+                    <height>60</height>
+
+                    <control type="group">
+                        <visible>Control.HasFocus(10)</visible>
+
+                        <animation type="Visible" reversible="false">
+                            <include>ActiveOverlayAnimation</include>
+                        </animation>
+
+                        <include>ActiveOverlay</include>
+                    </control>
+
+                    <!-- Button -->
+                    <control type="button" id="10">
+                        <align>center</align>
+                        <textoffsety>13</textoffsety>
+
+                        <font>MenuItemLabel</font>
+                        <textcolor>Primary</textcolor>
+
+                        <texturenofocus colordiffuse="BackgroundPrimary">solid.png</texturenofocus>
+                        <texturefocus colordiffuse="BackgroundPrimary">solid.png</texturefocus>
+                    </control>
+                </control>
+
+            </control>
+        </control>
+
+    </controls>
+
+</window>

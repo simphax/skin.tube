@@ -125,4 +125,130 @@
 
 
     </fontset>
+
+    <fontset id="HelveticaNeue" unicode="true">
+
+        <!-- Debug font -->
+        <font>
+            <name>font13</name>
+            <filename>HelveNeuMed.ttf</filename>
+            <size>30</size>
+        </font>
+
+        <!-- Skin fonts -->
+        <font>
+            <name>WindowTitle</name>
+            <filename>HelveNeuLig.ttf</filename>
+            <size>48</size>
+        </font>
+        <font>
+            <name>WindowTitleSecondary</name>
+            <filename>HelveNeuMed.ttf</filename>
+            <size>32</size>
+        </font>
+        <font>
+            <name>WindowTitleTertiary</name>
+            <filename>HelveNeuMed.ttf</filename>
+            <size>22</size>
+        </font>
+
+        <font>
+            <name>ItemTitle</name>
+            <filename>HelveNeuMed.ttf</filename>
+            <size>24</size>
+        </font>
+        <font>
+            <name>ItemTitleSecondary</name>
+            <filename>HelveNeuMedCon.ttf</filename>
+            <size>24</size>
+        </font>
+        <font>
+            <name>ItemDescription</name>
+            <filename>HelveNeuLig.ttf</filename>
+            <size>18</size>
+        </font>
+        <font>
+            <name>ItemTag</name>
+            <filename>HelveNeuHea.ttf</filename>
+            <size>24</size>
+            <style>uppercase</style>
+        </font>
+
+        <!-- Menus -->
+        <font>
+            <name>MenuTitle</name>
+            <filename>HelveNeuHea.ttf</filename>
+            <size>24</size>
+            <style>uppercase</style>
+        </font>
+        <font>
+            <name>MenuDescription</name>
+            <filename>HelveNeuMed.ttf</filename>
+            <size>20</size>
+        </font>
+        <font>
+            <name>MenuItemLabel</name>
+            <filename>HelveNeuHeaCon.ttf</filename>
+            <size>24</size>
+            <style>uppercase</style>
+        </font>
+        <font>
+            <name>MenuItemValue</name>
+            <filename>HelveNeuMed.ttf</filename>
+            <size>24</size>
+        </font>
+
+        <!-- Player -->
+        <font>
+            <name>PlayerTitle</name>
+            <filename>HelveNeuMed.ttf</filename>
+            <size>32</size>
+        </font>
+        <font>
+            <name>PlayerDetail</name>
+            <filename>HelveNeuMed.ttf</filename>
+            <size>22</size>
+        </font>
+        <font>
+            <name>PlayerSeparator</name>
+            <filename>HelveNeuMed.ttf</filename>
+            <size>20</size>
+        </font>
+
+        <!-- Info -->
+        <font>
+            <name>InfoPrimaryDetail</name>
+            <filename>HelveNeuMed.ttf</filename>
+            <size>26</size>
+        </font>
+        <font>
+            <name>InfoPrimaryDetailSecondary</name> <!-- Don't judge my brilliant naming scheme... -->
+            <filename>HelveNeuMedCon.ttf</filename>
+            <size>26</size>
+        </font>
+        <font>
+            <name>InfoDescription</name>
+            <filename>HelveNeuMed.ttf</filename>
+            <size>22</size>
+        </font>
+        <font>
+            <name>InfoTag</name>
+            <filename>HelveNeuHea.ttf</filename>
+            <size>28</size>
+            <style>uppercase</style>
+        </font>
+        <font>
+            <name>InfoSecondaryDetail</name>
+            <filename>HelveNeuMed.ttf</filename>
+            <size>22</size>
+        </font>
+        <font>
+            <name>InfoSecondaryDetailLabel</name>
+            <filename>HelveNeuMedCon.ttf</filename>
+            <size>22</size>
+            <style>uppercase</style>
+        </font>
+
+
+    </fontset>
 </fonts>

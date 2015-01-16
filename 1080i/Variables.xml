@@ -23,12 +23,17 @@
     <variable name="PlayerTitle">
         <value condition="VideoPlayer.Content(Movies)">$INFO[VideoPlayer.Title]</value>
         <value condition="VideoPlayer.Content(Episodes)">$INFO[VideoPlayer.TvShowTitle]</value>
+        <value condition="VideoPlayer.Content(LiveTv)">$INFO[VideoPlayer.ChannelName]</value>
+        <value>$INFO[Player.Title]</value>
     </variable>
     <variable name="PlayerDetail">
         <value condition="VideoPlayer.Content(Movies)">$INFO[VideoPlayer.Year] [COLOR PlayerSeparator]·[/COLOR] $INFO[VideoPlayer.Genre]</value>
         <value condition="VideoPlayer.Content(Episodes) + SubString(VideoPlayer.Episode,S,Left)">$INFO[VideoPlayer.Episode] [COLOR PlayerSeparator]·[/COLOR] $INFO[VideoPlayer.Title]</value>
         <value condition="VideoPlayer.Content(Episodes) + !IntegerGreaterThan(VideoPlayer.Episode, 9)">$INFO[VideoPlayer.Season]x0$INFO[VideoPlayer.Episode] [COLOR PlayerSeparator]·[/COLOR] $INFO[VideoPlayer.Title]</value>
         <value condition="VideoPlayer.Content(Episodes)">$INFO[VideoPlayer.Season]x$INFO[VideoPlayer.Episode] [COLOR PlayerSeparator]·[/COLOR] $INFO[VideoPlayer.Title]</value>
+        <value condition="VideoPlayer.Content(LiveTv)">$INFO[VideoPlayer.Title] [COLOR PlayerSeparator]· Next: $INFO[VideoPlayer.NextTitle][/COLOR]</value>
+        <value condition="!IsEmpty(MusicPlayer.Artist) + !Player.HasVideo">$INFO[MusicPlayer.Artist] [COLOR PlayerSeparator]·[/COLOR] $INFO[MusicPlayer.Album]</value>
+        <value condition="!Player.HasVideo">$INFO[MusicPlayer.BitRate] kbit/s</value>
     </variable>
 
     <variable name="PlayerTime">
@@ -59,6 +64,56 @@
 
     <variable name="InfoDetail2">
         <value>$INFO[ListItem.Rating]</value>
+    </variable>
+
+    <variable name="Home1Name">
+        <value condition="Skin.String(Home1Name)">$INFO[Skin.String(Home1Name)]</value>
+        <value>Movies</value>
+    </variable>
+
+    <variable name="Home1Path">
+        <value condition="Skin.String(Home1Path)">$INFO[Skin.String(Home1Path)]</value>
+        <value>ActivateWindow(Videos, MovieTitles, return)</value>
+    </variable>
+
+    <variable name="Home2Name">
+        <value condition="Skin.String(Home2Name)">$INFO[Skin.String(Home2Name)]</value>
+        <value>TV Shows</value>
+    </variable>
+
+    <variable name="Home2Path">
+        <value condition="Skin.String(Home2Path)">$INFO[Skin.String(Home2Path)]</value>
+        <value>ActivateWindow(Videos,TVShowTitles,return)</value>
+    </variable>
+
+    <variable name="Home3Name">
+        <value condition="Skin.String(Home3Name)">$INFO[Skin.String(Home3Name)]</value>
+        <value>Music</value>
+    </variable>
+
+    <variable name="Home3Path">
+        <value condition="Skin.String(Home3Path)">$INFO[Skin.String(Home3Path)]</value>
+        <value>ActivateWindow(Music)</value>
+    </variable>
+
+    <variable name="Home4Name">
+        <value condition="Skin.String(Home4Name)">$INFO[Skin.String(Home4Name)]</value>
+        <value>Live TV</value>
+    </variable>
+
+    <variable name="Home4Path">
+        <value condition="Skin.String(Home4Path)">$INFO[Skin.String(Home4Path)]</value>
+        <value>ActivateWindow(TVChannels)</value>
+    </variable>
+
+    <variable name="Home5Name">
+        <value condition="Skin.String(Home5Name)">$INFO[Skin.String(Home5Name)]</value>
+        <value>Apps</value>
+    </variable>
+
+    <variable name="Home5Path">
+        <value condition="Skin.String(Home5Path)">$INFO[Skin.String(Home5Path)]</value>
+        <value>ActivateWindow(Programs,Addons,return)</value>
     </variable>
 
 </includes>

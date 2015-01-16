@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<controls>
+		<control type="visualisation" id="2">
+			<!-- FIX ME Music Visualization needs to have an id of 2 in this window to be able to lock or change preset -->
+			<description>visualisation</description>
+			<left>0</left>
+			<top>0</top>
+            <include>FillParent</include>
+		</control>
+
+
+        <!-- Overlay -->
+        <control type="group" id="1">
+            <visible>!Player.HasVideo | Player.ShowInfo | Player.ShowTime | Player.Paused | Player.Seeking | Player.DisplayAfterSeek | Player.Forwarding | Player.Rewinding | Window.IsActive(MusicOSD) | Window.IsActive(SliderDialog)</visible>
+
+            <animation effect="Fade" end="100" time="300" tween="cubic" easing="out">Visible</animation>
+            <animation effect="Fade" end="0" time="150" delay="50" tween="cubic" easing="in">Hidden</animation>
+
+            <control type="image" id="1">
+                <texture colordiffuse="PlayerInfoOverlay">solid.png</texture>
+            </control>
+            <control type="image" id="1">
+                <texture colordiffuse="PlayerOverlay">solid.png</texture>
+
+                <visible>Window.IsActive(MusicOSD) | Window.IsActive(SliderDialog)</visible>
+
+                <animation effect="Fade" end="100" time="300" tween="cubic" easing="out">Visible</animation>
+                <animation effect="Fade" end="0" time="150" delay="50" tween="cubic" easing="in">Hidden</animation>
+            </control>
+        </control>
+
+        <!-- Cover image -->
+        <control type="image">
+            <top>360</top>
+            <left>780</left>
+            <width>360</width>
+            <height>360</height>
+
+            <visible>!Player.HasVideo | Player.ShowInfo | Player.ShowTime | Player.Paused | Player.Seeking | Player.DisplayAfterSeek | Player.Forwarding | Player.Rewinding | Window.IsActive(MusicOSD)</visible>
+
+            <texture fallback="DefaultAlbumCover.png">$INFO[Player.Art(thumb)]</texture>
+            <aspectratio aligny="bottom">keep</aspectratio>
+        </control>
+
+        <!-- Time -->
+        <control type="grouplist" id="1">
+            <top>91</top>
+            <right>100</right>
+
+            <align>right</align>
+            <orientation>horizontal</orientation>
+            <usecontrolcoords>true</usecontrolcoords>
+
+            <animation effect="Fade" start="0" end="100" time="300" tween="cubic" easing="out">Visible</animation>
+            <animation effect="Fade" start="100" end="0" time="150" tween="cubic" easing="in">Hidden</animation>
+
+            <visible>!Player.HasVideo | Player.ShowInfo | Player.ShowTime | Player.Paused | Player.Seeking | Player.DisplayAfterSeek | Player.Forwarding | Player.Rewinding | Window.IsActive(MusicOSD)</visible>
+
+            <!-- <control type="image" id="1">
+                <width>16</width>
+                <height>16</height>
+                <top>18</top>
+
+                <texture colordiffuse="Secondary">icon-finish-time.png</texture>
+            </control> -->
+
+            <control type="label" id="1">
+                <left>5</left>
+                <width>auto</width>
+                <top>10</top>
+
+                <visible>!StringCompare(Player.FinishTime(hh:mm:ss),System.Time(hh:mm:ss))</visible>
+
+                <textcolor>Secondary</textcolor>
+                <font>WindowTitleTertiary</font>
+
+                <label>$INFO[Player.FinishTime(hh:mm)]</label>
+            </control>
+
+            <control type="label" id="1">
+                <left>10</left>
+                <width>auto</width>
+                <textcolor>Primary</textcolor>
+                <font>WindowTitleSecondary</font>
+
+                <label>$INFO[System.Time(hh:mm)]</label>
+            </control>
+
+        </control>
+
+        <!-- Information -->
+        <control type="group" id="1">
+            <bottom>250</bottom>
+            <left>360</left>
+            <right>360</right>
+    
+            <visible>!Player.HasVideo | Player.ShowInfo | Player.ShowTime | Player.Paused | Player.Seeking | Player.DisplayAfterSeek | Player.Forwarding | Player.Rewinding | Window.IsActive(MusicOSD)</visible>
+
+            <!-- <animation type="Visible">
+                <include>WindowOpenForwards</include>
+            </animation>
+            <animation type="Hidden">
+                <include>WindowCloseBackwards</include>
+            </animation> -->
+
+            <animation effect="Fade" start="0" end="100" time="300" tween="cubic" easing="out" delay="30">Visible</animation>
+            <animation effect="Fade" start="100" end="0" time="150" delay="50" tween="cubic" easing="in">Hidden</animation>
+
+            <control type="group" id="1">
+                <bottom>28</bottom>
+
+                <!-- Title -->
+                <control type="label" id="1">
+                    <height>0</height>
+                    <bottom>64</bottom>
+
+                    <font>PlayerTitle</font>
+                    <textcolor>PlayerTitle</textcolor>
+
+                    <label>$VAR[PlayerTitle]</label>
+                </control>
+
+                <!-- Detail -->
+                <control type="label" id="1">
+                    <height>0</height>
+                    <bottom>22</bottom>
+
+                    <font>PlayerDetail</font>
+                    <textcolor>PlayerDetail</textcolor>
+
+                    <label>$VAR[PlayerDetail]</label>
+                </control>
+
+                <!-- Time -->
+                <control type="grouplist" id="1">
+                    <height>0</height>
+                    <bottom>22</bottom>
+                    <right>0</right>
+
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <itemgap>10</itemgap>
+
+                    <orientation>horizontal</orientation>
+                    <align>right</align>
+
+                    <control type="label" id="1">
+                        <width>auto</width>
+
+                        <font>PlayerDetail</font>
+                        <textcolor>PlayerDetail</textcolor>
+
+                        <label>$VAR[PlayerTime]</label>
+                    </control>
+
+                    <control type="label" id="1">
+                        <width>auto</width>
+                        <top>1</top>
+
+                        <font>PlayerSeparator</font>
+                        <textcolor>PlayerSeparator</textcolor>
+
+                        <label>/</label>
+                    </control>
+
+                    <control type="label" id="1">
+                        <width>auto</width>
+
+                        <font>PlayerDetail</font>
+                        <textcolor>PlayerDetail</textcolor>
+
+                        <label>$VAR[PlayerDuration]</label>
+                    </control>
+                </control>
+            </control>
+
+            <!-- Progress bar -->
+            <control type="group" id="1">
+                <bottom>0</bottom>
+                <height>8</height>
+
+                <control type="progress" id="1">
+                    <texturebg colordiffuse="PlayerProgressBack">solid.png</texturebg>
+                    <midtexture colordiffuse="PlayerProgressBar">solid.png</midtexture>
+
+                    <info>Player.Progress</info>
+                </control>
+            </control>
+        </control>
+	</controls>
+</window>

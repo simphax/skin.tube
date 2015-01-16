@@ -39,16 +39,16 @@
             </control>
 
             <control type="group">
-                <top>11</top>
                 <left>20</left>
                 <right>20</right>
 
                 <!-- Detail -->
                 <control type="label">
-                    <left>20</left>
-                    <width>80</width>
+                    <left>0</left>
+                    <width>60</width>
 
                     <align>center</align>
+                    <aligny>center</aligny>
 
                     <font>ItemTitleSecondary</font>
                     <textcolor>Secondary</textcolor>
@@ -59,7 +59,8 @@
 
                 <!-- Title -->
                 <control type="label">
-                    <left>60</left>
+                    <aligny>center</aligny>
+                    <left>80</left>
                     <right>40</right>
 
                     <font>ItemTitle</font>
@@ -69,6 +70,7 @@
                     <label>$VAR[ViewItemTitle]</label>
                 </control>
                 <control type="label">
+                    <aligny>center</aligny>
                     <right>40</right>
 
                     <font>ItemTitle</font>
@@ -78,7 +80,7 @@
                     <label>$VAR[ViewItemTitleNoDetail]</label>
                 </control>
 
-                <!-- Detail 2 -->
+                <!-- Detail 2 --
                 <control type="label">
                     <width>200</width>
                     <right>-200</right>
@@ -90,7 +92,7 @@
                     <selectedcolor>Secondary</selectedcolor>
 
                     <label>$VAR[ViewItemDetail2]</label>
-                </control>
+                </control>-->
 
             </control>
         </control>

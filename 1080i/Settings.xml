@@ -53,7 +53,7 @@
                             </control>
 
                             <control type="label">
-                                <left>50%</left>
+                                <left>0</left>
                                 <top>13</top>
 
                                 <align>center</align>
@@ -79,7 +79,7 @@
                             </control>
 
                             <control type="label">
-                                <left>50%</left>
+                                <left>0</left>
                                 <top>13</top>
 
                                 <align>center</align>
@@ -104,10 +104,10 @@
                             <label>Video</label>
                             <onclick>ActivateWindow(VideosSettings)</onclick>
                         </item>
-                        <!--<item>
+                        <item>
                             <label>Music</label>
                             <onclick>ActivateWindow(MusicSettings)</onclick>
-                        </item>-->
+                        </item>
                         <item>
                             <label>Add-ons</label>
                             <onclick>ActivateWindow(AddonBrowser)</onclick>

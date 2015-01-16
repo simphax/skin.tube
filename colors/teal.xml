@@ -2,8 +2,8 @@
 <colors>
     
     <!-- Backgrounds -->
-    <color name="GlobalBackground">FF1E1E1E<!-- FF24262A --></color>
-    <color name="DialogBackground">FB1E1E1E<!-- FB24262A --></color>
+    <color name="GlobalBackground">FF496367<!-- FF24262A --></color>
+    <color name="DialogBackground">FB242424<!-- FB24262A --></color>
     <color name="BackgroundPrimary">FF353535<!-- FF35373B --></color>
     <color name="BackgroundSecondary">FF2B2B2B<!-- FF2D2F32 --></color>
 
@@ -28,8 +28,7 @@
     <color name="PlayerDetail">F0FFFFFF</color>
     <color name="PlayerSeparator">80FFFFFF</color>
 
-    <color name="PlayerButtonBackFocus">33FFFFFF</color>
-    <color name="PlayerButtonBack">11FFFFFF</color>
+    <color name="PlayerButtonBack">33FFFFFF</color>
     <color name="PlayerButtonIcon">FFFFFFFF</color>
     <color name="PlayerButtonIconFocus">FFFFFFFF</color>
 

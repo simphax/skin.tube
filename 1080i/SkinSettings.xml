@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">101</defaultcontrol>
+
+    <onload>Control.SetFocus(101)</onload>
+
+    <controls>
+        <include>GlobalBackground</include>
+        <include>GlobalTime</include>
+
+        <control type="group">
+            <include>ContentCommon</include>
+
+            <!-- Animations -->
+            <animation type="WindowOpen" condition="Window.Previous(Settings)">
+                <include>WindowOpenForwards</include>
+            </animation>
+            <animation type="WindowClose" condition="Window.Next(Settings)">
+                <include>WindowCloseBackwards</include>
+            </animation>
+
+            <animation type="WindowOpen">
+                <include>WindowOpenBackwards</include>
+            </animation>
+            <animation type="WindowClose">
+                <include>WindowCloseForwards</include>
+            </animation>
+
+            <!-- Content -->
+            <control type="grouplist">
+                <width>840</width>
+                <include>DialogContents</include>
+
+                <!-- Title -->
+                <control type="label">
+                    <textcolor>Secondary</textcolor>
+                    <include>DialogTitle</include>
+                    <label>Skin Settings</label>
+                </control>
+
+                <!-- Settings -->
+                <control type="group">
+                    <top>20</top>
+                    <left>30</left>
+                    <width>780</width>
+                    <height>480</height>
+
+                    <control type="group">
+
+                        <control type="grouplist" id="101">
+                            <width>780</width>
+                            <height>480</height>
+
+                            <pagecontrol>121</pagecontrol>
+                            <itemgap>10</itemgap>
+
+                            <control type="label">
+                                <font>MenuItemLabel</font>
+                                <textcolor>Primary</textcolor>
+                                <include>DialogTitle</include>
+                                <label>Menu Item 1</label>
+                            </control>
+
+                            <control type="radiobutton" id="1">
+                                <include>SettingsRadioButton</include>
+                                <label>Enable</label>
+                                <onclick>False</onclick>
+                                <selected>True</selected>
+                            </control>
+
+                            <control type="button" id="2">
+                                <include>SettingsButton</include>
+                                <label>$VAR[Home1Name]</label>
+                                <onclick>Skin.SetString(Home1Name)</onclick>
+                            </control>
+
+                            <control type="button" id="3">
+                                <include>SettingsButton</include>
+                                <label>$VAR[Home1Path]</label>
+                                <onclick>Skin.SetString(Home1Path)</onclick>
+                            </control>
+
+                            <control type="label" id="16">
+                                <font>MenuItemLabel</font>
+                                <textcolor>Primary</textcolor>
+                                <include>DialogTitle</include>
+                                <label>Menu Item 2</label>
+                            </control>
+
+                            <control type="radiobutton" id="4">
+                                <include>SettingsRadioButton</include>
+                                <label>Enable Menu Item 2</label>
+                                <onclick>Skin.ToggleSetting(Home2Disable)</onclick>
+                                <selected>!Skin.HasSetting(Home2Disable)</selected>
+                            </control>
+
+                            <control type="button" id="5">
+                                <include>SettingsButton</include>
+                                <label>$VAR[Home2Name]</label>
+                                <onclick>Skin.SetString(Home2Name)</onclick>
+                            </control>
+
+                            <control type="button" id="6">
+                                <include>SettingsButton</include>
+                                <label>$VAR[Home2Path]</label>
+                                <onclick>Skin.SetString(Home2Path)</onclick>
+                            </control>
+
+                            <control type="label" id="17">
+                                <font>MenuItemLabel</font>
+                                <textcolor>Primary</textcolor>
+                                <include>DialogTitle</include>
+                                <label>Menu Item 3</label>
+                            </control>
+
+                            <control type="radiobutton" id="7">
+                                <include>SettingsRadioButton</include>
+                                <label>Enable</label>
+                                <onclick>Skin.ToggleSetting(Home3Disable)</onclick>
+                                <selected>!Skin.HasSetting(Home3Disable)</selected>
+                            </control>
+
+                            <control type="button" id="8">
+                                <include>SettingsButton</include>
+                                <label>$VAR[Home3Name]</label>
+                                <onclick>Skin.SetString(Home3Name)</onclick>
+                            </control>
+
+                            <control type="button" id="9">
+                                <include>SettingsButton</include>
+                                <label>$VAR[Home3Path]</label>
+                                <onclick>Skin.SetString(Home3Path)</onclick>
+                            </control>
+
+                            <control type="label" id="18">
+                                <font>MenuItemLabel</font>
+                                <textcolor>Primary</textcolor>
+                                <include>DialogTitle</include>
+                                <label>Menu Item 4</label>
+                            </control>
+
+                            <control type="radiobutton" id="10">
+                                <include>SettingsRadioButton</include>
+                                <label>Enable</label>
+                                <onclick>Skin.ToggleSetting(Home4Disable)</onclick>
+                                <selected>!Skin.HasSetting(Home4Disable)</selected>
+                            </control>
+
+                            <control type="button" id="11">
+                                <include>SettingsButton</include>
+                                <label>$VAR[Home4Name]</label>
+                                <onclick>Skin.SetString(Home4Name)</onclick>
+                            </control>
+
+                            <control type="button" id="12">
+                                <include>SettingsButton</include>
+                                <label>$VAR[Home4Path]</label>
+                                <onclick>Skin.SetString(Home4Path)</onclick>
+                            </control>
+
+                            <control type="label" id="19">
+                                <font>MenuItemLabel</font>
+                                <textcolor>Primary</textcolor>
+                                <include>DialogTitle</include>
+                                <label>Menu Item 5</label>
+                            </control>
+
+                            <control type="radiobutton" id="13">
+                                <include>SettingsRadioButton</include>
+                                <label>Enable</label>
+                                <onclick>Skin.ToggleSetting(Home5Disable)</onclick>
+                                <selected>!Skin.HasSetting(Home5Disable)</selected>
+                            </control>
+
+                            <control type="button" id="14">
+                                <include>SettingsButton</include>
+                                <label>$VAR[Home5Name]</label>
+                                <onclick>Skin.SetString(Home5Name)</onclick>
+                            </control>
+
+                            <control type="button" id="15">
+                                <include>SettingsButton</include>
+                                <label>$VAR[Home5Path]</label>
+                                <onclick>Skin.SetString(Home5Path)</onclick>
+                            </control>
+
+                        </control>
+
+                        <control type="scrollbar" id="121">
+                            <right>-20</right>
+                            <height>480</height>
+
+                            <onleft>120</onleft>
+                            <onright>156</onright>
+
+                            <showonepage>false</showonepage>
+
+                            <texturesliderbackground colordiffuse="08FFFFFF">solid.png</texturesliderbackground>
+                            <texturesliderbar colordiffuse="22FFFFFF">solid.png</texturesliderbar>
+                        </control>
+                    </control>
+                </control>
+            </control>
+        </control>
+
+    </controls>
+
+</window>

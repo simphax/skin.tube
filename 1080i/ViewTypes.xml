@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-
     <include file="ViewTypeList.xml"/>
     <include file="ViewTypePoster.xml"/>
     <include file="ViewTypeFanart.xml"/>
@@ -22,7 +21,7 @@
 
     <!-- Title -->
     <variable name="ViewItemTitle">
-        <value condition="Container.Content(Movies) | Container.Content(TvShows) | Container.Content(Episodes)">$INFO[ListItem.Title]</value>
+        <value condition="Container.Content(Movies) | Container.Content(TvShows) | Container.Content(Episodes)">$INFO[ListItem.OriginalTitle]</value>
     </variable>
     <variable name="ViewItemTitleNoDetail">
         <!-- Force an empty label for items with a detail -->
