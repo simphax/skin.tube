@@ -121,6 +121,7 @@
                 <align>right</align>
                 <top>948</top>
                 <right>100</right>
+                <itemgap>20</itemgap>
                 <control type="button" id="101">
 
                     <onup>300</onup>
