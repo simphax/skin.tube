@@ -311,6 +311,21 @@
         </control>
     </include>
 
+    <include name="InfoCastItemAlt">
+
+        <control type="label">
+            <left>20</left>
+            <right>20</right>
+            <aligny>center</aligny>
+
+            <font>InfoDescription</font>
+            <textcolor>Primary</textcolor>
+            <selectedcolor>Primary</selectedcolor>
+
+            <label>$INFO[ListItem.Label]</label>
+        </control>
+    </include>
+
     <include name="TVChannelListItem">
         <top>10</top>
         <bottom>10</bottom>

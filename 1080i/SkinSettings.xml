@@ -89,7 +89,7 @@
 
                             <control type="radiobutton" id="4">
                                 <include>SettingsRadioButton</include>
-                                <label>Enable Menu Item 2</label>
+                                <label>Enable</label>
                                 <onclick>Skin.ToggleSetting(Home2Disable)</onclick>
                                 <selected>!Skin.HasSetting(Home2Disable)</selected>
                             </control>
@@ -182,6 +182,21 @@
                                 <include>SettingsButton</include>
                                 <label>$VAR[Home5Path]</label>
                                 <onclick>Skin.SetString(Home5Path)</onclick>
+                            </control>
+
+
+                            <control type="label" id="20">
+                                <font>MenuItemLabel</font>
+                                <textcolor>Primary</textcolor>
+                                <include>DialogTitle</include>
+                                <label>Extra</label>
+                            </control>
+
+                            <control type="radiobutton" id="21">
+                                <include>SettingsRadioButton</include>
+                                <label>Alternative Video Info View</label>
+                                <onclick>Skin.ToggleSetting(AltVideoInfo)</onclick>
+                                <selected>Skin.HasSetting(AltVideoInfo)</selected>
                             </control>
 
                         </control>
