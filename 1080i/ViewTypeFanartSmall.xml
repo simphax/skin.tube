@@ -80,19 +80,17 @@
                     <label>$VAR[ViewItemTitleNoDetail]</label>
                 </control>
 
-                <!-- Detail 2 --
+                <!-- Detail 2 -->
                 <control type="label">
-                    <width>200</width>
-                    <right>-200</right>
-
                     <align>right</align>
+                    <aligny>center</aligny>
 
                     <font>ItemTitleSecondary</font>
                     <textcolor>Secondary</textcolor>
                     <selectedcolor>Secondary</selectedcolor>
 
                     <label>$VAR[ViewItemDetail2]</label>
-                </control>-->
+                </control>
 
             </control>
         </control>

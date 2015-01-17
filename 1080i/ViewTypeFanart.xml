@@ -85,11 +85,10 @@
                     <label>$VAR[ViewItemTitleNoDetail]</label>
                 </control>
 
-                <!-- Detail 2 --
+                <!-- Detail 2 -->
                 <control type="label">
                     <aligny>center</aligny>
-                    <width>200</width>
-                    <right>-200</right>
+                    
 
                     <align>right</align>
 
@@ -98,7 +97,7 @@
                     <selectedcolor>Secondary</selectedcolor>
 
                     <label>$VAR[ViewItemDetail2]</label>
-                </control>-->
+                </control>
 
             </control>
         </control>
