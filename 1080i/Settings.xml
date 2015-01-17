@@ -35,10 +35,10 @@
                     <label>Settings</label>
                 </control>
 
-                <control type="list" id="300">
+                <control type="panel" id="300">
                     <centerleft>50%</centerleft>
                     <top>10</top>
-                    <width>360</width>
+                    <width>720</width>
                     <height>480</height>
 
                     <itemlayout width="360" height="80">
