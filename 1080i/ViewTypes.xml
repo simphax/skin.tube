@@ -21,7 +21,7 @@
 
     <!-- Title -->
     <variable name="ViewItemTitle">
-        <value condition="Container.Content(Movies) | Container.Content(TvShows) | Container.Content(Episodes)">$INFO[ListItem.OriginalTitle]</value>
+        <value condition="Container.Content(Movies) | Container.Content(TvShows) | Container.Content(Episodes)">$INFO[ListItem.Title]</value>
     </variable>
     <variable name="ViewItemTitleNoDetail">
         <!-- Force an empty label for items with a detail -->
