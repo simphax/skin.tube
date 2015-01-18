@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="28">
-    <defaultcontrol always="true">901</defaultcontrol>
-    <views>901</views>
+    <defaultcontrol always="true">505</defaultcontrol>
+    <views>505</views>
 
     <controls>
 
@@ -38,7 +38,9 @@
                 <right>100</right>
                 <include>ViewScrollbarVisibility</include>
 
-                <control type="group">
+                <include>ViewTypeListExt</include>
+
+                <!--control type="group">
                     <include>FillParent</include>
 
                     <visible>Control.IsVisible(901)</visible>
@@ -69,7 +71,7 @@
 
                     <include>ViewScrollbarHorizontal</include>
 
-                </control>
+                </control-->
             </control>
 
             <!-- Menu overlay -->

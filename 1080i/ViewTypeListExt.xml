@@ -123,7 +123,7 @@
                 <include>ViewTypeHorizontal</include>
 
                 <viewtype label="List Extended">biglist</viewtype>
-                <visible>Container.Content(Albums) | Container.Content(Songs)</visible>
+                <!--visible>Container.Content(Albums) | Container.Content(Songs) | Container.Content()</visible-->
 
                 <itemlayout width="580" height="120">
                     <control type="group">

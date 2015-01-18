@@ -7,6 +7,7 @@
     <include file="ViewTypeFanartSmall.xml"/>
     <include file="ViewTypeAlbumArt.xml"/>
 
+
     <!-- Details -->
     <variable name="ViewItemDetail">
         <value condition="Container.Content(Episodes) + ListItem.Property(IsSpecial)">$INFO[ListItem.Episode]</value>
@@ -18,7 +19,9 @@
     <!-- Subtitle -->
     <variable name="ViewItemDetailExt">
         <value condition="Container.Content(Albums) | Container.Content(Songs)">$INFO[ListItem.Artist]</value>
+        <value>$INFO[ListItem.Title]</value>
     </variable>
+
 
     <variable name="ViewItemDetail2">
         <value condition="[Container.Content(TvShows) | Container.Content(Seasons)] + IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes), 0)">$INFO[ListItem.Property(UnWatchedEpisodes)]</value>
@@ -34,6 +37,7 @@
     <!-- Title extra -->
     <variable name="ViewItemTitleExt">
         <value condition="Container.Content(Albums) | Container.Content(Songs)">$INFO[ListItem.Title]</value>
+        <value>$INFO[ListItem.ChannelName]</value>
     </variable>
     <variable name="ViewItemTitleNoDetail">
         <!-- Force an empty label for items with a detail -->
@@ -41,7 +45,7 @@
 
         <value condition="Container.Content(Seasons) + StringCompare(ListItem.Title, $LOCALIZE[20366])">All seasons</value>
         <value condition="Container.Content(Seasons)">$INFO[ListItem.Title]</value>
-        <value condition="Container.Content(Albums)">$INFO[ListItem.Artist] - $INFO[ListItem.Title]</value>
+        <!--value condition="Container.Content(Albums)">$INFO[ListItem.Artist] - $INFO[ListItem.Title]</value-->
         <value>$INFO[ListItem.Label]</value>
     </variable>
 

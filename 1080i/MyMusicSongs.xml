@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="27">
     <defaultcontrol always="true">500</defaultcontrol>
-    <views>500,501,502,503</views>
+    <views>500,504,505</views>
 
     <controls>
 
