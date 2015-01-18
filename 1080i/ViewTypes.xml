@@ -10,10 +10,10 @@
 
     <!-- Details -->
     <variable name="ViewItemDetail">
-        <value condition="Container.Content(Episodes) + ListItem.Property(IsSpecial)">$INFO[ListItem.Episode]</value>
-        <value condition="Container.Content(Episodes) + !IntegerGreaterThan(ListItem.Episode, 9)">$INFO[ListItem.Season]x0$INFO[ListItem.Episode]</value>
-        <value condition="Container.Content(Episodes)">$INFO[ListItem.Season]x$INFO[ListItem.Episode]</value>
-        <value condition="Container.Content(Movies) | Container.Content(TvShows)">$INFO[ListItem.Year]</value>
+        <value condition="!IsEmpty(ListItem.Episode) + Container.Content(Episodes) + ListItem.Property(IsSpecial)">$INFO[ListItem.Episode]</value>
+        <value condition="!IsEmpty(ListItem.Episode) + Container.Content(Episodes) + !IntegerGreaterThan(ListItem.Episode, 9)">$INFO[ListItem.Season]x0$INFO[ListItem.Episode]</value>
+        <value condition="!IsEmpty(ListItem.Episode)">$INFO[ListItem.Season]x$INFO[ListItem.Episode]</value>
+        <value condition="!IsEmpty(ListItem.Year)">$INFO[ListItem.Year]</value>
     </variable>
 
     <!-- Subtitle Extended List -->
@@ -31,7 +31,9 @@
 
     <!-- Title -->
     <variable name="ViewItemTitle">
-        <value condition="Container.Content(Movies) | Container.Content(TvShows) | Container.Content(Episodes)">$INFO[ListItem.Title]</value>
+        <value condition="!IsEmpty(ListItem.OriginalTitle)">$INFO[ListItem.OriginalTitle]</value>
+        <value condition="!IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+        <value condition="!IsEmpty(ListItem.Year) | !IsEmpty(ListItem.Episode)">$INFO[ListItem.Label]</value>
     </variable>
 
     <!-- Title Extended List -->
@@ -42,7 +44,7 @@
     </variable>
     <variable name="ViewItemTitleNoDetail">
         <!-- Force an empty label for items with a detail -->
-        <value condition="Container.Content(Movies) | Container.Content(TvShows) | Container.Content(Episodes)">$VAR[]</value>
+        <value condition="!IsEmpty(ListItem.Year) | !IsEmpty(ListItem.Episode)">$VAR[]</value>
 
         <value condition="Container.Content(Seasons) + StringCompare(ListItem.Title, $LOCALIZE[20366])">All seasons</value>
         <value condition="Container.Content(Seasons)">$INFO[ListItem.Title]</value>
