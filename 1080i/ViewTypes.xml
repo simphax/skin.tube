@@ -11,8 +11,8 @@
     <!-- Details -->
     <variable name="ViewItemDetail">
         <value condition="!IsEmpty(ListItem.Episode) + Container.Content(Episodes) + ListItem.Property(IsSpecial)">$INFO[ListItem.Episode]</value>
-        <value condition="!IsEmpty(ListItem.Episode) + Container.Content(Episodes) + !IntegerGreaterThan(ListItem.Episode, 9)">$INFO[ListItem.Season]x0$INFO[ListItem.Episode]</value>
-        <value condition="!IsEmpty(ListItem.Episode)">$INFO[ListItem.Season]x$INFO[ListItem.Episode]</value>
+        <value condition="!IsEmpty(ListItem.Season) + !IsEmpty(ListItem.Episode) + Container.Content(Episodes) + !IntegerGreaterThan(ListItem.Episode, 9)">$INFO[ListItem.Season]x0$INFO[ListItem.Episode]</value>
+        <value condition="!IsEmpty(ListItem.Season) + !IsEmpty(ListItem.Episode)">$INFO[ListItem.Season]x$INFO[ListItem.Episode]</value>
         <value condition="!IsEmpty(ListItem.Year)">$INFO[ListItem.Year]</value>
     </variable>
 
@@ -31,8 +31,8 @@
 
     <!-- Title -->
     <variable name="ViewItemTitle">
-        <value condition="!IsEmpty(ListItem.OriginalTitle)">$INFO[ListItem.OriginalTitle]</value>
-        <value condition="!IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+        <value condition="!IsEmpty(ListItem.OriginalTitle) + !IsEmpty(ListItem.Year) | !IsEmpty(ListItem.OriginalTitle) + !IsEmpty(ListItem.Episode)">$INFO[ListItem.OriginalTitle]</value>
+        <value condition="!IsEmpty(ListItem.Title) + !IsEmpty(ListItem.Year) | !IsEmpty(ListItem.Title) + !IsEmpty(ListItem.Episode)">$INFO[ListItem.Title]</value>
         <value condition="!IsEmpty(ListItem.Year) | !IsEmpty(ListItem.Episode)">$INFO[ListItem.Label]</value>
     </variable>
 
