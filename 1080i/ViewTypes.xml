@@ -45,7 +45,7 @@
 
         <value condition="Container.Content(Seasons) + StringCompare(ListItem.Title, $LOCALIZE[20366])">All seasons</value>
         <value condition="Container.Content(Seasons)">$INFO[ListItem.Title]</value>
-        <!--value condition="Container.Content(Albums)">$INFO[ListItem.Artist] - $INFO[ListItem.Title]</value-->
+        <value condition="Container.Content(Albums) + !IsEmpty(ListItem.Title) + !IsEmpty(ListItem.Artist) | Container.Content(Songs) + !IsEmpty(ListItem.Title) + !IsEmpty(ListItem.Artist) ">[COLOR Secondary]$INFO[ListItem.Artist] - [/COLOR]$INFO[ListItem.Title]</value>
         <value>$INFO[ListItem.Label]</value>
     </variable>
 
