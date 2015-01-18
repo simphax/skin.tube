@@ -41,9 +41,8 @@
                 <include>ViewScrollbarVisibility</include>
 
                 <include>ViewTypeList</include>
-                <include>ViewTypePoster</include>
-                <include>ViewTypeFanart</include>
-                <include>ViewTypeFanartSmall</include>
+                <include>ViewTypeListExt</include>
+                <include>ViewTypeAlbumArt</include>
             </control>
 
             <!-- Menu overlay -->

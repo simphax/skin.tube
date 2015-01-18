@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+    <include name="ViewTypeAlbumArtItem">
+        <top>10</top>
+        <bottom>10</bottom>
+        <left>135</left>
+        <right>-115</right>
+
+        <include>DefaultImage</include>
+
+        <!-- Poster -->
+        <control type="image">
+            <include>FillParent</include>
+
+            <fadetime>200</fadetime>
+            <aspectratio>scale</aspectratio>
+            <texture>$INFO[ListItem.Art(thumb)]</texture>
+        </control>
+
+        <include>ImageOverlay</include>
+
+        <include>ItemBadge</include>
+    </include>
+
+    <include name="ViewTypeAlbumArt">
+        <control type="group">
+            <include>FillParent</include>
+
+            <visible>Control.IsVisible(504)</visible>
+
+            <control type="panel" id="504">
+                <top>-10</top>
+                <bottom>-10</bottom>
+                <left>-135</left>
+                <right>-135</right>
+
+                <include>ViewTypeHorizontal</include>
+
+                <viewtype label="Album Art">icon</viewtype>
+                <visible>Container.Content(Albums) | Container.Content(Songs)</visible>
+
+                <itemlayout width="280" height="283">
+                    <control type="group">
+                        <include>ViewTypeAlbumArtItem</include>
+                    </control>
+                </itemlayout>
+
+                <focusedlayout width="280" height="283">
+                    <control type="group">
+                        <!-- Active overlay -->
+                        <include>ActiveOverlay</include>
+                        
+                        <include>ViewTypeAlbumArtItem</include>
+                    </control>
+                </focusedlayout>
+            </control>
+
+            <include>ViewScrollbarHorizontal</include>
+        </control>
+
+    </include>
+
+</includes>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="26">
     <defaultcontrol always="true">500</defaultcontrol>
-    <views>500,501,502,503</views>
+    <views>500,501,502,503,504,505</views>
 
     <controls>
 
@@ -41,9 +41,8 @@
                 <include>ViewScrollbarVisibility</include>
 
                 <include>ViewTypeList</include>
-                <include>ViewTypePoster</include>
-                <include>ViewTypeFanart</include>
-                <include>ViewTypeFanartSmall</include>
+                <include>ViewTypeListExt</include>
+                <include>ViewTypeAlbumArt</include>
             </control>
 
             <!-- Menu overlay -->
@@ -61,7 +60,7 @@
             <!-- View options -->
             <control type="group" id="3000">
                 <visible allowhiddenfocus="true">ControlGroup(3000).HasFocus</visible>
-
+                
                 <animation type="Visible">
                     <include>WindowOpenForwards</include>
                 </animation>
@@ -71,7 +70,7 @@
 
                 <control type="button" id="3002">
                     <onfocus condition="Control.IsVisible(3000)">Control.SetFocus(500)</onfocus>
-                    <onfocus condition="!Control.IsVisible(3000) + Window.IsActive(Videos)">Control.SetFocus(3001)</onfocus>
+                    <onfocus condition="!Control.IsVisible(3000)">Control.SetFocus(3001)</onfocus>
                 </control>
 
                 <!-- Controls -->

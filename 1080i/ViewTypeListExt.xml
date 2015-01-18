@@ -1,64 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-    <include name="ViewTypeListItem">
+    <include name="ViewTypeListExtItem">
         <top>10</top>
         <bottom>10</bottom>
         <left>140</left>
         <right>-120</right>
 
+        <!-- Background -->
+        <control type="image">
+            <texture colordiffuse="BackgroundPrimary">solid.png</texture>
+        </control>
+
+        <!-- Icon -->
+        <control type="group">
+            <width>105</width>
+            <control type="image">
+                <include>FillParent</include>
+
+                <fadetime>200</fadetime>
+                <aspectratio>scale</aspectratio>
+                <texture>$INFO[ListItem.Art(thumb)]</texture>
+            </control>
+        </control>
         <!-- Label -->
         <control type="group">
+            <left>105</left>
             <right>65</right>
-
-            <control type="image">
-                <texture colordiffuse="BackgroundPrimary">solid.png</texture>
-            </control>
             
             <control type="group">
+                <top>18</top>
+                <bottom>20</bottom>
                 <left>20</left>
                 <right>20</right>
 
-                <!-- Detail -->
+                <!-- Extra -->
                 <control type="label">
-                    <aligny>center</aligny>
                     <left>0</left>
-                    <width>60</width>
-
-                    <align>center</align>
+                    <top>30</top>
 
                     <font>ItemTitleSecondary</font>
                     <textcolor>Secondary</textcolor>
                     <selectedcolor>Secondary</selectedcolor>
 
-                    <label>$VAR[ViewItemDetail]</label>
+                    <label>$VAR[ViewItemDetailExt]</label>
                 </control>
 
                 <!-- Title -->
                 <control type="label">
-                    <aligny>center</aligny>
-                    <left>80</left>
-                    <right>40</right>
 
                     <font>ItemTitle</font>
                     <textcolor>Primary</textcolor>
                     <selectedcolor>Primary</selectedcolor>
 
-                    <label>$VAR[ViewItemTitle]</label>
-                </control>
-
-                <control type="label">
-                    <aligny>center</aligny>
-                    <right>0</right>
-
-                    <font>ItemTitle</font>
-                    <textcolor>Primary</textcolor>
-                    <selectedcolor>Primary</selectedcolor>
-
-                    <label>$VAR[ViewItemTitleNoDetail]</label>
+                    <label>$VAR[ViewItemTitleExt]</label>
                 </control>
 
                 <!-- Detail 2 -->
-                <control type="label">
+                <!--control type="label">
                     <align>right</align>
                     <aligny>center</aligny>
 
@@ -67,14 +65,15 @@
                     <selectedcolor>Secondary</selectedcolor>
 
                     <label>$VAR[ViewItemDetail2]</label>
-                </control>
+                </control-->
             </control>
         </control>
 
         <!-- Watched badge -->
         <control type="group">
             <right>0</right>
-            <width>65</width>
+            <width>35</width>
+            <aligny>center</aligny>
 
             <control type="image">
                 <texture colordiffuse="BackgroundSecondary">solid.png</texture>
@@ -109,13 +108,13 @@
         </control>
     </include>
 
-    <include name="ViewTypeList">
+    <include name="ViewTypeListExt">
         <control type="group">
             <include>FillParent</include>
 
-            <visible>Control.IsVisible(500)</visible>
+            <visible>Control.IsVisible(505)</visible>
         
-            <control type="panel" id="500">
+            <control type="panel" id="505">
                 <top>-10</top>
                 <bottom>-10</bottom>
                 <left>-140</left>
@@ -123,18 +122,19 @@
 
                 <include>ViewTypeHorizontal</include>
 
-                <viewtype label="List">list</viewtype>
+                <viewtype label="List Extended">biglist</viewtype>
+                <visible>Container.Content(Albums) | Container.Content(Songs)</visible>
 
-                <itemlayout width="580" height="85">
+                <itemlayout width="580" height="120">
                     <control type="group">
-                        <include>ViewTypeListItem</include>
+                        <include>ViewTypeListExtItem</include>
                     </control>
                 </itemlayout>
 
-                <focusedlayout width="580" height="85">
+                <focusedlayout width="580" height="120">
                     <control type="group">
                         <include>ActiveOverlay</include>
-                        <include>ViewTypeListItem</include>
+                        <include>ViewTypeListExtItem</include>
                     </control>
                 </focusedlayout>
             </control>

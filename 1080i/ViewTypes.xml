@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
     <include file="ViewTypeList.xml"/>
+    <include file="ViewTypeListExt.xml"/>
     <include file="ViewTypePoster.xml"/>
     <include file="ViewTypeFanart.xml"/>
     <include file="ViewTypeFanartSmall.xml"/>
+    <include file="ViewTypeAlbumArt.xml"/>
 
     <!-- Details -->
     <variable name="ViewItemDetail">
@@ -11,6 +13,11 @@
         <value condition="Container.Content(Episodes) + !IntegerGreaterThan(ListItem.Episode, 9)">$INFO[ListItem.Season]x0$INFO[ListItem.Episode]</value>
         <value condition="Container.Content(Episodes)">$INFO[ListItem.Season]x$INFO[ListItem.Episode]</value>
         <value condition="Container.Content(Movies) | Container.Content(TvShows)">$INFO[ListItem.Year]</value>
+    </variable>
+
+    <!-- Subtitle -->
+    <variable name="ViewItemDetailExt">
+        <value condition="Container.Content(Albums) | Container.Content(Songs)">$INFO[ListItem.Artist]</value>
     </variable>
 
     <variable name="ViewItemDetail2">
@@ -23,12 +30,18 @@
     <variable name="ViewItemTitle">
         <value condition="Container.Content(Movies) | Container.Content(TvShows) | Container.Content(Episodes)">$INFO[ListItem.Title]</value>
     </variable>
+
+    <!-- Title extra -->
+    <variable name="ViewItemTitleExt">
+        <value condition="Container.Content(Albums) | Container.Content(Songs)">$INFO[ListItem.Title]</value>
+    </variable>
     <variable name="ViewItemTitleNoDetail">
         <!-- Force an empty label for items with a detail -->
         <value condition="Container.Content(Movies) | Container.Content(TvShows) | Container.Content(Episodes)">$VAR[]</value>
 
         <value condition="Container.Content(Seasons) + StringCompare(ListItem.Title, $LOCALIZE[20366])">All seasons</value>
         <value condition="Container.Content(Seasons)">$INFO[ListItem.Title]</value>
+        <value condition="Container.Content(Albums)">$INFO[ListItem.Artist] - $INFO[ListItem.Title]</value>
         <value>$INFO[ListItem.Label]</value>
     </variable>
 

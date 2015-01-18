@@ -93,7 +93,7 @@
 
     <variable name="Home3Path">
         <value condition="Skin.String(Home3Path)">$INFO[Skin.String(Home3Path)]</value>
-        <value>ActivateWindow(Music)</value>
+        <value>ActivateWindow(MusicLibrary)</value>
     </variable>
 
     <variable name="Home4Name">
