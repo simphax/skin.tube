@@ -16,10 +16,10 @@
         <value condition="Container.Content(Movies) | Container.Content(TvShows)">$INFO[ListItem.Year]</value>
     </variable>
 
-    <!-- Subtitle -->
+    <!-- Subtitle Extended List -->
     <variable name="ViewItemDetailExt">
-        <value condition="Container.Content(Albums) | Container.Content(Songs)">$INFO[ListItem.Artist]</value>
-        <value>$INFO[ListItem.Title]</value>
+        <value condition="!IsEmpty(ListItem.Artist)">$INFO[ListItem.Artist]</value>
+        <value condition="!IsEmpty(ListItem.ChannelName)">$INFO[ListItem.Title]</value>
     </variable>
 
 
@@ -34,10 +34,11 @@
         <value condition="Container.Content(Movies) | Container.Content(TvShows) | Container.Content(Episodes)">$INFO[ListItem.Title]</value>
     </variable>
 
-    <!-- Title extra -->
+    <!-- Title Extended List -->
     <variable name="ViewItemTitleExt">
-        <value condition="Container.Content(Albums) | Container.Content(Songs)">$INFO[ListItem.Title]</value>
-        <value>$INFO[ListItem.ChannelName]</value>
+        <value condition="!IsEmpty(ListItem.Title) + !IsEmpty(ListItem.Artist)">$INFO[ListItem.Title]</value>
+        <value condition="!IsEmpty(ListItem.ChannelName)">$INFO[ListItem.ChannelName]</value>
+        <value>$INFO[ListItem.Label]</value>
     </variable>
     <variable name="ViewItemTitleNoDetail">
         <!-- Force an empty label for items with a detail -->
