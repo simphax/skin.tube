@@ -28,14 +28,29 @@
                 <fadetime>200</fadetime>
                 <aspectratio>scale</aspectratio>
                 <texture>$INFO[ListItem.Art(thumb)]</texture>
+                <visible>IsEmpty(ListItem.ChannelName)</visible>
+            </control>
+            <control type="image">
+                <top>20</top>
+                <left>20</left>
+                <right>20</right>
+                <bottom>20</bottom>
+
+                <fadetime>200</fadetime>
+                <aspectratio>keep</aspectratio>
+                <texture>$INFO[ListItem.Art(thumb)]</texture>
+                <visible>!IsEmpty(ListItem.ChannelName)</visible>
             </control>
             <control type="label">
+                <visible>IsEmpty(ListItem.Art(thumb))</visible>
                 <align>center</align>
                 <aligny>center</aligny>
                 <font>ItemTitle</font>
                 <textcolor>Secondary</textcolor>
                 <label>$INFO[ListItem.ChannelNumberLabel]</label>
             </control>
+
+            <include>ImageOverlay</include>
         </control>
         <!-- Label -->
         <control type="group">
