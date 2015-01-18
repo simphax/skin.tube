@@ -29,8 +29,6 @@
                 <include>WindowCloseForwards</include>
             </animation>
 
-            <visible>![Window.IsVisible(MusicInformation)]</visible>
-
             <!-- Views -->
             <control type="group">
                 <top>160</top>
@@ -438,52 +436,6 @@
                                 <textureradiooffnofocus>icon-watched.png</textureradiooffnofocus>
                                 <textureradioofffocus>icon-watched.png</textureradioofffocus>
                             </control>
-                        </control>
-                    </control>
-
-                    <!-- Update library -->
-                    <control type="group" id="3050">
-                        <top>20</top>
-                        <centerleft>50%</centerleft>
-                        <width>340</width>
-                        <height>60</height>
-
-                        <control type="group">
-                            <visible>ControlGroup(3050).HasFocus</visible>
-                            
-                            <animation type="Visible" reversible="false">
-                                <include>ActiveOverlayAnimation</include>
-                            </animation>
-
-                            <include>ActiveOverlay</include>
-                        </control>
-
-                        <!-- Button -->
-                        <control type="togglebutton" id="3051">
-                            <onup>3040</onup>
-                            <ondown condition="Skin.HasSetting(KioskMode)">3010</ondown>
-                            <ondown condition="!Skin.HasSetting(KioskMode)">3002</ondown>
-
-                            <align>center</align>
-                            <textoffsety>13</textoffsety>
-
-                            <font>MenuItemLabel</font>
-                            <textcolor>Primary</textcolor>
-                            <disabledcolor>Secondary</disabledcolor>
-
-                            <label>Update library</label>
-                            <altlabel>Updating...</altlabel>
-
-                            <enable>!Library.IsScanningVideo</enable>
-                            <usealttexture>Library.IsScanningVideo</usealttexture>
-
-                            <onclick>UpdateLibrary(Video)</onclick>
-                            <onclick>Control.SetFocus(3040)</onclick>
-
-                            <texturenofocus colordiffuse="BackgroundPrimary">solid.png</texturenofocus>
-                            <texturefocus colordiffuse="BackgroundPrimary">solid.png</texturefocus>
-                            <alttexturenofocus colordiffuse="BackgroundSecondary">solid.png</alttexturenofocus>
-                            <alttexturefocus colordiffuse="BackgroundSecondary">solid.png</alttexturefocus>
                         </control>
                     </control>
 

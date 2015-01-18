@@ -15,10 +15,10 @@
             <include>ContentCommon</include>
 
             <!-- Animations -->
-            <animation type="WindowOpen" condition="Window.Previous(Home)">
+            <animation type="WindowOpen" condition="Window.Previous(Settings)">
                 <include>WindowOpenForwards</include>
             </animation>
-            <animation type="WindowClose" condition="Window.Next(Home)">
+            <animation type="WindowClose" condition="Window.Next(Settings)">
                 <include>WindowCloseBackwards</include>
             </animation>
 
@@ -28,8 +28,6 @@
             <animation type="Hidden">
                 <include>WindowCloseForwards</include>
             </animation>
-
-            <visible>![Window.IsVisible(MusicInformation)]</visible>
 
             <!-- Views -->
             <control type="group">
