@@ -6,9 +6,9 @@
         <value condition="Window.IsActive(VideoLibrary) + Container.Content(Movies) + SubString(Container.FolderPath, setid)">$INFO[Container.FolderName]</value>
         <value condition="Window.IsActive(VideoLibrary) + Container.Content(Movies)">Movies</value>
         <value condition="Window.IsActive(VideoLibrary) + Container.Content(TvShows)">TV shows</value>
-        <value condition="Window.IsActive(VideoLibrary) + [Container.Content(Seasons) | Container.Content(Episodes)]">$INFO[ListItem.TvShowTitle]</value>
+        <value condition="Window.IsActive(VideoLibrary) + [Container.Content(Seasons) | Container.Content(Episodes)] + !IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
         <value condition="!IsEmpty(Container.FolderName)">$INFO[Container.FolderName]</value>
-        <value>&lt; no name &gt;</value>
+        <value></value>
     </variable>
     
     <!-- Secondary title -->
@@ -16,7 +16,7 @@
         <!-- Flattened season, could possibly also be checked by comparing FolderPath with "-2" -->
         <value condition="Window.IsActive(VideoLibrary) + Container.Content(Episodes) + StringCompare(Container.FolderName, ListItem.TvShowTitle)">$VAR[]</value>
         <value condition="Window.IsActive(VideoLibrary) + Container.Content(Episodes) + StringCompare(Container.FolderName, $LOCALIZE[20366])">All seasons</value>
-        <value condition="Window.IsActive(VideoLibrary) + Container.Content(Episodes)">$INFO[Container.FolderName]</value>
+        <value condition="Window.IsActive(VideoLibrary) + Container.Content(Episodes) + !IsEmpty(ListItem.TvShowTitle)">$INFO[Container.FolderName]</value>
     </variable>
 
     <!-- Player -->
