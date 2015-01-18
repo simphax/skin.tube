@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="skin.tube" name="Tube(Fork)" version="0.0.0" provider-name="Mesoptier">
+<addon id="skin.tube-fork" name="Tube(Fork)" version="0.0.0" provider-name="Mesoptier">
     <requires>
         <import addon="xbmc.gui" version="5.6.0"></import>
     </requires>
