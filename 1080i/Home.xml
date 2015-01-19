@@ -7,35 +7,34 @@
         <include>GlobalBackground</include>
         <include>GlobalTime</include>
 
-            <!-- Circle buttons -->
-            <control type="grouplist" id="301">
-                <!--animation type="WindowOpen">
-                    <effect type="fade" start="0" end="100" time="300" />
-                </animation>
-                <animation type="WindowClose">
-                    <effect type="fade" start="100" end="0" time="150" />
-                </animation-->
+        <!-- Circle buttons -->
+        <control type="grouplist" id="301">
+            <!--animation type="WindowOpen">
+                <effect type="fade" start="0" end="100" time="300" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" start="100" end="0" time="150" />
+            </animation-->
 
 
-                <!--animation type="WindowOpen">
-                    <effect type="Fade" start="0" end="100" time="300" tween="cubic"/>
-                    <effect type="Slide" start="0,500" end="0,0" time="300" center="auto" tween="back"/>
-                </animation>
-                <animation type="WindowClose">
-                    <effect type="Fade" start="100" end="0" time="150" tween="cubic" easing="in"/>
-                    <effect type="Slide" start="0,0" end="0,500" time="150" center="auto" tween="cubic" easing="in"/>
-                </animation-->
+            <!--animation type="WindowOpen">
+                <effect type="Fade" start="0" end="100" time="300" tween="cubic"/>
+                <effect type="Slide" start="0,500" end="0,0" time="300" center="auto" tween="back"/>
+            </animation>
+            <animation type="WindowClose">
+                <effect type="Fade" start="100" end="0" time="150" tween="cubic" easing="in"/>
+                <effect type="Slide" start="0,0" end="0,500" time="150" center="auto" tween="cubic" easing="in"/>
+            </animation-->
 
-                
-
-                <defaultcontrol always="true">101</defaultcontrol>
-                <orientation>horizontal</orientation>
-                <align>right</align>
-                <top>948</top>
-                <right>100</right>
-                <itemgap>20</itemgap>
-                <control type="button" id="101">
-<animation type="WindowOpen">
+            <defaultcontrol always="true">101</defaultcontrol>
+            <orientation>horizontal</orientation>
+            <align>right</align>
+            <top>948</top>
+            <right>100</right>
+            <itemgap>20</itemgap>
+            
+            <control type="button" id="101">
+                <animation type="WindowOpen">
                     <effect type="Fade" start="0" end="100" time="300" tween="cubic" delay="200"/>
                     <effect type="Zoom" start="0" end="100" time="300" center="auto" tween="back" delay="200"/>
                 </animation>
@@ -43,18 +42,18 @@
                     <effect type="Fade" start="100" end="1" time="150" tween="cubic" easing="in" delay=""/>
                     <effect type="Zoom" start="100" end="0" time="150" center="auto" tween="cubic" easing="in" delay=""/>
                 </animation>
-                    <onup>300</onup>
-                    <width>40</width>
-                    <height>40</height>
+                <onup>300</onup>
+                <width>40</width>
+                <height>40</height>
 
-                    <texturenofocus colordiffuse="Primary">circle-settings.png</texturenofocus>
-                    <texturefocus colordiffuse="Primary">circle-settings.png</texturefocus>
-                    <animation condition="!Control.HasFocus(101)" effect="Fade" time="50" start="100" end="40">Conditional</animation>
+                <texturenofocus colordiffuse="Primary">circle-settings.png</texturenofocus>
+                <texturefocus colordiffuse="Primary">circle-settings.png</texturefocus>
+                <animation condition="!Control.HasFocus(101)" effect="Fade" time="50" start="100" end="40">Conditional</animation>
 
-                    <onclick>ActivateWindow(Settings)</onclick>
-                </control>
-                <control type="button" id="102">
-<animation type="WindowOpen">
+                <onclick>ActivateWindow(Settings)</onclick>
+            </control>
+            <control type="button" id="102">
+                <animation type="WindowOpen">
                     <effect type="Fade" start="0" end="100" time="300" tween="cubic" delay="150"/>
                     <effect type="Zoom" start="0" end="100" time="300" center="auto" tween="back" delay="150"/>
                 </animation>
@@ -62,36 +61,36 @@
                     <effect type="Fade" start="100" end="1" time="150" tween="cubic" easing="in" delay="80"/>
                     <effect type="Zoom" start="100" end="0" time="150" center="auto" tween="cubic" easing="in" delay="80"/>
                 </animation>
-                    <onup>300</onup>
-                    <width>40</width>
-                    <height>40</height>
+                <onup>300</onup>
+                <width>40</width>
+                <height>40</height>
 
-                    <texturenofocus colordiffuse="Primary">circle-update.png</texturenofocus>
-                    <texturefocus colordiffuse="Primary">circle-update.png</texturefocus>
-                    <animation condition="!Control.HasFocus(102)" effect="Fade" time="50" start="100" end="40">Conditional</animation>
+                <texturenofocus colordiffuse="Primary">circle-update.png</texturenofocus>
+                <texturefocus colordiffuse="Primary">circle-update.png</texturefocus>
+                <animation condition="!Control.HasFocus(102)" effect="Fade" time="50" start="100" end="40">Conditional</animation>
 
-                    <onclick>ReloadSkin()</onclick>
-                </control>
-                <control type="button" id="103">
-                    <animation type="WindowOpen">
-                        <effect type="Fade" start="0" end="100" time="300" tween="cubic" delay="100"/>
-                        <effect type="Zoom" start="0" end="100" time="300" center="auto" tween="back" delay="100"/>
-                    </animation>
-                    <animation type="WindowClose">
-                        <effect type="Fade" start="100" end="1" time="150" tween="cubic" easing="in" delay="160"/>
-                        <effect type="Zoom" start="100" end="0" time="150" center="auto" tween="cubic" easing="in" delay="160"/>
-                    </animation>
-                    <onup>300</onup>
-                    <width>40</width>
-                    <height>40</height>
-
-                    <texturenofocus colordiffuse="Primary">circle-exit.png</texturenofocus>
-                    <texturefocus colordiffuse="Primary">circle-exit.png</texturefocus>
-                    <animation condition="!Control.HasFocus(103)" effect="Fade" time="50" start="100" end="40">Conditional</animation>
-
-                    <onclick>Quit()</onclick>
-                </control>
+                <onclick>ReloadSkin()</onclick>
             </control>
+            <control type="button" id="103">
+                <animation type="WindowOpen">
+                    <effect type="Fade" start="0" end="100" time="300" tween="cubic" delay="100"/>
+                    <effect type="Zoom" start="0" end="100" time="300" center="auto" tween="back" delay="100"/>
+                </animation>
+                <animation type="WindowClose">
+                    <effect type="Fade" start="100" end="1" time="150" tween="cubic" easing="in" delay="160"/>
+                    <effect type="Zoom" start="100" end="0" time="150" center="auto" tween="cubic" easing="in" delay="160"/>
+                </animation>
+                <onup>300</onup>
+                <width>40</width>
+                <height>40</height>
+
+                <texturenofocus colordiffuse="Primary">circle-exit.png</texturenofocus>
+                <texturefocus colordiffuse="Primary">circle-exit.png</texturefocus>
+                <animation condition="!Control.HasFocus(103)" effect="Fade" time="50" start="100" end="40">Conditional</animation>
+
+                <onclick>Quit()</onclick>
+            </control>
+        </control>
 
         <!-- Content -->
         <control type="group">
@@ -196,4 +195,12 @@
                 <control type="button" id="5">
                     <label>$VAR[Home5Name]</label>
                     <onclick>$VAR[Home5Path]</onclick>
-   
+                    <ondown>301</ondown>
+                    <visible>!Skin.HasSetting(Home5Disable)</visible>
+                </control>
+            </control>
+
+        </control>
+
+    </controls>
+</window>
