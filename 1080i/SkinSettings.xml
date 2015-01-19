@@ -59,43 +59,39 @@
                                 <font>MenuItemLabel</font>
                                 <textcolor>Primary</textcolor>
                                 <include>DialogTitle</include>
-                                <label>Menu Item 1</label>
+                                <label>Menu Items</label>
                             </control>
 
-                            <control type="grouplist" id="102">
+                            <!-- Menu item 1 -->
+                            <control type="grouplist" id="103">
                                 <orientation>horizontal</orientation>
+                                <usecontrolcoords>true</usecontrolcoords>
                                 <itemgap>10</itemgap>
                                 <width>780</width>
                                 <height>70</height>
 
-                                <control type="radiobutton" id="1">
-                                    <ondown>103</ondown>
-                                    <width>385</width>
-                                    <radioposx>345</radioposx>
-                                    <include>SettingsRadioButton</include>
-                                    <label>Enable</label>
-                                    <onclick>False</onclick>
-                                    <selected>True</selected>
-                                    <enable>False</enable>
+                                <control type="image">
+                                    <width>60</width>
+                                    <bottom>10</bottom>
+                                    <texture colordiffuse="BackgroundPrimary">solid.png</texture>
+                                    <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(2)">Conditional</animation>
                                 </control>
 
                                 <control type="button" id="2">
-                                    <ondown>103</ondown>
-                                    <width>385</width>
+                                    <left>-56</left>
+                                    <ondown>1</ondown>
+                                    <centertop>30</centertop>
+                                    <width>32</width>
+                                    <height>32</height>
+                                    <texturefocus colordiffuse="Primary">icon-favourite.png</texturefocus>
+                                    <texturenofocus colordiffuse="Secondary">icon-favourite.png</texturenofocus>
                                     <include>SettingsButton</include>
-                                    <label>Set Favourite</label>
                                     <onclick>RunScript(script.favourites,property=Home1)</onclick>
                                 </control>
-                            </control>
-                            <control type="grouplist" id="103">
-                                <orientation>horizontal</orientation>
-                                <itemgap>10</itemgap>
-                                <width>780</width>
-                                <height>70</height>
-                                <top>-10</top>
 
                                 <control type="button" id="3">
-                                    <ondown>104</ondown>
+                                    <left>14</left>
+                                    <ondown>1</ondown>
                                     <width>180</width>
                                     <include>SettingsButton</include>
                                     <label>$VAR[Home1Label]</label>
@@ -103,67 +99,62 @@
                                 </control>
 
                                 <control type="button" id="4">
-                                    <ondown>104</ondown>
-                                    <width>590</width>
+                                    <ondown>1</ondown>
+                                    <width>520</width>
                                     <include>SettingsButton</include>
                                     <label>$VAR[Home1Path]</label>
                                     <onclick>Skin.SetString(Home1.Path)</onclick>
                                 </control>
+
+                            </control>
+                            <control type="radiobutton" id="1">
+                                <top>-10</top>
+                                <include>SettingsRadioButton</include>
+                                <label>Enable</label>
+                                <onclick>False</onclick>
+                                <selected>True</selected>
+                                <enable>False</enable>
                             </control>
 
-
-
-
-                            <control type="label" id="203">
-                                <font>MenuItemLabel</font>
-                                <textcolor>Primary</textcolor>
-                                <include>DialogTitle</include>
-                                <label>Menu Item 2</label>
-                            </control>
-                            <control type="grouplist" id="104">
-                                <orientation>horizontal</orientation>
-                                <itemgap>10</itemgap>
-                                <width>780</width>
-                                <height>70</height>
-
-                                <control type="radiobutton" id="5">
-                                    <ondown>106</ondown>
-                                    <width>385</width>
-                                    <radioposx>345</radioposx>
-                                    <include>SettingsRadioButton</include>
-                                    <label>Enable</label>
-                                    <onclick>False</onclick>
-                                    <selected>True</selected>
-                                    <enable>False</enable>
-                                </control>
-
-                                <control type="button" id="6">
-                                    <ondown>106</ondown>
-                                    <width>385</width>
-                                    <ondown>2</ondown>
-                                    <include>SettingsButton</include>
-                                    <label>Set Favourite</label>
-                                    <onclick>RunScript(script.favourites,property=Home2)</onclick>
-                                </control>
-                            </control>
+                            <!-- Menu item 2 -->
                             <control type="grouplist" id="106">
                                 <orientation>horizontal</orientation>
                                 <itemgap>10</itemgap>
                                 <width>780</width>
                                 <height>70</height>
-                                <top>-10</top>
+                                <top>10</top>
+                                <usecontrolcoords>true</usecontrolcoords>
+
+                                <control type="image">
+                                    <width>60</width>
+                                    <bottom>10</bottom>
+                                    <texture colordiffuse="BackgroundPrimary">solid.png</texture>
+                                    <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(300)">Conditional</animation>
+                                </control>
+
+                                <control type="button" id="300">
+                                    <left>-56</left>
+                                    <ondown>104</ondown>
+                                    <centertop>30</centertop>
+                                    <width>32</width>
+                                    <height>32</height>
+                                    <texturefocus colordiffuse="Primary">icon-favourite.png</texturefocus>
+                                    <texturenofocus colordiffuse="Secondary">icon-favourite.png</texturenofocus>
+                                    <include>SettingsButton</include>
+                                    <onclick>RunScript(script.favourites,property=Home2)</onclick>
+                                </control>
 
                                 <control type="button" id="7">
-                                    <ondown>107</ondown>
+                                    <left>14</left>
+                                    <ondown>104</ondown>
                                     <width>180</width>
-                                    <onup>22</onup>
                                     <include>SettingsButton</include>
                                     <label>$VAR[Home2Label]</label>
                                     <onclick>Skin.SetString(Home2.Label)</onclick>
                                 </control>
 
                                 <control type="button" id="8">
-                                    <ondown>107</ondown>
+                                    <ondown>104</ondown>
                                     <width>590</width>
                                     <include>SettingsButton</include>
                                     <label>$VAR[Home2Path]</label>
@@ -171,56 +162,55 @@
                                 </control>
                             </control>
 
-                            <control type="label" id="204">
-                                <font>MenuItemLabel</font>
-                                <textcolor>Primary</textcolor>
-                                <include>DialogTitle</include>
-                                <label>Menu Item 3</label>
+                            <control type="radiobutton" id="104">
+                                <top>-10</top>
+                                <include>SettingsRadioButton</include>
+                                <label>Enable</label>
+                                <onclick>False</onclick>
+                                <onclick>Skin.ToggleSetting(Home2Disable)</onclick>
+                                <selected>!Skin.HasSetting(Home2Disable)</selected>
                             </control>
-                            <control type="grouplist" id="107">
-                                <orientation>horizontal</orientation>
-                                <itemgap>10</itemgap>
-                                <width>780</width>
-                                <height>70</height>
 
-                                <control type="radiobutton" id="9">
-                                    <ondown>108</ondown>
-                                    <width>385</width>
-                                    <radioposx>345</radioposx>
-                                    <include>SettingsRadioButton</include>
-                                    <label>Enable</label>
-                                    <onclick>False</onclick>
-                                    <selected>True</selected>
-                                    <enable>False</enable>
-                                </control>
 
-                                <control type="button" id="10">
-                                    <ondown>108</ondown>
-                                    <width>385</width>
-                                    <ondown>2</ondown>
-                                    <include>SettingsButton</include>
-                                    <label>Set Favourite</label>
-                                    <onclick>RunScript(script.favourites,property=Home3)</onclick>
-                                </control>
-                            </control>
+                            <!-- Menu item 3 -->
                             <control type="grouplist" id="108">
                                 <orientation>horizontal</orientation>
                                 <itemgap>10</itemgap>
                                 <width>780</width>
                                 <height>70</height>
-                                <top>-10</top>
+                                <top>10</top>
+                                <usecontrolcoords>true</usecontrolcoords>
+
+                                <control type="image">
+                                    <width>60</width>
+                                    <bottom>10</bottom>
+                                    <texture colordiffuse="BackgroundPrimary">solid.png</texture>
+                                    <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(301)">Conditional</animation>
+                                </control>
+
+                                <control type="button" id="301">
+                                    <left>-56</left>
+                                    <ondown>107</ondown>
+                                    <centertop>30</centertop>
+                                    <width>32</width>
+                                    <height>32</height>
+                                    <texturefocus colordiffuse="Primary">icon-favourite.png</texturefocus>
+                                    <texturenofocus colordiffuse="Secondary">icon-favourite.png</texturenofocus>
+                                    <include>SettingsButton</include>
+                                    <onclick>RunScript(script.favourites,property=Home3)</onclick>
+                                </control>
 
                                 <control type="button" id="11">
-                                    <ondown>109</ondown>
+                                    <left>14</left>
+                                    <ondown>107</ondown>
                                     <width>180</width>
-                                    <onup>22</onup>
                                     <include>SettingsButton</include>
                                     <label>$VAR[Home3Label]</label>
                                     <onclick>Skin.SetString(Home3.Label)</onclick>
                                 </control>
 
                                 <control type="button" id="12">
-                                    <ondown>109</ondown>
+                                    <ondown>107</ondown>
                                     <width>590</width>
                                     <include>SettingsButton</include>
                                     <label>$VAR[Home3Path]</label>
@@ -228,56 +218,55 @@
                                 </control>
                             </control>
 
-                            <control type="label" id="205">
-                                <font>MenuItemLabel</font>
-                                <textcolor>Primary</textcolor>
-                                <include>DialogTitle</include>
-                                <label>Menu Item 4</label>
+                            <control type="radiobutton" id="107">
+                                <top>-10</top>
+                                <ondown>110</ondown>
+                                <include>SettingsRadioButton</include>
+                                <label>Enable</label>
+                                <onclick>False</onclick>
+                                <onclick>Skin.ToggleSetting(Home3Disable)</onclick>
+                                <selected>!Skin.HasSetting(Home3Disable)</selected>
                             </control>
-                            <control type="grouplist" id="109">
-                                <orientation>horizontal</orientation>
-                                <itemgap>10</itemgap>
-                                <width>780</width>
-                                <height>70</height>
 
-                                <control type="radiobutton" id="13">
-                                    <ondown>110</ondown>
-                                    <width>385</width>
-                                    <radioposx>345</radioposx>
-                                    <include>SettingsRadioButton</include>
-                                    <label>Enable</label>
-                                    <onclick>False</onclick>
-                                    <selected>True</selected>
-                                    <enable>False</enable>
-                                </control>
-
-                                <control type="button" id="14">
-                                    <ondown>110</ondown>
-                                    <width>385</width>
-                                    <ondown>2</ondown>
-                                    <include>SettingsButton</include>
-                                    <label>Set Favourite</label>
-                                    <onclick>RunScript(script.favourites,property=Home4)</onclick>
-                                </control>
-                            </control>
+                            <!-- Menu item 4 -->
                             <control type="grouplist" id="110">
                                 <orientation>horizontal</orientation>
                                 <itemgap>10</itemgap>
                                 <width>780</width>
                                 <height>70</height>
-                                <top>-10</top>
+                                <top>10</top>
+                                <usecontrolcoords>true</usecontrolcoords>
+
+                                <control type="image">
+                                    <width>60</width>
+                                    <bottom>10</bottom>
+                                    <texture colordiffuse="BackgroundPrimary">solid.png</texture>
+                                    <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(302)">Conditional</animation>
+                                </control>
+
+                                <control type="button" id="302">
+                                    <left>-56</left>
+                                    <ondown>109</ondown>
+                                    <centertop>30</centertop>
+                                    <width>32</width>
+                                    <height>32</height>
+                                    <texturefocus colordiffuse="Primary">icon-favourite.png</texturefocus>
+                                    <texturenofocus colordiffuse="Secondary">icon-favourite.png</texturenofocus>
+                                    <include>SettingsButton</include>
+                                    <onclick>RunScript(script.favourites,property=Home4)</onclick>
+                                </control>
 
                                 <control type="button" id="15">
-                                    <ondown>111</ondown>
+                                    <left>14</left>
+                                    <ondown>109</ondown>
                                     <width>180</width>
-                                    <onup>22</onup>
                                     <include>SettingsButton</include>
                                     <label>$VAR[Home4Label]</label>
                                     <onclick>Skin.SetString(Home4.Label)</onclick>
                                 </control>
 
                                 <control type="button" id="16">
-                                    <ondown>111</ondown>
+                                    <ondown>109</ondown>
                                     <width>590</width>
                                     <include>SettingsButton</include>
                                     <label>$VAR[Home4Path]</label>
@@ -285,53 +274,105 @@
                                 </control>
                             </control>
 
-                            <control type="label" id="206">
-                                <font>MenuItemLabel</font>
-                                <textcolor>Primary</textcolor>
-                                <include>DialogTitle</include>
-                                <label>Menu Item 5</label>
+                            <control type="radiobutton" id="109">
+                                <top>-10</top>
+                                <ondown>112</ondown>
+                                <include>SettingsRadioButton</include>
+                                <label>Enable</label>
+                                <onclick>False</onclick>
+                                <onclick>Skin.ToggleSetting(Home4Disable)</onclick>
+                                <selected>!Skin.HasSetting(Home4Disable)</selected>
                             </control>
-                            <control type="grouplist" id="111">
-                                <orientation>horizontal</orientation>
-                                <itemgap>10</itemgap>
-                                <width>780</width>
-                                <height>70</height>
 
-                                <control type="radiobutton" id="17">
-                                    <ondown>112</ondown>
-                                    <width>385</width>
-                                    <radioposx>345</radioposx>
-                                    <include>SettingsRadioButton</include>
-                                    <label>Enable</label>
-                                    <onclick>False</onclick>
-                                    <selected>True</selected>
-                                    <enable>False</enable>
-                                </control>
-
-                                <control type="button" id="18">
-                                    <ondown>112</ondown>
-                                    <width>385</width>
-                                    <ondown>2</ondown>
-                                    <include>SettingsButton</include>
-                                    <label>Set Favourite</label>
-                                    <onclick>RunScript(script.favourites,property=Home5)</onclick>
-                                </control>
-                            </control>
+                            <!-- Menu item 5 -->
                             <control type="grouplist" id="112">
                                 <orientation>horizontal</orientation>
                                 <itemgap>10</itemgap>
                                 <width>780</width>
                                 <height>70</height>
-                                <top>-10</top>
+                                <top>10</top>
+                                <usecontrolcoords>true</usecontrolcoords>
+
+                                <control type="image">
+                                    <width>60</width>
+                                    <bottom>10</bottom>
+                                    <texture colordiffuse="BackgroundPrimary">solid.png</texture>
+                                    <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(303)">Conditional</animation>
+                                </control>
+
+                                <control type="button" id="303">
+                                    <left>-56</left>
+                                    <ondown>111</ondown>
+                                    <centertop>30</centertop>
+                                    <width>32</width>
+                                    <height>32</height>
+                                    <texturefocus colordiffuse="Primary">icon-favourite.png</texturefocus>
+                                    <texturenofocus colordiffuse="Secondary">icon-favourite.png</texturenofocus>
+                                    <include>SettingsButton</include>
+                                    <onclick>RunScript(script.favourites,property=Home5)</onclick>
+                                </control>
 
                                 <control type="button" id="19">
-                                    <ondown>202</ondown>
+                                    <left>14</left>
+                                    <ondown>111</ondown>
                                     <width>180</width>
-                                    <onup>22</onup>
                                     <include>SettingsButton</include>
                                     <label>$VAR[Home5Label]</label>
                                     <onclick>Skin.SetString(Home5.Label)</onclick>
                                 </control>
 
                                 <control type="button" id="20">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                                    <ondown>111</ondown>
+                                    <width>590</width>
+                                    <include>SettingsButton</include>
+                                    <label>$VAR[Home5Path]</label>
+                                    <onclick>Skin.SetString(Home5.Path)</onclick>
+                                </control>
+                            </control>
+                            <control type="radiobutton" id="111">
+                                <top>-10</top>
+                                <ondown>201</ondown>
+                                <include>SettingsRadioButton</include>
+                                <label>Enable</label>
+                                <onclick>False</onclick>
+                                <onclick>Skin.ToggleSetting(Home5Disable)</onclick>
+                                <selected>!Skin.HasSetting(Home5Disable)</selected>
+                            </control>
+
+
+                            <control type="label" id="201">
+                                <font>MenuItemLabel</font>
+                                <textcolor>Primary</textcolor>
+                                <include>DialogTitle</include>
+                                <label>Extra</label>
+                            </control>
+
+                            <control type="radiobutton" id="202">
+                                <include>SettingsRadioButton</include>
+                                <label>Alternative Video Info View</label>
+                                <onclick>Skin.ToggleSetting(AltVideoInfo)</onclick>
+                                <selected>Skin.HasSetting(AltVideoInfo)</selected>
+                            </control>
+
+                        </control>
+
+                        <control type="scrollbar" id="121">
+                            <right>-20</right>
+                            <height>480</height>
+
+                            <onleft>120</onleft>
+                            <onright>156</onright>
+
+                            <showonepage>false</showonepage>
+
+                            <texturesliderbackground colordiffuse="08FFFFFF">solid.png</texturesliderbackground>
+                            <texturesliderbar colordiffuse="22FFFFFF">solid.png</texturesliderbar>
+                        </control>
+                    </control>
+                </control>
+            </control>
+        </control>
+
+    </controls>
+
+</window>

@@ -78,39 +78,42 @@
 
     <variable name="Home2Label">
         <value condition="Skin.String(Home2.Label)">$INFO[Skin.String(Home2.Label)]</value>
-        <value>Movies</value>
+        <value>TV Shows</value>
     </variable>
 
     <variable name="Home2Path">
         <value condition="Skin.String(Home2.Path)">$INFO[Skin.String(Home2.Path)]</value>
-        <value>ActivateWindow(Videos, MovieTitles, return)</value>
+        <value>ActivateWindow(Videos,TVShowTitles,return)</value>
     </variable>
 
     <variable name="Home3Label">
         <value condition="Skin.String(Home3.Label)">$INFO[Skin.String(Home3.Label)]</value>
-        <value>Movies</value>
+        <value>Music</value>
     </variable>
 
     <variable name="Home3Path">
         <value condition="Skin.String(Home3.Path)">$INFO[Skin.String(Home3.Path)]</value>
-        <value>ActivateWindow(Videos, MovieTitles, return)</value>
+        <value>ActivateWindow(MusicLibrary)</value>
     </variable>
 
     <variable name="Home4Label">
         <value condition="Skin.String(Home4.Label)">$INFO[Skin.String(Home4.Label)]</value>
-        <value>Movies</value>
+        <value>Live TV</value>
     </variable>
 
     <variable name="Home4Path">
-        <value condition="Skin.String(Home1.Path)">$INFO[Skin.String(Home4.Path)]</value>
-        <value>ActivateWindow(Videos, MovieTitles, return)</value>
+        <value condition="Skin.String(Home4.Path)">$INFO[Skin.String(Home4.Path)]</value>
+        <value>ActivateWindow(TVChannels)</value>
     </variable>
 
     <variable name="Home5Label">
         <value condition="Skin.String(Home5.Label)">$INFO[Skin.String(Home5.Label)]</value>
-        <value>Movies</value>
+        <value>Apps</value>
     </variable>
 
     <variable name="Home5Path">
         <value condition="Skin.String(Home5.Path)">$INFO[Skin.String(Home5.Path)]</value>
-        <value>ActivateWindow(Videos, MovieTitles, return
+        <value>ActivateWindow(Programs,Addons,return)</value>
+    </variable>
+
+</includes>
