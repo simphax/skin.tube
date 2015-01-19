@@ -430,8 +430,6 @@
         </control>
     </include>
     <include name="SettingsEdit">
-        <onleft>155</onleft>
-        <onright>156</onright>
 
         <height>60</height>
 
@@ -449,8 +447,6 @@
         <texturefocus colordiffuse="BackgroundPrimary">solid.png</texturefocus>
     </include>
     <include name="SettingsRadioButton">
-        <onleft>155</onleft>
-        <onright>156</onright>
 
         <height>60</height>
 
@@ -477,8 +473,6 @@
         <textureradioonfocus colordiffuse="Primary">icon-watched.png</textureradioonfocus>
     </include>
     <include name="SettingsButton">
-        <onleft>155</onleft>
-        <onright>156</onright>
 
         <height>60</height>
 
