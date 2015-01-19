@@ -170,30 +170,30 @@
             <control type="grouplist" id="300">
                 <orientation>horizontal</orientation>
                 <control type="button" id="1">
-                    <label>$VAR[Home1Name]</label>
+                    <label>$VAR[Home1Label]</label>
                     <onclick>$VAR[Home1Path]</onclick>
                     <ondown>301</ondown>
                 </control>
                 <control type="button" id="2">
-                    <label>$VAR[Home2Name]</label>
+                    <label>$VAR[Home2Label]</label>
                     <onclick>$VAR[Home2Path]</onclick>
                     <ondown>301</ondown>
                     <visible>!Skin.HasSetting(Home2Disable)</visible>
                 </control>
                 <control type="button" id="3">
-                    <label>$VAR[Home3Name]</label>
+                    <label>$VAR[Home3Label]</label>
                     <onclick>$VAR[Home3Path]</onclick>
                     <ondown>301</ondown>
                     <visible>!Skin.HasSetting(Home3Disable)</visible>
                 </control>
                 <control type="button" id="4">
-                    <label>$VAR[Home4Name]</label>
+                    <label>$VAR[Home4Label]</label>
                     <onclick>$VAR[Home4Path]</onclick>
                     <ondown>301</ondown>
                     <visible>!Skin.HasSetting(Home4Disable)</visible>
                 </control>
                 <control type="button" id="5">
-                    <label>$VAR[Home5Name]</label>
+                    <label>$VAR[Home5Label]</label>
                     <onclick>$VAR[Home5Path]</onclick>
                     <ondown>301</ondown>
                     <visible>!Skin.HasSetting(Home5Disable)</visible>
