@@ -155,7 +155,7 @@
 
                                 <control type="button" id="8">
                                     <ondown>104</ondown>
-                                    <width>590</width>
+                                    <width>520</width>
                                     <include>SettingsButton</include>
                                     <label>$VAR[Home2Path]</label>
                                     <onclick>Skin.SetString(Home2.Path)</onclick>
@@ -211,7 +211,7 @@
 
                                 <control type="button" id="12">
                                     <ondown>107</ondown>
-                                    <width>590</width>
+                                    <width>520</width>
                                     <include>SettingsButton</include>
                                     <label>$VAR[Home3Path]</label>
                                     <onclick>Skin.SetString(Home3.Path)</onclick>
@@ -267,7 +267,7 @@
 
                                 <control type="button" id="16">
                                     <ondown>109</ondown>
-                                    <width>590</width>
+                                    <width>520</width>
                                     <include>SettingsButton</include>
                                     <label>$VAR[Home4Path]</label>
                                     <onclick>Skin.SetString(Home4.Path)</onclick>
@@ -323,7 +323,7 @@
 
                                 <control type="button" id="20">
                                     <ondown>111</ondown>
-                                    <width>590</width>
+                                    <width>520</width>
                                     <include>SettingsButton</include>
                                     <label>$VAR[Home5Path]</label>
                                     <onclick>Skin.SetString(Home5.Path)</onclick>
