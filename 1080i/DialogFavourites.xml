@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog">
+    <defaultcontrol always="true">450</defaultcontrol>
+
+    <controls>
+        <include>DialogBackground</include>
+
+        <control type="group">
+            <include>DialogAnimations</include>
+
+            <control type="grouplist" id="996">
+                <width>800</width>
+                <include>DialogContents</include>
+
+                <!-- Title -->
+                <control type="label">
+                    <include>DialogTitle</include>
+                    <label>Favourites</label>
+                </control>
+
+                <!-- Options -->
+                <control type="group">
+                    <centerleft>50%</centerleft>
+                    <top>10</top>
+                    <width>420</width>
+                    <height>480</height>
+
+                    <visible>Control.IsVisible(450)</visible>
+
+                    <control type="scrollbar" id="10">
+                        <top>10</top>
+                        <height>460</height>
+                        <right>10</right>
+
+                        <onleft>450</onleft>
+                        <onright>450</onright>
+
+                        <showonepage>false</showonepage>
+                    </control>
+
+                    <control type="list" id="450">
+                        <onleft>10</onleft>
+                        <onright>10</onright>
+                        <pagecontrol>10</pagecontrol>
+
+                        <itemlayout height="80">
+                            <control type="group">
+                                <left>40</left>
+                                <width>340</width>
+                                <top>10</top>
+                                <height>60</height>
+
+                                <control type="image">
+                                    <texture colordiffuse="BackgroundPrimary">solid.png</texture>
+                                </control>
+
+                                <control type="label">
+                                    <top>12</top>
+                                    <left>20</left>
+                                    <right>20</right>
+
+                                    <font>MenuItemValue</font>
+                                    <textcolor>Primary</textcolor>
+                                    <selectedcolor>Primary</selectedcolor>
+
+                                    <label>$INFO[ListItem.Label]</label>
+                                </control>
+
+
+                            </control>
+                        </itemlayout>
+
+                        <focusedlayout height="80">
+                            <control type="group">
+                                <left>40</left>
+                                <width>340</width>
+                                <top>10</top>
+                                <height>60</height>
+
+                                <control type="group">
+                                    <visible>Control.HasFocus(450)</visible>
+                                    <include>ActiveOverlay</include>
+                                </control>
+
+                                <control type="image">
+                                    <texture colordiffuse="BackgroundPrimary">solid.png</texture>
+                                </control>
+
+                                <control type="label">
+                                    <top>12</top>
+                                    <left>20</left>
+                                    <right>20</right>
+
+                                    <font>MenuItemValue</font>
+                                    <textcolor>Primary</textcolor>
+                                    <selectedcolor>Primary</selectedcolor>
+
+                                    <label>$INFO[ListItem.Label]</label>
+                                </control>
+
+                            </control>
+                        </focusedlayout>
+                    </control>
+                </control>
+
+            </control>
+
+        </control>
+
+    </controls>
+</window>
