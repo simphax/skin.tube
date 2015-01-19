@@ -78,11 +78,11 @@
                                 </control>
 
                                 <control type="button" id="2">
-                                    <left>-56</left>
+                                    <left>-52</left>
                                     <ondown>1</ondown>
                                     <centertop>30</centertop>
-                                    <width>32</width>
-                                    <height>32</height>
+                                    <width>24</width>
+                                    <height>24</height>
                                     <texturefocus colordiffuse="Primary">icon-favourite.png</texturefocus>
                                     <texturenofocus colordiffuse="Secondary">icon-favourite.png</texturenofocus>
                                     <include>SettingsButton</include>
@@ -90,7 +90,7 @@
                                 </control>
 
                                 <control type="button" id="3">
-                                    <left>14</left>
+                                    <left>18</left>
                                     <ondown>1</ondown>
                                     <width>180</width>
                                     <include>SettingsButton</include>
@@ -133,11 +133,11 @@
                                 </control>
 
                                 <control type="button" id="300">
-                                    <left>-56</left>
+                                    <left>-52</left>
                                     <ondown>104</ondown>
                                     <centertop>30</centertop>
-                                    <width>32</width>
-                                    <height>32</height>
+                                    <width>24</width>
+                                    <height>24</height>
                                     <texturefocus colordiffuse="Primary">icon-favourite.png</texturefocus>
                                     <texturenofocus colordiffuse="Secondary">icon-favourite.png</texturenofocus>
                                     <include>SettingsButton</include>
@@ -145,7 +145,7 @@
                                 </control>
 
                                 <control type="button" id="7">
-                                    <left>14</left>
+                                    <left>18</left>
                                     <ondown>104</ondown>
                                     <width>180</width>
                                     <include>SettingsButton</include>
@@ -189,11 +189,11 @@
                                 </control>
 
                                 <control type="button" id="301">
-                                    <left>-56</left>
+                                    <left>-52</left>
                                     <ondown>107</ondown>
                                     <centertop>30</centertop>
-                                    <width>32</width>
-                                    <height>32</height>
+                                    <width>24</width>
+                                    <height>24</height>
                                     <texturefocus colordiffuse="Primary">icon-favourite.png</texturefocus>
                                     <texturenofocus colordiffuse="Secondary">icon-favourite.png</texturenofocus>
                                     <include>SettingsButton</include>
@@ -201,7 +201,7 @@
                                 </control>
 
                                 <control type="button" id="11">
-                                    <left>14</left>
+                                    <left>18</left>
                                     <ondown>107</ondown>
                                     <width>180</width>
                                     <include>SettingsButton</include>
@@ -245,11 +245,11 @@
                                 </control>
 
                                 <control type="button" id="302">
-                                    <left>-56</left>
+                                    <left>-52</left>
                                     <ondown>109</ondown>
                                     <centertop>30</centertop>
-                                    <width>32</width>
-                                    <height>32</height>
+                                    <width>24</width>
+                                    <height>24</height>
                                     <texturefocus colordiffuse="Primary">icon-favourite.png</texturefocus>
                                     <texturenofocus colordiffuse="Secondary">icon-favourite.png</texturenofocus>
                                     <include>SettingsButton</include>
@@ -257,7 +257,7 @@
                                 </control>
 
                                 <control type="button" id="15">
-                                    <left>14</left>
+                                    <left>18</left>
                                     <ondown>109</ondown>
                                     <width>180</width>
                                     <include>SettingsButton</include>
@@ -301,11 +301,11 @@
                                 </control>
 
                                 <control type="button" id="303">
-                                    <left>-56</left>
+                                    <left>-52</left>
                                     <ondown>111</ondown>
                                     <centertop>30</centertop>
-                                    <width>32</width>
-                                    <height>32</height>
+                                    <width>24</width>
+                                    <height>24</height>
                                     <texturefocus colordiffuse="Primary">icon-favourite.png</texturefocus>
                                     <texturenofocus colordiffuse="Secondary">icon-favourite.png</texturenofocus>
                                     <include>SettingsButton</include>
@@ -313,7 +313,7 @@
                                 </control>
 
                                 <control type="button" id="19">
-                                    <left>14</left>
+                                    <left>18</left>
                                     <ondown>111</ondown>
                                     <width>180</width>
                                     <include>SettingsButton</include>
