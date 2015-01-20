@@ -97,6 +97,42 @@
                         <include>DialogActiveButton</include>
                     </control>
                 </control>
+
+                <control type="group">
+                    <include>DialogButtonDimensions</include>
+                    <visible>Control.IsVisible(1010)</visible>
+                    <control type="group">
+                        <visible>Control.HasFocus(1010)</visible>
+                        <include>DialogActiveButton</include>
+                    </control>
+                </control>
+
+                <control type="group">
+                    <include>DialogButtonDimensions</include>
+                    <visible>Control.IsVisible(1011)</visible>
+                    <control type="group">
+                        <visible>Control.HasFocus(1011)</visible>
+                        <include>DialogActiveButton</include>
+                    </control>
+                </control>
+
+                <control type="group">
+                    <include>DialogButtonDimensions</include>
+                    <visible>Control.IsVisible(1012)</visible>
+                    <control type="group">
+                        <visible>Control.HasFocus(1012)</visible>
+                        <include>DialogActiveButton</include>
+                    </control>
+                </control>
+
+                <control type="group">
+                    <include>DialogButtonDimensions</include>
+                    <visible>Control.IsVisible(1013)</visible>
+                    <control type="group">
+                        <visible>Control.HasFocus(1013)</visible>
+                        <include>DialogActiveButton</include>
+                    </control>
+                </control>
             </control>
 
             <control type="grouplist" id="996">
