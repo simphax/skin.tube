@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="145">
+    <defaultcontrol always="true">11</defaultcontrol>
     <controls>
 
+        <zorder>10</zorder>
         <control type="group">
             <top>62</top> <!-- 125 - 63  -->
             <centerleft>50%</centerleft>
@@ -30,6 +32,10 @@
             <control type="slider" id="11">
                 <top>49</top> <!-- 55 - (20 - 8) / 2 -->
                 <height>20</height>
+                <onup>noop</onup>
+                <ondown>noop</ondown>
+                <onleft>11</onleft>
+                <onright>11</onright>
 
                 <texturesliderbar colordiffuse="PlayerProgressBack">slider-nib.png</texturesliderbar>
                 <textureslidernib colordiffuse="PlayerProgressBar">slider-nib.png</textureslidernib>

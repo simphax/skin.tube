@@ -3,6 +3,9 @@
 	<defaultcontrol>5</defaultcontrol>
 	<controls>
 		<control type="group">
+            
+            <!--animation effect="fade" start="100" end="0" time="400" condition="Window.IsVisible(SliderDialog) | Window.IsVisible(FileBrowser)">Conditional</animation-->
+            <visible>!Window.IsVisible(SliderDialog) + !Window.IsVisible(FileBrowser)</visible>
 
 			<animation type="WindowOpen" condition="!Window.Previous(OSDVideoSettings) + !Window.Previous(OSDAudioSettings)">
 		        <include>WindowOpenForwards</include>
@@ -216,15 +219,31 @@
                 <height>10</height>
             </control>
 
-			<control type="sliderex" id="13">
-				<description>Default Slider</description>
-				<height>40</height>
-				<texturenofocus border="5">button-nofocus.png</texturenofocus>
-				<texturefocus border="5">button-focus2.png</texturefocus>
-				<font>font13</font>
-				<textcolor>grey2</textcolor>
-				<focusedcolor>white</focusedcolor>
-			</control>
+            <control type="sliderex" id="13">
+                <onleft>155</onleft>
+                <onright>156</onright>
+
+                <height>60</height>
+                <textoffsetx>20</textoffsetx>
+                <textoffsety>13</textoffsety>
+                <align>left</align>
+                <texturenofocus colordiffuse="PlayerButtonBack">solid.png</texturenofocus>
+                <texturefocus colordiffuse="PlayerButtonBackFocus">solid.png</texturefocus>
+
+                <texturebg colordiffuse="Secondary">solid.png</texturebg>
+
+                <sliderwidth>160</sliderwidth>
+                <sliderheight>20</sliderheight>
+
+                <texturesliderbar colordiffuse="PlayerProgressBack">slider-nib.png</texturesliderbar>
+                <textureslidernib colordiffuse="PlayerProgressBar">slider-nib.png</textureslidernib>
+                <textureslidernibfocus colordiffuse="PlayerProgressBar">slider-nib.png</textureslidernibfocus>
+
+                <textcolor>Secondary</textcolor>
+                <focusedcolor>Primary</focusedcolor>
+                <disabledcolor>Disabled</disabledcolor>
+                <font>MenuItemLabel</font>
+            </control>
 
 
             <control type="button" id="28"></control>
