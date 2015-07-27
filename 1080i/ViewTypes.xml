@@ -237,18 +237,21 @@
 
     <!-- Controls the visibility of the scrollbar, from Black's Experience1080 -->
     <include name="ViewScrollbarVisibility">
-        <control type="image" id="601">
-            <animation effect="fade" start="100" end="0" time="0" delay="1500" condition="!Window.Previous(FullscreenVideo)">WindowOpen</animation>
-        </control>
-        <control type="image" id="602">
-            <animation effect="fade" start="0" end="100" time="0">Visible</animation>
-            <animation effect="fade" start="100" end="0" time="0">Hidden</animation>
-            <visible>Control.HasFocus(70) | !Control.IsVisible(601)</visible>
-        </control>
-        <control type="image" id="602">
-            <animation effect="fade" start="0" end="100" time="0">Visible</animation>
-            <animation effect="fade" start="100" end="0" time="0" delay="1500">Hidden</animation>
-            <visible>!Control.HasFocus(70) + [Container.Scrolling | Container.OnScrollNext | Container.OnScrollPrevious]</visible>
+        <control type="group">
+            <!--visible>Skin.HasSetting(ScrollBar)</visible-->
+            <control type="image" id="601">
+                <animation effect="fade" start="100" end="0" time="0" delay="1500" condition="!Window.Previous(FullscreenVideo)">WindowOpen</animation>
+            </control>
+            <control type="image" id="602">
+                <animation effect="fade" start="0" end="100" time="0">Visible</animation>
+                <animation effect="fade" start="100" end="0" time="0">Hidden</animation>
+                <visible>Control.HasFocus(70) | !Control.IsVisible(601)</visible>
+            </control>
+            <control type="image" id="602">
+                <animation effect="fade" start="0" end="100" time="0">Visible</animation>
+                <animation effect="fade" start="100" end="0" time="0" delay="1500">Hidden</animation>
+                <visible>!Control.HasFocus(70) + [Container.Scrolling | Container.OnScrollNext | Container.OnScrollPrevious]</visible>
+            </control>
         </control>
     </include>
     
@@ -262,19 +265,23 @@
     <include name="ViewTypeHorizontal">
         <include>ViewTypeCommon</include>
 
-        <onup condition="!Skin.HasSetting(KioskMode)">3002</onup>
+        <onup condition="!Skin.HasSetting(KioskMode)">3000</onup>
         <onup condition="Skin.HasSetting(KioskMode) + Control.IsVisible(600)">600</onup>
         <ondown condition="Control.IsVisible(600)">600</ondown>
-        <ondown condition="!Skin.HasSetting(KioskMode) + !Control.IsVisible(600)">3002</ondown>
+        <ondown condition="!Skin.HasSetting(KioskMode) + !Control.IsVisible(600)">3000</ondown>
     </include>
 
     <include name="ViewScrollbarHorizontal">
         <control type="scrollbar" id="600">
+            
+            <!--onfocus condition="!Skin.HasSetting(ScrollBar) + Skin.HasSetting(KioskMode)">Control.SetFocus(500)</onfocus>
+            <onfocus condition="!Skin.HasSetting(ScrollBar) + !Skin.HasSetting(KioskMode)">Control.SetFocus(3000)</onfocus-->
+
             <top>850</top>
             <width>1720</width>
 
             <onup>500</onup>
-            <ondown condition="!Skin.HasSetting(KioskMode)">3002</ondown>
+            <ondown condition="!Skin.HasSetting(KioskMode)">3000</ondown>
             <ondown condition="Skin.HasSetting(KioskMode)">500</ondown>
 
             <orientation>horizontal</orientation>
