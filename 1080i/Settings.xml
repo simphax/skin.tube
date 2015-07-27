@@ -113,6 +113,10 @@
                             <onclick>ActivateWindow(AddonBrowser)</onclick>
                         </item>
                         <item>
+                            <label>TV</label>
+                            <onclick>ActivateWindow(PvrSettings)</onclick>
+                        </item>
+                        <item>
                             <label>System</label>
                             <onclick>ActivateWindow(SystemSettings)</onclick>
                         </item>
