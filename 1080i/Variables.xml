@@ -126,4 +126,9 @@
         <value>ActivateWindow(Programs,Addons,return)</value>
     </variable>
 
+    <variable name="FanartItemsPath">
+        <value condition="Skin.String(FanartItemsPath)">$INFO[Skin.String(FanartItemsPath)]</value>
+        <value>special://skin/extras/playlists/RandomMovies.xsp</value>
+    </variable>
+
 </includes>

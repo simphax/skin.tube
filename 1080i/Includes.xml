@@ -32,13 +32,26 @@
         </control>
 
         <!-- multi image background -->
-        <control type="multiimage" id="99004">
-            <imagepath background="true">$INFO[Window(Home).Property(script.grab.fanart.Movie.FanArt)]</imagepath>
+
+        <control type="wraplist" id="9600">
+            <visible>!Player.HasVideo + Skin.HasSetting(HomeFanArt) + Window.IsActive(Home)</visible>
             <aspectratio>scale</aspectratio>
-            <timeperimage>15000</timeperimage>
-            <fadetime>350</fadetime>
+            <autoscroll time="20000">True</autoscroll>
+            <orientation>horizontal</orientation>
+            <preloaditems>1</preloaditems>
+            <itemlayout width="1920" height="1080">
+            </itemlayout>
+            <focusedlayout width="1920" height="1080">
+            </focusedlayout>
+            <content target="video">$VAR[FanartItemsPath]</content>
+        </control>
+        <control type="multiimage" id="99004">
+            <imagepath background="true">$INFO[Container(9600).ListItem.Art(fanart)]</imagepath>
+            <aspectratio>scale</aspectratio>
+            <fadetime>600</fadetime>
+            <timeperimage>100</timeperimage>
             <randomize>true</randomize>
-            <visible>!IsEmpty(Window(Home).Property(script.grab.fanart.Global.FanArt)) + !Player.HasVideo + Skin.HasSetting(HomeFanArt) + Window.IsActive(Home)</visible>
+            <visible>!Player.HasVideo + Skin.HasSetting(HomeFanArt) + Window.IsActive(Home)</visible>
         </control>
 
         <control type="image">

@@ -422,7 +422,12 @@
                                 <onclick>Skin.ToggleSetting(HomeFanArt)</onclick>
                                 <selected>Skin.HasSetting(HomeFanArt)</selected>
                             </control>
-
+                            <control type="button" id="205">
+                                <left>100</left>
+                                <include>SettingsButton</include>
+                                <label>$VAR[FanartItemsPath]</label>
+                                <onclick>Skin.SetString(FanartItemsPath)</onclick>
+                            </control>
                         </control>
 
                         <control type="scrollbar" id="121">
