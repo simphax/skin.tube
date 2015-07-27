@@ -52,6 +52,7 @@
                         <include>ActiveOverlay</include>
                         
                         <include>ViewTypePosterItem</include>
+                        <include>BusyOverlay</include>
                     </control>
                 </focusedlayout>
             </control>

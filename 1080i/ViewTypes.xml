@@ -57,27 +57,109 @@
 
     <!-- Active overlay -->
     <include name="ActiveOverlay">
-        <control type="image">
-            <top>-10</top>
-            <bottom>-10</bottom>
-            <left>-10</left>
-            <right>-10</right>
+        <control type="group">
+            <control type="image">
+                <top>-10</top>
+                <bottom>-10</bottom>
+                <left>-10</left>
+                <right>-10</right>
 
-            <texture border="10">active-overlay.png</texture>
-            
-            <animation type="Focus" reversible="false">
-                <include>ActiveOverlayAnimation</include>
-            </animation>
+                <texture border="10">active-overlay.png</texture>
+                
+                <animation type="Focus" reversible="false">
+                    <include>ActiveOverlayAnimation</include>
+                </animation>
 
-            <animation type="Visible" reversible="false">
-                <include>ActiveOverlayAnimation</include>
-            </animation>
+                <animation type="Visible" reversible="false">
+                    <include>ActiveOverlayAnimation</include>
+                </animation>
+
+                <visible>!Window.IsActive(BusyDialog)</visible>
+            </control>
+            <control type="image">
+                <top>-7</top>
+                <bottom>-7</bottom>
+                <left>-7</left>
+                <right>-7</right>
+
+                <texture border="10">active-overlay.png</texture>
+
+                <animation type="Visible" reversible="true">
+                    <effect type="Fade" start="0" end="100" time="150"/>
+                </animation>
+
+                <visible>Window.IsActive(BusyDialog)</visible>
+            </control>
         </control>
     </include>
 
     <include name="ActiveOverlayAnimation">
         <effect type="Zoom" start="95" end="100" time="200" center="auto" tween="cubic"/>
         <effect type="Fade" start="0" end="100" time="150"/>
+    </include>
+    <include name="BusyOverlay">
+        <!-- Busy image -->
+        <!--control type="image">
+            <right>0</right>
+            <width>35</width>
+            <texture>solid.png</texture>
+            <colordiffuse>Primary</colordiffuse>
+
+            <visible>Window.IsActive(BusyDialog)</visible>
+            <!--animation condition="true" effect="rotate" center="auto" start="360" end="0" time="500" loop="true">Conditional</animation-->
+            <!--animation effect="fade" start="100" end="40" pulse="true" time="300" condition="True">Conditional</animation>
+        </control-->
+        <!-- Busy Overlay -->
+        <control type="group">
+            <!--right>0</right-->
+            <!--width>35</width-->
+            <aligny>center</aligny>
+            <visible>Window.IsActive(BusyDialog)</visible>
+            <animation type="Visible" reversible="true">
+                <!--effect type="Zoom" start="0" end="100" time="200" center="auto" tween="cubic"/-->
+                <effect type="Fade" start="0" end="100" time="150" tween="cubic" easing="inout"/>
+            </animation>
+
+            <control type="image">
+                <texture colordiffuse="BusyOverlay">solid.png</texture>
+            </control>
+            <!--control type="group">
+                <right>0</right>
+                <width>35</width>
+                <control type="image">
+                    <texture colordiffuse="BusyOverlay">solid.png</texture>
+                </control>
+                <control type="image">
+                    <centertop>50%</centertop>
+                    <centerleft>50%</centerleft>
+                    <width>16</width>
+                    <height>16</height>
+
+                    <texture colordiffuse="BusySpinner">icon-stop.png</texture>
+                    
+                    <animation condition="true" effect="rotate" center="auto" start="360" end="0" time="500" loop="true">Conditional</animation>
+                </control>
+            </control-->
+            <control type="image">
+                <centertop>50%</centertop>
+                <centerleft>50%</centerleft>
+                <width>16</width>
+                <height>16</height>
+
+                <texture colordiffuse="BusySpinner">icon-record.png</texture>
+                
+                <animation condition="true" effect="Slide" start="-262,0" end="262,0" time="500" center="auto" tween="cubic" easing="inout" pulse="true">Conditional</animation>
+            </control>
+            <!--control type="image">
+                <centertop>50%</centertop>
+                <centerleft>50%</centerleft>
+                <width>64</width>
+                <height>64</height>
+
+                <texture colordiffuse="BusySpinner">spinner.png</texture>
+                <animation condition="true" effect="rotate" center="auto" start="360" end="0" time="500" loop="true">Conditional</animation>
+            </control-->
+        </control>
     </include>
 
     <include name="ImageOverlay">

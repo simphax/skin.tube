@@ -165,6 +165,7 @@
                     <control type="group">
                         <include>ActiveOverlay</include>
                         <include>ViewTypeListExtItem</include>
+                        <include>BusyOverlay</include>
                     </control>
                 </focusedlayout>
             </control>

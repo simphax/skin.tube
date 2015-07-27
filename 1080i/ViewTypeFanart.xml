@@ -231,6 +231,7 @@
 
                         <include>ViewTypeFanartDescriptionFocused</include>
                         <include>ViewTypeFanartItem</include>
+                        <include>BusyOverlay</include>
                     </control>
                 </focusedlayout>
             </control>

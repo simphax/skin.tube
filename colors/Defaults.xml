@@ -18,6 +18,9 @@
     <color name="BadgePlayingBackground">FF39B80F<!-- FF0576F0 --></color>
     <color name="BadgeIcon">FFFFFFFF</color>
 
+    <color name="BusyOverlay">99FFFFFF</color>
+    <color name="BusySpinner">FF353535</color>
+
     <!-- Player -->
     <color name="PlayerOverlay">600A0A0A</color>
     <color name="PlayerInfoOverlay">400A0A0A</color>

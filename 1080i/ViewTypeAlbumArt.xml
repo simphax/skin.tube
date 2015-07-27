@@ -52,6 +52,7 @@
                         <include>ActiveOverlay</include>
                         
                         <include>ViewTypeAlbumArtItem</include>
+                        <include>BusyOverlay</include>
                     </control>
                 </focusedlayout>
             </control>

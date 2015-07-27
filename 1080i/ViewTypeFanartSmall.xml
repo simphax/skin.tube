@@ -125,6 +125,7 @@
                         <include>ActiveOverlay</include>
 
                         <include>ViewTypeFanartSmallItem</include>
+                        <include>BusyOverlay</include>
                     </control>
                 </focusedlayout>
             </control>
