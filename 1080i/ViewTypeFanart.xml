@@ -22,7 +22,7 @@
             <control type="image">
                 <include>FillParent</include>
 
-                <fadetime>200</fadetime>
+                <fadetime>0</fadetime>
                 <aspectratio>scale</aspectratio>
                 <texture>$VAR[ViewTypeFanartImage]</texture>
             </control>

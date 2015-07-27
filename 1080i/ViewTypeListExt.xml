@@ -25,7 +25,7 @@
             <control type="image">
                 <include>FillParent</include>
 
-                <fadetime>200</fadetime>
+                <fadetime>0</fadetime>
                 <aspectratio>scale</aspectratio>
                 <texture>$INFO[ListItem.Art(thumb)]</texture>
                 <visible>IsEmpty(ListItem.ChannelName)</visible>
@@ -36,7 +36,7 @@
                 <right>20</right>
                 <bottom>20</bottom>
 
-                <fadetime>200</fadetime>
+                <fadetime>0</fadetime>
                 <aspectratio>keep</aspectratio>
                 <texture>$INFO[ListItem.Art(thumb)]</texture>
                 <visible>!IsEmpty(ListItem.ChannelName)</visible>
