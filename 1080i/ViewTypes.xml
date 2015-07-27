@@ -291,4 +291,393 @@
         </control>
     </include>
 
+    <include name="ViewOptions">
+        <!-- View options -->
+        <control type="group" id="3000">
+            <visible>!Skin.HasSetting(KioskMode)</visible>
+
+            <control type="image">
+                <texture colordiffuse="DrawerBackground">solid.png</texture>
+            </control>
+            
+            <bottom>-100</bottom>
+            <height>100</height>
+
+            <!-- Controls -->
+            <control type="grouplist" id="3001">
+                <top>15</top>
+                <align>center</align>
+                <orientation>horizontal</orientation>
+
+                <itemgap>20</itemgap>
+                <usecontrolcoords>true</usecontrolcoords>
+
+                <!-- View mode -->
+                <control type="group" id="3010">
+                    <top>10</top>
+                    <width>340</width>
+                    <height>60</height>
+
+                    <control type="group">
+                        <visible>ControlGroup(3010).HasFocus</visible>
+                        
+                        <animation type="Visible" reversible="false">
+                            <include>ActiveOverlayAnimation</include>
+                        </animation>
+
+                        <include>ActiveOverlay</include>
+                    </control>
+
+                    <!-- Label -->
+                    <control type="group">
+                        <right>200</right>
+
+                        <control type="image">
+                            <texture colordiffuse="BackgroundSecondary">solid.png</texture>
+                        </control>
+
+                        <control type="label">
+                            <left>20</left>
+                            <top>13</top>
+
+                            <font>MenuItemLabel</font>
+                            <textcolor>Secondary</textcolor>
+
+                            <label>View</label>
+                        </control>
+                    </control>
+
+                    <!-- Value -->
+                    <control type="group">
+                        <right>0</right>
+                        <width>200</width>
+
+                        <control type="image">
+                            <texture colordiffuse="BackgroundPrimary">solid.png</texture>
+                        </control>
+
+                        <control type="label">
+                            <left>20</left>
+                            <top>13</top>
+
+                            <font>MenuItemValue</font>
+                            <textcolor>Primary</textcolor>
+
+                            <label>$INFO[Container.ViewMode]</label>
+                        </control>
+                    </control>
+
+                    <control type="button" id="2">
+
+                        <onback>500</onback>
+                        <onup>500</onup>
+
+                        <ondown>500</ondown>
+
+                        <onleft condition="Control.IsVisible(3050)">3050</onleft>
+                        <onleft condition="!Control.IsVisible(3050)">3040</onleft>
+                        <onright>3020</onright>
+
+                        <onclick>Container.NextViewMode</onclick>
+                    </control>
+                </control>
+
+                <!-- Sort method -->
+                <control type="group" id="3020">
+                    <top>10</top>
+                    <width>340</width>
+                    <height>60</height>
+
+                    <animation condition="!Control.IsEnabled(3)" effect="Fade" start="100" end="30" time="0">Conditional</animation>
+
+                    <control type="group">
+                        <visible>ControlGroup(3020).HasFocus</visible>
+                        
+                        <animation type="Visible" reversible="false">
+                            <include>ActiveOverlayAnimation</include>
+                        </animation>
+
+                        <include>ActiveOverlay</include>
+                    </control>
+
+                    <!-- Label -->
+                    <control type="group">
+                        <right>200</right>
+
+                        <control type="image">
+                            <texture colordiffuse="BackgroundSecondary">solid.png</texture>
+                        </control>
+
+                        <control type="label">
+                            <left>20</left>
+                            <top>13</top>
+
+                            <font>MenuItemLabel</font>
+                            <textcolor>Secondary</textcolor>
+
+                            <label>Sort</label>
+                        </control>
+                    </control>
+
+                    <!-- Value -->
+                    <control type="group">
+                        <right>0</right>
+                        <width>200</width>
+
+                        <control type="image">
+                            <texture colordiffuse="BackgroundPrimary">solid.png</texture>
+                        </control>
+
+                        <control type="label">
+                            <left>20</left>
+                            <top>13</top>
+
+                            <font>MenuItemValue</font>
+                            <textcolor>Primary</textcolor>
+
+                            <label>$INFO[Container.SortMethod]</label>
+                        </control>
+                    </control>
+
+                    <control type="button" id="3">
+                        <onback>500</onback>
+                        <onup>500</onup>
+                        <ondown>500</ondown>
+
+                        <onleft>3010</onleft>
+                        <onright>3030</onright>
+
+                        <onclick>Container.NextSortMethod</onclick>
+                    </control>
+                </control>
+
+                <!-- Sort direction -->
+                <control type="group" id="3030">
+                    <top>10</top>
+                    <width>340</width>
+                    <height>60</height>
+
+                    <control type="group">
+                        <visible>ControlGroup(3030).HasFocus</visible>
+                        
+                        <animation type="Visible" reversible="false">
+                            <include>ActiveOverlayAnimation</include>
+                        </animation>
+
+                        <include>ActiveOverlay</include>
+                    </control>
+
+                    <!-- Label -->
+                    <control type="group">
+                        <right>60</right>
+
+                        <control type="image">
+                            <texture colordiffuse="BackgroundSecondary">solid.png</texture>
+                        </control>
+
+                        <control type="label">
+                            <left>20</left>
+                            <top>13</top>
+
+                            <font>MenuItemLabel</font>
+                            <textcolor>Secondary</textcolor>
+
+                            <label>Sort direction</label>
+                        </control>
+                    </control>
+
+                    <!-- Value -->
+                    <control type="group">
+                        <right>0</right>
+                        <width>60</width>
+
+                        <control type="image">
+                            <texture colordiffuse="BackgroundPrimary">solid.png</texture>
+                        </control>
+
+                        <control type="radiobutton" id="4">
+                            <onback>500</onback>
+                            <onup>500</onup>
+                            <ondown>500</ondown>
+                            <onleft>3020</onleft>
+                            <onright>3040</onright>
+
+                            <radioposx>20</radioposx>
+                            <radioposy>0</radioposy>
+                            <radiowidth>20</radiowidth>
+                            <radioheight>20</radioheight>
+
+                            <textureradioonnofocus flipy="true">sort-asc.png</textureradioonnofocus>
+                            <textureradioonfocus flipy="true">sort-asc.png</textureradioonfocus>
+                            <textureradiooffnofocus>sort-asc.png</textureradiooffnofocus>
+                            <textureradioofffocus>sort-asc.png</textureradioofffocus>
+                        </control>
+                    </control>
+                </control>
+
+                <!-- Show watched -->
+                <control type="group" id="3040">
+                    <top>10</top>
+                    <width>340</width>
+                    <height>60</height>
+
+                    <control type="group">
+                        <visible>ControlGroup(3040).HasFocus</visible>
+                        
+                        <animation type="Visible" reversible="false">
+                            <include>ActiveOverlayAnimation</include>
+                        </animation>
+
+                        <include>ActiveOverlay</include>
+                    </control>
+
+                    <!-- Label -->
+                    <control type="group">
+                        <right>60</right>
+
+                        <control type="image">
+                            <texture colordiffuse="BackgroundSecondary">solid.png</texture>
+                        </control>
+
+                        <control type="label">
+                            <left>20</left>
+                            <top>13</top>
+
+                            <font>MenuItemLabel</font>
+                            <textcolor>Secondary</textcolor>
+
+                            <label>Show watched</label>
+                        </control>
+                    </control>
+
+                    <!-- Value -->
+                    <control type="group">
+                        <right>0</right>
+                        <width>60</width>
+
+                        <control type="image">
+                            <texture colordiffuse="BackgroundPrimary">solid.png</texture>
+                        </control>
+
+                        <control type="radiobutton" id="14">
+                            <onback>500</onback>
+                            <onup>500</onup>
+                            <ondown>500</ondown>
+                            <onleft>3030</onleft>
+                            <onright condition="Control.IsVisible(3050)">3050</onright>
+                            <onright condition="!Control.IsVisible(3050)">3010</onright>
+
+                            <radioposx>20</radioposx>
+                            <radioposy>0</radioposy>
+                            <radiowidth>20</radiowidth>
+                            <radioheight>20</radioheight>
+
+                            <textureradioonnofocus>icon-unwatched.png</textureradioonnofocus>
+                            <textureradioonfocus>icon-unwatched.png</textureradioonfocus>
+                            <textureradiooffnofocus>icon-watched.png</textureradiooffnofocus>
+                            <textureradioofffocus>icon-watched.png</textureradioofffocus>
+                        </control>
+                    </control>
+                </control>
+
+                <!-- Update music library -->
+                <control type="group" id="3050">
+                    <visible>Window.IsVisible(Music) | Window.IsVisible(MusicFiles) | Window.IsVisible(MusicLibrary) | Window.IsVisible(MusicPlaylist)</visible>
+                    <top>10</top>
+                    <width>340</width>
+                    <height>60</height>
+
+                    <control type="group">
+                        <visible>ControlGroup(3050).HasFocus</visible>
+                        
+                        <animation type="Visible" reversible="false">
+                            <include>ActiveOverlayAnimation</include>
+                        </animation>
+
+                        <include>ActiveOverlay</include>
+                    </control>
+
+                    <!-- Button -->
+                    <control type="togglebutton" id="3051">
+                        <onup>500</onup>
+                        <ondown>500</ondown>
+                        <!--onleft>3040</onleft>
+                        <onright>3010</onright-->
+
+                        <align>center</align>
+                        <textoffsety>13</textoffsety>
+
+                        <font>MenuItemLabel</font>
+                        <textcolor>Primary</textcolor>
+                        <disabledcolor>Secondary</disabledcolor>
+
+                        <label>Update library</label>
+                        <altlabel>Updating...</altlabel>
+
+                        <enable>!Library.IsScanningMusic</enable>
+                        <usealttexture>Library.IsScanningMusic</usealttexture>
+
+                        <onclick>UpdateLibrary(Music)</onclick>
+                        <onclick>Control.SetFocus(3040)</onclick>
+
+                        <texturenofocus colordiffuse="BackgroundPrimary">solid.png</texturenofocus>
+                        <texturefocus colordiffuse="BackgroundPrimary">solid.png</texturefocus>
+                        <alttexturenofocus colordiffuse="BackgroundSecondary">solid.png</alttexturenofocus>
+                        <alttexturefocus colordiffuse="BackgroundSecondary">solid.png</alttexturefocus>
+                    </control>
+                </control>
+
+
+                <!-- Update video library -->
+                <control type="group" id="3050">
+                    <visible>Window.IsVisible(Videos)</visible>
+                    <top>10</top>
+                    <width>340</width>
+                    <height>60</height>
+
+                    <control type="group">
+                        <visible>ControlGroup(3050).HasFocus</visible>
+                        
+                        <animation type="Visible" reversible="false">
+                            <include>ActiveOverlayAnimation</include>
+                        </animation>
+
+                        <include>ActiveOverlay</include>
+                    </control>
+
+                    <!-- Button -->
+                    <control type="togglebutton" id="3051">
+                        <onback>500</onback>
+                        <onup>500</onup>
+                        <ondown>500</ondown>
+                        <onleft>3040</onleft>
+                        <onright>3010</onright>
+
+                        <align>center</align>
+                        <textoffsety>13</textoffsety>
+
+                        <font>MenuItemLabel</font>
+                        <textcolor>Primary</textcolor>
+                        <disabledcolor>Secondary</disabledcolor>
+
+                        <label>Update library</label>
+                        <altlabel>Updating...</altlabel>
+
+                        <enable>!Library.IsScanningVideo</enable>
+                        <usealttexture>Library.IsScanningVideo</usealttexture>
+
+                        <onclick>UpdateLibrary(Video)</onclick>
+                        <onclick>Control.SetFocus(3040)</onclick>
+
+                        <texturenofocus colordiffuse="BackgroundPrimary">solid.png</texturenofocus>
+                        <texturefocus colordiffuse="BackgroundPrimary">solid.png</texturefocus>
+                        <alttexturenofocus colordiffuse="BackgroundSecondary">solid.png</alttexturenofocus>
+                        <alttexturefocus colordiffuse="BackgroundSecondary">solid.png</alttexturefocus>
+                    </control>
+                </control>
+
+            </control>
+        </control>
+    </include>
+
 </includes>

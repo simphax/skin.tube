@@ -6,6 +6,8 @@
     <include file="ViewTypes.xml"/>
 
     <include name="GlobalBackground">
+        <animation condition="ControlGroup(3000).HasFocus" effect="Slide" start="0,0" end="0,-100" time="150" tween="cubic" easing="out">Conditional</animation>
+
         <control type="image">
             <texture colordiffuse="GlobalBackground">solid.png</texture>
         </control>
