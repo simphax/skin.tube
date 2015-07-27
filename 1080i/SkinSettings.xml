@@ -411,9 +411,16 @@
 
                             <control type="radiobutton" id="203">
                                 <include>SettingsRadioButton</include>
-                                <label>Disable Scroll Bar</label>
+                                <label>Disable Horizontal Scroll Bar</label>
                                 <onclick>Skin.ToggleSetting(NoScrollBar)</onclick>
                                 <selected>Skin.HasSetting(NoScrollBar)</selected>
+                            </control>
+
+                            <control type="radiobutton" id="204">
+                                <include>SettingsRadioButton</include>
+                                <label>Rotate Fan Art on Home</label>
+                                <onclick>Skin.ToggleSetting(HomeFanArt)</onclick>
+                                <selected>Skin.HasSetting(HomeFanArt)</selected>
                             </control>
 
                         </control>

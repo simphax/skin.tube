@@ -31,10 +31,21 @@
             <visible>!Player.HasVideo</visible>
         </control>
 
+        <!-- multi image background -->
+        <control type="multiimage" id="99004">
+            <imagepath background="true">$INFO[Window(Home).Property(script.grab.fanart.Movie.FanArt)]</imagepath>
+            <aspectratio>scale</aspectratio>
+            <timeperimage>15000</timeperimage>
+            <fadetime>350</fadetime>
+            <randomize>true</randomize>
+            <visible>!IsEmpty(Window(Home).Property(script.grab.fanart.Global.FanArt)) + !Player.HasVideo + Skin.HasSetting(HomeFanArt) + Window.IsActive(Home)</visible>
+        </control>
+
         <control type="image">
             <texture colordiffuse="GlobalBackground">solid.png</texture>
 
-            <animation effect="Fade" condition="True" end="99" time="0">Conditional</animation>
+            <animation effect="Fade" condition="Window.IsActive(Home)" end="92" time="0">Conditional</animation>
+            <animation effect="Fade" condition="!Window.IsActive(Home)" end="99" time="0">Conditional</animation>
         </control>
     </include>
 
