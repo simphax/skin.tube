@@ -148,7 +148,7 @@
 
                 <texture colordiffuse="BusySpinner">icon-record.png</texture>
                 
-                <animation condition="true" effect="Slide" start="-262,0" end="262,0" time="500" center="auto" tween="cubic" easing="inout" pulse="true">Conditional</animation>
+                <animation condition="true" effect="Slide" start="-258,0" end="258,0" time="500" center="auto" tween="cubic" easing="inout" pulse="true">Conditional</animation>
             </control>
             <!--control type="image">
                 <centertop>50%</centertop>
@@ -306,7 +306,7 @@
 
             <!-- Controls -->
             <control type="grouplist" id="3001">
-                <top>15</top>
+                <top>11</top>
                 <align>center</align>
                 <orientation>horizontal</orientation>
 
