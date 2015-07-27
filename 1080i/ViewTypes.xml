@@ -602,8 +602,8 @@
                     <control type="togglebutton" id="3051">
                         <onup>500</onup>
                         <ondown>500</ondown>
-                        <!--onleft>3040</onleft>
-                        <onright>3010</onright-->
+                        <onleft>3040</onleft>
+                        <onright>3010</onright>
 
                         <align>center</align>
                         <textoffsety>13</textoffsety>
