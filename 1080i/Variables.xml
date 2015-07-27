@@ -116,4 +116,14 @@
         <value>ActivateWindow(Programs,Addons,return)</value>
     </variable>
 
+    <variable name="Home6Label">
+        <value condition="Skin.String(Home6.Label)">$INFO[Skin.String(Home6.Label)]</value>
+        <value>Apps</value>
+    </variable>
+
+    <variable name="Home6Path">
+        <value condition="Skin.String(Home6.Path)">$INFO[Skin.String(Home6.Path)]</value>
+        <value>ActivateWindow(Programs,Addons,return)</value>
+    </variable>
+
 </includes>

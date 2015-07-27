@@ -3,3 +3,5 @@
 .idea
 *.subl*
 *.afp*
+*.smbdelete*
+.DS_Store

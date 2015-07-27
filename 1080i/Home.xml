@@ -163,6 +163,16 @@
                     <animation condition="!Control.HasFocus(5)" effect="Fade" time="50" start="100" end="40">Conditional</animation>
                     <visible>!Skin.HasSetting(Home5Disable)</visible>
                 </control>
+                <control type="label">
+                    <width>auto</width>
+
+                    <font>WindowTitle</font>
+                    <textcolor>Primary</textcolor>
+
+                    <label>$INFO[Control.GetLabel(6)]</label>
+                    <animation condition="!Control.HasFocus(6)" effect="Fade" time="50" start="100" end="40">Conditional</animation>
+                    <visible>!Skin.HasSetting(Home6Disable)</visible>
+                </control>
 
             </control>
 
@@ -197,6 +207,12 @@
                     <onclick>$VAR[Home5Path]</onclick>
                     <ondown>301</ondown>
                     <visible>!Skin.HasSetting(Home5Disable)</visible>
+                </control>
+                <control type="button" id="6">
+                    <label>$VAR[Home6Label]</label>
+                    <onclick>$VAR[Home6Path]</onclick>
+                    <ondown>301</ondown>
+                    <visible>!Skin.HasSetting(Home6Disable)</visible>
                 </control>
             </control>
 

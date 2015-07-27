@@ -331,12 +331,67 @@
                             </control>
                             <control type="radiobutton" id="111">
                                 <top>-10</top>
-                                <ondown>201</ondown>
+                                <ondown>113</ondown>
                                 <include>SettingsRadioButton</include>
                                 <label>Enable</label>
                                 <onclick>False</onclick>
                                 <onclick>Skin.ToggleSetting(Home5Disable)</onclick>
                                 <selected>!Skin.HasSetting(Home5Disable)</selected>
+                            </control>
+
+                            <!-- Menu item 6 -->
+                            <control type="grouplist" id="113">
+                                <orientation>horizontal</orientation>
+                                <itemgap>10</itemgap>
+                                <width>780</width>
+                                <height>70</height>
+                                <top>10</top>
+                                <usecontrolcoords>true</usecontrolcoords>
+
+                                <control type="image">
+                                    <width>60</width>
+                                    <bottom>10</bottom>
+                                    <texture colordiffuse="BackgroundPrimary">solid.png</texture>
+                                    <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(303)">Conditional</animation>
+                                </control>
+
+                                <control type="button" id="304">
+                                    <left>-52</left>
+                                    <ondown>114</ondown>
+                                    <centertop>30</centertop>
+                                    <width>24</width>
+                                    <height>24</height>
+                                    <texturefocus colordiffuse="Primary">icon-favourite.png</texturefocus>
+                                    <texturenofocus colordiffuse="Secondary">icon-favourite.png</texturenofocus>
+                                    <include>SettingsButton</include>
+                                    <onclick>RunScript(script.favourites,property=Home6)</onclick>
+                                </control>
+
+                                <control type="button" id="21">
+                                    <left>18</left>
+                                    <ondown>114</ondown>
+                                    <width>180</width>
+                                    <include>SettingsButton</include>
+                                    <label>$VAR[Home6Label]</label>
+                                    <onclick>Skin.SetString(Home6.Label)</onclick>
+                                </control>
+
+                                <control type="button" id="22">
+                                    <ondown>114</ondown>
+                                    <width>520</width>
+                                    <include>SettingsButton</include>
+                                    <label>$VAR[Home6Path]</label>
+                                    <onclick>Skin.SetString(Home6.Path)</onclick>
+                                </control>
+                            </control>
+                            <control type="radiobutton" id="114">
+                                <top>-10</top>
+                                <ondown>201</ondown>
+                                <include>SettingsRadioButton</include>
+                                <label>Enable</label>
+                                <onclick>False</onclick>
+                                <onclick>Skin.ToggleSetting(Home6Disable)</onclick>
+                                <selected>!Skin.HasSetting(Home6Disable)</selected>
                             </control>
 
 
