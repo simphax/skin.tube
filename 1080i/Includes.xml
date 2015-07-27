@@ -36,7 +36,7 @@
         <control type="wraplist" id="9600">
             <visible>!Player.HasVideo + Skin.HasSetting(HomeFanArt) + Window.IsActive(Home)</visible>
             <aspectratio>scale</aspectratio>
-            <autoscroll time="20000">True</autoscroll>
+            <autoscroll time="26000">True</autoscroll>
             <orientation>horizontal</orientation>
             <preloaditems>1</preloaditems>
             <itemlayout width="1920" height="1080">
