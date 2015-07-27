@@ -238,7 +238,7 @@
     <!-- Controls the visibility of the scrollbar, from Black's Experience1080 -->
     <include name="ViewScrollbarVisibility">
         <control type="group">
-            <!--visible>Skin.HasSetting(ScrollBar)</visible-->
+            <visible>!Skin.HasSetting(NoScrollBar)</visible>
             <control type="image" id="601">
                 <animation effect="fade" start="100" end="0" time="0" delay="1500" condition="!Window.Previous(FullscreenVideo)">WindowOpen</animation>
             </control>
@@ -273,9 +273,10 @@
 
     <include name="ViewScrollbarHorizontal">
         <control type="scrollbar" id="600">
+            <visible allowhiddenfocus="true">!Skin.HasSetting(NoScrollBar)</visible>
             
-            <!--onfocus condition="!Skin.HasSetting(ScrollBar) + Skin.HasSetting(KioskMode)">Control.SetFocus(500)</onfocus>
-            <onfocus condition="!Skin.HasSetting(ScrollBar) + !Skin.HasSetting(KioskMode)">Control.SetFocus(3000)</onfocus-->
+            <onfocus condition="Skin.HasSetting(NoScrollBar) + Skin.HasSetting(KioskMode)">Control.SetFocus(500)</onfocus>
+            <onfocus condition="Skin.HasSetting(NoScrollBar) + !Skin.HasSetting(KioskMode)">Control.SetFocus(3000)</onfocus>
 
             <top>850</top>
             <width>1720</width>
