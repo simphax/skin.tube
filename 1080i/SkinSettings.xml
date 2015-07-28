@@ -428,6 +428,13 @@
                                 <label>$VAR[FanartItemsPath]</label>
                                 <onclick>Skin.SetString(FanartItemsPath)</onclick>
                             </control>
+
+                            <control type="radiobutton" id="206">
+                                <include>SettingsRadioButton</include>
+                                <label>Home system buttons as drawer</label>
+                                <onclick>Skin.ToggleSetting(HomeDrawer)</onclick>
+                                <selected>Skin.HasSetting(HomeDrawer)</selected>
+                            </control>
                         </control>
 
                         <control type="scrollbar" id="121">
