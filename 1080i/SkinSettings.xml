@@ -528,6 +528,13 @@
                                 <label>$VAR[FanartItemsPath]</label>
                                 <onclick>Skin.SetString(FanartItemsPath)</onclick>
                             </control>
+
+                            <control type="radiobutton" id="407">
+                                <include>SettingsRadioButton</include>
+                                <label>Delay startup 8 seconds</label>
+                                <onclick>Skin.ToggleSetting(DelayedStart)</onclick>
+                                <selected>Skin.HasSetting(DelayedStart)</selected>
+                            </control>
                         </control>
 
                         <control type="scrollbar" id="121">

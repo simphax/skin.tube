@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window>
+    <defaultcontrol always="true">9315</defaultcontrol>
+    <controls>
+	    <control type="button" id="9315">
+	        <visible allowhiddenfocus="true">false</visible>
+	        <onfocus condition="!Skin.HasSetting(DelayedStart)">ReplaceWindow(Home)</onfocus>
+	        <onfocus condition="Skin.HasSetting(DelayedStart)">AlarmClock(GoHome,ReplaceWindow(Home),00:08,silent,false)</onfocus>
+	    </control>
+	</controls>
+</window>
