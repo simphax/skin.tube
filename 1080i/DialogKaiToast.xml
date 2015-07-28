@@ -12,6 +12,7 @@
                 <effect type="Fade" start="100" end="0" time="150" tween="cubic" easing="in"/>
                 <effect type="Slide" start="0,0" end="-500,0" time="150" center="auto" tween="cubic" easing="in"/>
             </animation>
+
             <control type="grouplist">
                 <top>91</top>
                 <right>100</right>
