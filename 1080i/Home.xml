@@ -69,8 +69,8 @@
                     <width>40</width>
                     <height>40</height>
 
-                    <texturenofocus colordiffuse="Primary">circle-exit.png</texturenofocus>
-                    <texturefocus colordiffuse="Primary">circle-exit.png</texturefocus>
+                    <texturenofocus colordiffuse="Primary">circle-shutdown.png</texturenofocus>
+                    <texturefocus colordiffuse="Primary">circle-shutdown.png</texturefocus>
                     <animation condition="!Control.HasFocus(103)" effect="Fade" time="50" start="100" end="40">Conditional</animation>
 
                     <onclick>$VAR[ExitPath]</onclick>
@@ -250,11 +250,11 @@
                         <width>50</width>
                         <height>50</height>
 
-                        <texturenofocus colordiffuse="Primary">circle-update-50.png</texturenofocus>
-                        <texturefocus colordiffuse="Primary">circle-update-50.png</texturefocus>
+                        <texturenofocus colordiffuse="Primary">circle-favourites-50.png</texturenofocus>
+                        <texturefocus colordiffuse="Primary">circle-favourites-50.png</texturefocus>
                         <animation condition="!Control.HasFocus(102)" effect="Fade" time="50" start="100" end="40">Conditional</animation>
 
-                        <onclick>$VAR[RestartPath]</onclick>
+                        <onclick>$VAR[FavouritesPath]</onclick>
                     </control>
                     <control type="button" id="103">
                         <onup>300</onup>
@@ -262,9 +262,21 @@
                         <width>50</width>
                         <height>50</height>
 
-                        <texturenofocus colordiffuse="Primary">circle-exit-50.png</texturenofocus>
-                        <texturefocus colordiffuse="Primary">circle-exit-50.png</texturefocus>
+                        <texturenofocus colordiffuse="Primary">circle-update-50.png</texturenofocus>
+                        <texturefocus colordiffuse="Primary">circle-update-50.png</texturefocus>
                         <animation condition="!Control.HasFocus(103)" effect="Fade" time="50" start="100" end="40">Conditional</animation>
+
+                        <onclick>$VAR[RestartPath]</onclick>
+                    </control>
+                    <control type="button" id="104">
+                        <onup>300</onup>
+                        <ondown>300</ondown>
+                        <width>50</width>
+                        <height>50</height>
+
+                        <texturenofocus colordiffuse="Primary">circle-shutdown-50.png</texturenofocus>
+                        <texturefocus colordiffuse="Primary">circle-shutdown-50.png</texturefocus>
+                        <animation condition="!Control.HasFocus(104)" effect="Fade" time="50" start="100" end="40">Conditional</animation>
 
                         <onclick>$VAR[ExitPath]</onclick>
                     </control>

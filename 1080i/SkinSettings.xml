@@ -400,7 +400,7 @@
                                 <include>DialogTitle</include>
                                 <label>System buttons</label>
                             </control>
-                            <!-- restart button -->
+                            <!-- favourites button -->
                             <control type="grouplist" id="201">
                                 <orientation>horizontal</orientation>
                                 <itemgap>10</itemgap>
@@ -415,7 +415,7 @@
                                     <height>40</height>
                                     <align>center</align>
 
-                                    <texture colordiffuse="Secondary">circle-update.png</texture>
+                                    <texture colordiffuse="Secondary">circle-favourites-50.png</texture>
                                 </control>
 
                                 <control type="button" id="202">
@@ -423,11 +423,11 @@
                                     <width>710</width>
                                     <ondown>203</ondown>
                                     <include>SettingsButton</include>
-                                    <label>$VAR[RestartPath]</label>
-                                    <onclick>Skin.SetString(RestartPath)</onclick>
+                                    <label>$VAR[FavouritesPath]</label>
+                                    <onclick>Skin.SetString(FavouritesPath)</onclick>
                                 </control>
                             </control>
-                            <!-- shutdown button -->
+                            <!-- restart button -->
                             <control type="grouplist" id="203">
                                 <orientation>horizontal</orientation>
                                 <itemgap>10</itemgap>
@@ -443,10 +443,38 @@
                                     <height>40</height>
                                     <align>center</align>
 
-                                    <texture colordiffuse="Secondary">circle-exit.png</texture>
+                                    <texture colordiffuse="Secondary">circle-update.png</texture>
                                 </control>
 
                                 <control type="button" id="204">
+                                    <left>10</left>
+                                    <width>710</width>
+                                    <ondown>205</ondown>
+                                    <include>SettingsButton</include>
+                                    <label>$VAR[RestartPath]</label>
+                                    <onclick>Skin.SetString(RestartPath)</onclick>
+                                </control>
+                            </control>
+                            <!-- shutdown button -->
+                            <control type="grouplist" id="205">
+                                <orientation>horizontal</orientation>
+                                <itemgap>10</itemgap>
+                                <width>780</width>
+                                <height>70</height>
+                                <top>-10</top>
+                                <usecontrolcoords>true</usecontrolcoords>
+
+                                <control type="image">
+                                    <top>10</top>
+                                    <left>10</left>
+                                    <width>40</width>
+                                    <height>40</height>
+                                    <align>center</align>
+
+                                    <texture colordiffuse="Secondary">circle-shutdown.png</texture>
+                                </control>
+
+                                <control type="button" id="206">
                                     <left>10</left>
                                     <width>710</width>
                                     <ondown>401</ondown>
