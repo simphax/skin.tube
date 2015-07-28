@@ -217,7 +217,6 @@
 
              <control type="group" id="3000">
                 <visible>Skin.HasSetting(HomeDrawer)</visible>
-                <defaultcontrol always="true">101</defaultcontrol>
                 <control type="image">
                     <texture colordiffuse="DrawerBackground">solid.png</texture>
                 </control>
@@ -235,6 +234,7 @@
                     <usecontrolcoords>true</usecontrolcoords>
                     <control type="button" id="101">
                         <onup>300</onup>
+                        <ondown>300</ondown>
                         <width>50</width>
                         <height>50</height>
 
@@ -246,6 +246,7 @@
                     </control>
                     <control type="button" id="102">
                         <onup>300</onup>
+                        <ondown>300</ondown>
                         <width>50</width>
                         <height>50</height>
 
@@ -257,6 +258,7 @@
                     </control>
                     <control type="button" id="103">
                         <onup>300</onup>
+                        <ondown>300</ondown>
                         <width>50</width>
                         <height>50</height>
 
