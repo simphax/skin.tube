@@ -386,50 +386,112 @@
                             </control>
                             <control type="radiobutton" id="114">
                                 <top>-10</top>
-                                <ondown>201</ondown>
+                                <ondown>200</ondown>
                                 <include>SettingsRadioButton</include>
                                 <label>Enable</label>
                                 <onclick>False</onclick>
                                 <onclick>Skin.ToggleSetting(Home6Disable)</onclick>
                                 <selected>!Skin.HasSetting(Home6Disable)</selected>
                             </control>
+                            <control type="label" id="200">
+                                <top>10</top>
+                                <font>MenuItemLabel</font>
+                                <textcolor>Primary</textcolor>
+                                <include>DialogTitle</include>
+                                <label>System buttons</label>
+                            </control>
+                            <control type="grouplist" id="201">
+                                <orientation>horizontal</orientation>
+                                <itemgap>10</itemgap>
+                                <width>780</width>
+                                <height>70</height>
+                                <top>10</top>
+                                <usecontrolcoords>true</usecontrolcoords>
+
+                                <control type="image">
+                                    <top>10</top>
+                                    <left>10</left>
+                                    <width>40</width>
+                                    <height>40</height>
+                                    <align>center</align>
+
+                                    <texture colordiffuse="Secondary">circle-update.png</texture>
+                                </control>
+
+                                <control type="button" id="202">
+                                    <left>10</left>
+                                    <width>710</width>
+                                    <ondown>203</ondown>
+                                    <include>SettingsButton</include>
+                                    <label>$VAR[RestartPath]</label>
+                                    <onclick>Skin.SetString(RestartPath)</onclick>
+                                </control>
+                            </control>
+                            <control type="grouplist" id="203">
+                                <orientation>horizontal</orientation>
+                                <itemgap>10</itemgap>
+                                <width>780</width>
+                                <height>70</height>
+                                <top>-10</top>
+                                <usecontrolcoords>true</usecontrolcoords>
+
+                                <control type="image">
+                                    <top>10</top>
+                                    <left>10</left>
+                                    <width>40</width>
+                                    <height>40</height>
+                                    <align>center</align>
+
+                                    <texture colordiffuse="Secondary">circle-exit.png</texture>
+                                </control>
+
+                                <control type="button" id="204">
+                                    <left>10</left>
+                                    <width>710</width>
+                                    <ondown>401</ondown>
+                                    <include>SettingsButton</include>
+                                    <label>$VAR[ExitPath]</label>
+                                    <onclick>Skin.SetString(ExitPath)</onclick>
+                                </control>
+                            </control>
 
 
-                            <control type="label" id="201">
+                            <control type="label" id="401">
                                 <font>MenuItemLabel</font>
                                 <textcolor>Primary</textcolor>
                                 <include>DialogTitle</include>
                                 <label>Extra</label>
                             </control>
 
-                            <control type="radiobutton" id="202">
+                            <control type="radiobutton" id="402">
                                 <include>SettingsRadioButton</include>
                                 <label>Alternative Video Info View</label>
                                 <onclick>Skin.ToggleSetting(AltVideoInfo)</onclick>
                                 <selected>Skin.HasSetting(AltVideoInfo)</selected>
                             </control>
 
-                            <control type="radiobutton" id="203">
+                            <control type="radiobutton" id="403">
                                 <include>SettingsRadioButton</include>
                                 <label>Disable Horizontal Scroll Bar</label>
                                 <onclick>Skin.ToggleSetting(NoScrollBar)</onclick>
                                 <selected>Skin.HasSetting(NoScrollBar)</selected>
                             </control>
 
-                            <control type="radiobutton" id="204">
+                            <control type="radiobutton" id="404">
                                 <include>SettingsRadioButton</include>
                                 <label>Rotate Fan Art on Home</label>
                                 <onclick>Skin.ToggleSetting(HomeFanArt)</onclick>
                                 <selected>Skin.HasSetting(HomeFanArt)</selected>
                             </control>
-                            <control type="button" id="205">
+                            <control type="button" id="405">
                                 <left>100</left>
+                                <visible>Skin.HasSetting(HomeFanArt)</visible>
                                 <include>SettingsButton</include>
                                 <label>$VAR[FanartItemsPath]</label>
                                 <onclick>Skin.SetString(FanartItemsPath)</onclick>
                             </control>
 
-                            <control type="radiobutton" id="206">
+                            <control type="radiobutton" id="406">
                                 <include>SettingsRadioButton</include>
                                 <label>Home system buttons as drawer</label>
                                 <onclick>Skin.ToggleSetting(HomeDrawer)</onclick>

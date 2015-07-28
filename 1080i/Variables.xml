@@ -131,4 +131,13 @@
         <value>special://skin/extras/playlists/RandomMovies.xsp</value>
     </variable>
 
+    <variable name="RestartPath">
+        <value condition="Skin.String(RestartPath)">$INFO[Skin.String(RestartPath)]</value>
+        <value>Reboot()</value>
+    </variable>
+    <variable name="ExitPath">
+        <value condition="Skin.String(ExitPath)">$INFO[Skin.String(ExitPath)]</value>
+        <value>ShutDown()</value>
+    </variable>
+
 </includes>

@@ -54,7 +54,7 @@
                     <texturefocus colordiffuse="Primary">circle-update.png</texturefocus>
                     <animation condition="!Control.HasFocus(102)" effect="Fade" time="50" start="100" end="40">Conditional</animation>
 
-                    <onclick>ReloadSkin()</onclick>
+                    <onclick>$VAR[RestartPath]</onclick>
                 </control>
                 <control type="button" id="103">
                     <animation type="WindowOpen">
@@ -73,7 +73,7 @@
                     <texturefocus colordiffuse="Primary">circle-exit.png</texturefocus>
                     <animation condition="!Control.HasFocus(103)" effect="Fade" time="50" start="100" end="40">Conditional</animation>
 
-                    <onclick>Quit()</onclick>
+                    <onclick>$VAR[ExitPath]</onclick>
                 </control>
             </control>
 
@@ -254,7 +254,7 @@
                         <texturefocus colordiffuse="Primary">circle-update-50.png</texturefocus>
                         <animation condition="!Control.HasFocus(102)" effect="Fade" time="50" start="100" end="40">Conditional</animation>
 
-                        <onclick>ReloadSkin()</onclick>
+                        <onclick>$VAR[RestartPath]</onclick>
                     </control>
                     <control type="button" id="103">
                         <onup>300</onup>
@@ -266,7 +266,7 @@
                         <texturefocus colordiffuse="Primary">circle-exit-50.png</texturefocus>
                         <animation condition="!Control.HasFocus(103)" effect="Fade" time="50" start="100" end="40">Conditional</animation>
 
-                        <onclick>Quit()</onclick>
+                        <onclick>$VAR[ExitPath]</onclick>
                     </control>
 
                 </control>
