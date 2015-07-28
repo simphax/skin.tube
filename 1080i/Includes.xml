@@ -5,8 +5,12 @@
     <include file="Defaults.xml"/>
     <include file="ViewTypes.xml"/>
 
+    <include name="DrawerPushAnimation">
+        <animation condition="!IsEmpty(Window(Home).Property(DrawerUp))" effect="Slide" start="0,0" end="0,-100" time="150" tween="cubic" easing="out">Conditional</animation>
+    </include>
+
     <include name="GlobalBackground">
-        <animation condition="ControlGroup(3000).HasFocus" effect="Slide" start="0,0" end="0,-100" time="150" tween="cubic" easing="out">Conditional</animation>
+        <include>DrawerPushAnimation</include>
 
         <control type="image">
             <texture colordiffuse="GlobalBackground">solid.png</texture>

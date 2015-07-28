@@ -4,6 +4,8 @@
     <controls>
 
         <control type="group">
+            <include>DrawerPushAnimation</include>
+            
             <animation type="WindowOpen">
                 <effect type="Fade" start="0" end="100" time="300" tween="cubic"/>
                 <effect type="Slide" start="-500,0" end="0,0" time="300" center="auto" tween="back"/>

@@ -2,7 +2,9 @@
 <window id="28">
     <defaultcontrol always="true">505</defaultcontrol>
     <views>500,505</views>
-
+    <onload>ClearProperty(DrawerUp,Home)</onload>
+    <onunload>ClearProperty(DrawerUp,Home)</onunload>
+    
     <controls>
         <control type="group">
             <include>GlobalBackground</include>

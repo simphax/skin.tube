@@ -2,6 +2,8 @@
 <window id="27">
     <defaultcontrol always="true">500</defaultcontrol>
     <views>500,504,505</views>
+    <onload>ClearProperty(DrawerUp,Home)</onload>
+    <onunload>ClearProperty(DrawerUp,Home)</onunload>
 
     <controls>
         <control type="group">

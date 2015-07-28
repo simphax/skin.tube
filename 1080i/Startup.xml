@@ -2,6 +2,7 @@
 <!-- Foundation -->
 <window>
     <defaultcontrol always="true">9315</defaultcontrol>
+    <onload>ClearProperty(DrawerUp,Home)</onload>
     <controls>
 	    <control type="button" id="9315">
 	        <visible allowhiddenfocus="true">false</visible>

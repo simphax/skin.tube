@@ -295,7 +295,15 @@
     <include name="ViewOptions">
         <!-- View options -->
         <control type="group" id="3000">
+            <defaultcontrol always="true">3001</defaultcontrol>
             <visible>!Skin.HasSetting(KioskMode)</visible>
+            <control type="button" id="3001">
+                <visible allowhiddenfocus="true">False</visible>
+                <onfocus condition="!IsEmpty(Window(Home).Property(DrawerUp))">ClearProperty(DrawerUp,Home)</onfocus>
+                <onfocus condition="IsEmpty(Window(Home).Property(DrawerUp))">SetProperty(DrawerUp,1,Home)</onfocus>
+                <onfocus condition="!IsEmpty(Window(Home).Property(DrawerUp))">SetFocus(500)</onfocus>
+                <onfocus condition="IsEmpty(Window(Home).Property(DrawerUp))">SetFocus(3002)</onfocus>
+            </control>
 
             <control type="image">
                 <texture colordiffuse="DrawerBackground">solid.png</texture>
@@ -305,7 +313,7 @@
             <height>100</height>
 
             <!-- Controls -->
-            <control type="grouplist" id="3001">
+            <control type="grouplist" id="3002">
                 <top>11</top>
                 <align>center</align>
                 <orientation>horizontal</orientation>
@@ -370,10 +378,9 @@
 
                     <control type="button" id="2">
 
-                        <onback>500</onback>
-                        <onup>500</onup>
-
-                        <ondown>500</ondown>
+                        <onback>3001</onback>
+                        <onup>3001</onup>
+                        <ondown>3001</ondown>
 
                         <onleft condition="Control.IsVisible(3050)">3050</onleft>
                         <onleft condition="!Control.IsVisible(3050)">3040</onleft>
@@ -441,9 +448,9 @@
                     </control>
 
                     <control type="button" id="3">
-                        <onback>500</onback>
-                        <onup>500</onup>
-                        <ondown>500</ondown>
+                        <onback>3001</onback>
+                        <onup>3001</onup>
+                        <ondown>3001</ondown>
 
                         <onleft>3010</onleft>
                         <onright>3030</onright>
@@ -497,9 +504,9 @@
                         </control>
 
                         <control type="radiobutton" id="4">
-                            <onback>500</onback>
-                            <onup>500</onup>
-                            <ondown>500</ondown>
+                            <onback>3001</onback>
+                            <onup>3001</onup>
+                            <ondown>3001</ondown>
                             <onleft>3020</onleft>
                             <onright>3040</onright>
 
@@ -561,9 +568,9 @@
                         </control>
 
                         <control type="radiobutton" id="14">
-                            <onback>500</onback>
-                            <onup>500</onup>
-                            <ondown>500</ondown>
+                            <onback>3001</onback>
+                            <onup>3001</onup>
+                            <ondown>3001</ondown>
                             <onleft>3030</onleft>
                             <onright condition="Control.IsVisible(3050)">3050</onright>
                             <onright condition="!Control.IsVisible(3050)">3010</onright>
@@ -648,9 +655,9 @@
 
                     <!-- Button -->
                     <control type="togglebutton" id="3051">
-                        <onback>500</onback>
-                        <onup>500</onup>
-                        <ondown>500</ondown>
+                        <onback>3001</onback>
+                        <onup>3001</onup>
+                        <ondown>3001</ondown>
                         <onleft>3040</onleft>
                         <onright>3010</onright>
 
