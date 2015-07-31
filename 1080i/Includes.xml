@@ -43,6 +43,7 @@
             <autoscroll time="26000">True</autoscroll>
             <orientation>horizontal</orientation>
             <preloaditems>1</preloaditems>
+            <left>1920</left>
             <itemlayout width="1920" height="1080">
             </itemlayout>
             <focusedlayout width="1920" height="1080">
