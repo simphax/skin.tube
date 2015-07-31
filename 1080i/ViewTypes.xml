@@ -386,6 +386,7 @@
                         <onleft condition="!Control.IsVisible(3050)">3040</onleft>
                         <onright>3020</onright>
 
+                        <onclick>Container.PreviousViewMode</onclick>
                         <onclick>Container.NextViewMode</onclick>
                     </control>
                 </control>
@@ -455,6 +456,7 @@
                         <onleft>3010</onleft>
                         <onright>3030</onright>
 
+                        <onclick>Container.PreviousSortMethod</onclick>
                         <onclick>Container.NextSortMethod</onclick>
                     </control>
                 </control>
