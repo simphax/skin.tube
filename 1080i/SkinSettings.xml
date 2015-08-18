@@ -521,15 +521,45 @@
                                 <onclick>Skin.ToggleSetting(HomeFanArt)</onclick>
                                 <selected>Skin.HasSetting(HomeFanArt)</selected>
                             </control>
-                            <control type="button" id="406">
-                                <left>100</left>
+
+                            <control type="grouplist" id="406">
+                                <orientation>horizontal</orientation>
+                                <itemgap>10</itemgap>
+                                <width>780</width>
+                                <height>70</height>
+                                <usecontrolcoords>true</usecontrolcoords>
                                 <visible>Skin.HasSetting(HomeFanArt)</visible>
-                                <include>SettingsButton</include>
-                                <label>$VAR[FanartItemsPath]</label>
-                                <onclick>Skin.SetString(FanartItemsPath)</onclick>
+
+                                <control type="image">
+                                    <left>40</left>
+                                    <width>60</width>
+                                    <bottom>10</bottom>
+                                    <texture colordiffuse="BackgroundPrimary">solid.png</texture>
+                                    <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(407)">Conditional</animation>
+                                </control>
+
+                                <control type="button" id="407">
+                                    <left>-52</left>
+                                    <ondown>409</ondown>
+                                    <centertop>30</centertop>
+                                    <width>24</width>
+                                    <height>24</height>
+                                    <texturefocus colordiffuse="Primary">icon-favourite.png</texturefocus>
+                                    <texturenofocus colordiffuse="Secondary">icon-favourite.png</texturenofocus>
+                                    <include>SettingsButton</include>
+                                    <onclick>RunScript(script.favourites,property=FanartItems)</onclick>
+                                </control>
+                                <control type="button" id="408">
+                                    <left>18</left>
+                                    <ondown>409</ondown>
+                                    <width>668</width>
+                                    <include>SettingsButton</include>
+                                    <label>$VAR[FanartItemsPath]</label>
+                                    <onclick>Skin.SetString(FanartItems.List)</onclick>
+                                </control>
                             </control>
 
-                            <control type="radiobutton" id="407">
+                            <control type="radiobutton" id="409">
                                 <include>SettingsRadioButton</include>
                                 <label>Delay startup 8 seconds</label>
                                 <onclick>Skin.ToggleSetting(DelayedStart)</onclick>
