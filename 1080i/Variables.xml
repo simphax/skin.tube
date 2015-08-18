@@ -127,8 +127,13 @@
     </variable>
 
     <variable name="FanartItemsPath">
-        <value condition="Skin.String(FanartItemsPath)">$INFO[Skin.String(FanartItemsPath)]</value>
+        <value condition="Skin.String(FanartItems.List)">$INFO[Skin.String(FanartItems.List)]</value>
         <value>special://skin/extras/playlists/RandomMovies.xsp</value>
+    </variable>
+
+    <variable name="PicturesPath">
+        <value condition="Skin.String(PicturesPath)">$INFO[Skin.String(PicturesPath)]</value>
+        <value></value>
     </variable>
 
     <variable name="FavouritesPath">
