@@ -48,7 +48,7 @@
             </itemlayout>
             <focusedlayout width="1920" height="1080">
             </focusedlayout>
-            <content target="video">$VAR[FanartItemsPath]</content>
+            <content>$VAR[FanartItemsPath]</content>
         </control>
         <control type="multiimage" id="99004">
             <animation effect="Fade" time="200" tween="cubic" easing="out">WindowOpen</animation>
@@ -61,6 +61,18 @@
             <timeperimage>100</timeperimage>
             <randomize>true</randomize>
             <visible>!Player.HasVideo + Skin.HasSetting(HomeFanArt) + Window.IsActive(Home)</visible>
+        </control>
+        <control type="multiimage" id="99005">
+            <animation effect="Fade" time="200" tween="cubic" easing="out">WindowOpen</animation>
+            <animation effect="Fade" time="50" tween="cubic" easing="in">WindowClose</animation>
+            <animation effect="Fade" time="200" tween="cubic" easing="out">Visible</animation>
+            <animation effect="Fade" time="50" tween="cubic" easing="in">Hidden</animation>
+            <imagepath background="true">$VAR[PicturesPath]</imagepath>
+            <aspectratio>scale</aspectratio>
+            <fadetime>600</fadetime>
+            <timeperimage>26000</timeperimage>
+            <randomize>true</randomize>
+            <visible>!Player.HasVideo + Skin.HasSetting(HomePictures) + Window.IsActive(Home)</visible>
         </control>
 
         <control type="image">

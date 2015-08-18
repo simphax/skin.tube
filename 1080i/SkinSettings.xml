@@ -519,6 +519,7 @@
                                 <include>SettingsRadioButton</include>
                                 <label>Rotate Fan Art on Home</label>
                                 <onclick>Skin.ToggleSetting(HomeFanArt)</onclick>
+                                <onclick>Skin.Reset(HomePictures)</onclick>
                                 <selected>Skin.HasSetting(HomeFanArt)</selected>
                             </control>
 
@@ -559,7 +560,52 @@
                                 </control>
                             </control>
 
+
                             <control type="radiobutton" id="409">
+                                <include>SettingsRadioButton</include>
+                                <label>Rotate Pictures on Home</label>
+                                <onclick>Skin.ToggleSetting(HomePictures)</onclick>
+                                <onclick>Skin.Reset(HomeFanArt)</onclick>
+                                <selected>Skin.HasSetting(HomePictures)</selected>
+                            </control>
+
+                            <control type="grouplist" id="410">
+                                <orientation>horizontal</orientation>
+                                <itemgap>10</itemgap>
+                                <width>780</width>
+                                <height>70</height>
+                                <usecontrolcoords>true</usecontrolcoords>
+                                <visible>Skin.HasSetting(HomePictures)</visible>
+
+                                <control type="image">
+                                    <left>40</left>
+                                    <width>60</width>
+                                    <bottom>10</bottom>
+                                    <texture colordiffuse="BackgroundPrimary">solid.png</texture>
+                                    <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(411)">Conditional</animation>
+                                </control>
+
+                                <control type="button" id="411">
+                                    <left>-52</left>
+                                    <ondown>413</ondown>
+                                    <centertop>30</centertop>
+                                    <width>24</width>
+                                    <height>24</height>
+                                    <texturefocus colordiffuse="Primary">icon-browser.png</texturefocus>
+                                    <texturenofocus colordiffuse="Secondary">icon-browse.png</texturenofocus>
+                                    <include>SettingsButton</include>
+                                </control>
+                                <control type="button" id="412">
+                                    <left>18</left>
+                                    <ondown>413</ondown>
+                                    <width>668</width>
+                                    <include>SettingsButton</include>
+                                    <label>$VAR[PicturesPath]</label>
+                                    <onclick>Skin.SetString(PicturesPath)</onclick>
+                                </control>
+                            </control>
+
+                            <control type="radiobutton" id="413">
                                 <include>SettingsRadioButton</include>
                                 <label>Delay startup 8 seconds</label>
                                 <onclick>Skin.ToggleSetting(DelayedStart)</onclick>

@@ -131,6 +131,11 @@
         <value>special://skin/extras/playlists/RandomMovies.xsp</value>
     </variable>
 
+    <variable name="PicturesPath">
+        <value condition="Skin.String(PicturesPath)">$INFO[Skin.String(PicturesPath)]</value>
+        <value></value>
+    </variable>
+
     <variable name="FavouritesPath">
         <value condition="Skin.String(FavouritesPath)">$INFO[Skin.String(FavouritesPath)]</value>
         <value>ActivateWindow(Favourites)</value>
