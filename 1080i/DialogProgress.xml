@@ -26,19 +26,17 @@
                 </control>
 
                 <control type="progress" id="20">
-                        <width>200</width>
-                        <height>30</height>
-                        <visible>true</visible>
-                        <!--texturebg>mybackgroundtexture.png</texturebg>
-                        <lefttexture>mydowntexture.png</lefttexture>
-                        <midtexture>mymidtexture.png</midtexture>
-                        <righttexture>myrighttexture.png</righttexture-->
-                        <overlaytexture colordiffuse="Primary">solid.png</overlaytexture>
+                    <width>420</width>
+                    <top>10</top>
+                    <height>8</height>
+                    <visible>true</visible>
+                    <texturebg colordiffuse="Secondary">solid.png</texturebg>
+                    <midtexture colordiffuse="Primary">solid.png</midtexture>
                 </control>
 
                 <!-- Button -->
                 <control type="group">
-                    <top>20</top>
+                    <top>22</top>
                     <centerleft>50%</centerleft>
                     <width>240</width>
                     <height>60</height>
