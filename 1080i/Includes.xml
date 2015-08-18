@@ -85,7 +85,7 @@
 
     <include name="GlobalTime">
         <control type="grouplist">
-            <visible>!Window.IsActive(10151) + !Window.IsActive(10107)</visible>
+            <visible>!Window.IsActive(ExtendedProgressDialog) + !Window.IsActive(InfoDialog) + !Window.IsActive(VolumeBar)</visible>
             <animation type="Visible">
                 <effect type="Fade" start="0" end="100" time="300"/>
             </animation>
