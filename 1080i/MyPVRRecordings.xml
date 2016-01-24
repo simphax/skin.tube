@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">505</defaultcontrol>
+    <views>500,505</views>
+    <onload>ClearProperty(DrawerUp,Home)</onload>
+    <onunload>ClearProperty(DrawerUp,Home)</onunload>
+    
+    <controls>
+        <control type="group">
+            <include>GlobalBackground</include>
+            <include>GlobalTime</include>
+
+            <include>WindowTitle</include>
+
+            <!-- Content -->
+            <control type="group">
+                <include>ContentCommon</include>
+
+                <!-- Animations -->
+                <animation type="WindowOpen" condition="Window.Previous(Home)">
+                    <include>WindowOpenForwards</include>
+                </animation>
+                <animation type="WindowClose" condition="Window.Next(Home)">
+                    <include>WindowCloseBackwards</include>
+                </animation>
+
+                <animation type="Visible">
+                    <include>WindowOpenBackwards</include>
+                </animation>
+                <animation type="Hidden">
+                    <include>WindowCloseForwards</include>
+                </animation>
+
+
+                <!-- Views -->
+                <control type="group" id="2000">
+                    <top>160</top>
+                    <bottom>90</bottom>
+                    <left>100</left>
+                    <right>100</right>
+                    <include>ViewScrollbarVisibility</include>
+
+                    <include>ViewTypeList</include>
+                    <include>ViewTypeListExt</include>
+                </control>
+
+                <include>ViewOptions</include>
+            </control>
+        </control>
+    </controls>
+</window>
