@@ -4,6 +4,8 @@
     <controls>
 
         <control type="group">
+            <visible>!Window.IsVisible(fullscreenvideo)</visible>
+            <visible>!Window.IsVisible(visualisation)</visible>
             <include>DrawerPushAnimation</include>
             
             <animation type="WindowOpen">
@@ -40,8 +42,28 @@
                     <textcolor>Primary</textcolor>
                     <font>WindowTitleSecondary</font>
                 </control>
+                <control type="image">
+                    <top>2</top>
+                    <left>5</left>
+                    <width>45</width>
+                    <height>45</height>
+                    <texture>$INFO[Control.GetLabel(32),progress/circle,.png]</texture>
+                    <aspectratio align="center" aligny="center">keep</aspectratio>
+                </control>
 
+                <control type="image">
+                    <top>2</top>
+                    <left>-50</left>
+                    <width>45</width>
+                    <height>45</height>
+                    <texture colordiffuse="33FFFFFF">progress/circle100.png</texture>
+                    <aspectratio align="center" aligny="center">keep</aspectratio>
+                </control>
             </control>
+        </control>
+
+        <control type="progress" id="32" description="Progress bar">
+            <animation effect="fade" end="0" condition="true">Conditional</animation>
         </control>
 
     </controls>
